@@ -1,0 +1,405 @@
+/**
+ * Help Tooltip Component
+ * Provides contextual help and onboarding guidance
+ */
+
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Animated,
+  StyleSheet,
+  Dimensions,
+  Modal,
+  TouchableWithoutFeedback,
+} from 'react-native';
+import { UserEngagementManager, OnboardingTooltipManager, HelpTooltip as HelpTooltipType } from '@/utils/userEngagement';
+
+interface HelpTooltipProps {
+  tooltip: HelpTooltipType;
+  targetRef?: React.RefObject<View>;
+  onDismiss: () => void;
+  onNext?: () => void;
+  showNext?: boolean;
+  userId: string;
+}
+
+const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
+
+export const HelpTooltip: React.FC<HelpTooltipProps> = ({
+  tooltip,
+  targetRef,
+  onDismiss,
+  onNext,
+  showNext = false,
+  userId,
+}) => {
+  const [tooltipManager] = useState(() => OnboardingTooltipManager.getInstance());
+  const [engagementManager] = useState(() => UserEngagementManager.getInstance());
+  const [targetLayout, setTargetLayout] = useState<{
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  } | null>(null);
+  const [tooltipLayout, setTooltipLayout] = useState<{
+    width: number;
+    height: number;
+  }>({ width: 0, height: 0 });
+  
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const scaleAnim = useRef(new Animated.Value(0.8)).current;
+  const overlayAnim = useRef(new Animated.Value(0)).current;
+
+  // Calculate target position
+  useEffect(() => {
+    if (targetRef?.current) {
+      targetRef.current.measure((x, y, width, height, pageX, pageY) => {
+        setTargetLayout({ x: pageX, y: pageY, width, height });
+      });
+    }
+  }, [targetRef]);
+
+  // Animate in when tooltip appears
+  useEffect(() => {
+    const animateIn = () => {
+      Animated.parallel([
+        Animated.timing(overlayAnim, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+        Animated.timing(scaleAnim, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+      ]).start();
+    };
+
+    animateIn();
+  }, [fadeAnim, scaleAnim, overlayAnim]);
+
+  // Handle dismiss with tracking
+  const handleDismiss = async () => {
+    tooltipManager.markTooltipShown(tooltip.id);
+    await tooltipManager.saveShownTooltips(userId);
+    await engagementManager.trackFeatureDiscovery(tooltip.targetFeature, userId);
+
+    // Animate out
+    Animated.parallel([
+      Animated.timing(overlayAnim, {
+        toValue: 0,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+      Animated.timing(fadeAnim, {
+        toValue: 0,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+      Animated.timing(scaleAnim, {
+        toValue: 0.8,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+    ]).start(() => {
+      onDismiss();
+    });
+  };
+
+  // Handle next with tracking
+  const handleNext = async () => {
+    tooltipManager.markTooltipShown(tooltip.id);
+    await tooltipManager.saveShownTooltips(userId);
+    await engagementManager.trackFeatureDiscovery(tooltip.targetFeature, userId);
+    
+    onNext?.();
+  };
+
+  // Calculate tooltip position
+  const getTooltipStyle = () => {
+    if (!targetLayout || tooltipLayout.width === 0) {
+      return { opacity: 0 };
+    }
+
+    const tooltipWidth = tooltipLayout.width;
+    const tooltipHeight = tooltipLayout.height;
+    const margin = 12;
+    
+    let left = 0;
+    let top = 0;
+
+    switch (tooltip.position) {
+      case 'top':
+        left = targetLayout.x + (targetLayout.width / 2) - (tooltipWidth / 2);
+        top = targetLayout.y - tooltipHeight - margin;
+        break;
+      case 'bottom':
+        left = targetLayout.x + (targetLayout.width / 2) - (tooltipWidth / 2);
+        top = targetLayout.y + targetLayout.height + margin;
+        break;
+      case 'left':
+        left = targetLayout.x - tooltipWidth - margin;
+        top = targetLayout.y + (targetLayout.height / 2) - (tooltipHeight / 2);
+        break;
+      case 'right':
+        left = targetLayout.x + targetLayout.width + margin;
+        top = targetLayout.y + (targetLayout.height / 2) - (tooltipHeight / 2);
+        break;
+    }
+
+    // Keep tooltip within screen bounds
+    if (left < margin) left = margin;
+    if (left + tooltipWidth > screenWidth - margin) {
+      left = screenWidth - tooltipWidth - margin;
+    }
+    if (top < margin) top = margin;
+    if (top + tooltipHeight > screenHeight - margin) {
+      top = screenHeight - tooltipHeight - margin;
+    }
+
+    return {
+      left,
+      top,
+      opacity: 1,
+    };
+  };
+
+  // Get arrow style
+  const getArrowStyle = () => {
+    if (!targetLayout || tooltipLayout.width === 0) return null;
+
+    const arrowSize = 8;
+    let arrowStyle = {};
+
+    switch (tooltip.position) {
+      case 'top':
+        arrowStyle = {
+          position: 'absolute',
+          bottom: -arrowSize,
+          left: '50%',
+          marginLeft: -arrowSize,
+          width: 0,
+          height: 0,
+          borderLeftWidth: arrowSize,
+          borderRightWidth: arrowSize,
+          borderTopWidth: arrowSize,
+          borderLeftColor: 'transparent',
+          borderRightColor: 'transparent',
+          borderTopColor: '#1f2937',
+        };
+        break;
+      case 'bottom':
+        arrowStyle = {
+          position: 'absolute',
+          top: -arrowSize,
+          left: '50%',
+          marginLeft: -arrowSize,
+          width: 0,
+          height: 0,
+          borderLeftWidth: arrowSize,
+          borderRightWidth: arrowSize,
+          borderBottomWidth: arrowSize,
+          borderLeftColor: 'transparent',
+          borderRightColor: 'transparent',
+          borderBottomColor: '#1f2937',
+        };
+        break;
+      case 'left':
+        arrowStyle = {
+          position: 'absolute',
+          right: -arrowSize,
+          top: '50%',
+          marginTop: -arrowSize,
+          width: 0,
+          height: 0,
+          borderTopWidth: arrowSize,
+          borderBottomWidth: arrowSize,
+          borderLeftWidth: arrowSize,
+          borderTopColor: 'transparent',
+          borderBottomColor: 'transparent',
+          borderLeftColor: '#1f2937',
+        };
+        break;
+      case 'right':
+        arrowStyle = {
+          position: 'absolute',
+          left: -arrowSize,
+          top: '50%',
+          marginTop: -arrowSize,
+          width: 0,
+          height: 0,
+          borderTopWidth: arrowSize,
+          borderBottomWidth: arrowSize,
+          borderRightWidth: arrowSize,
+          borderTopColor: 'transparent',
+          borderBottomColor: 'transparent',
+          borderRightColor: '#1f2937',
+        };
+        break;
+    }
+
+    return arrowStyle;
+  };
+
+  // Render spotlight effect around target
+  const renderSpotlight = () => {
+    if (!targetLayout) return null;
+
+    const spotlightRadius = 8;
+    const highlightStyle = {
+      position: 'absolute',
+      left: targetLayout.x - 4,
+      top: targetLayout.y - 4,
+      width: targetLayout.width + 8,
+      height: targetLayout.height + 8,
+      borderRadius: spotlightRadius,
+      borderWidth: 3,
+      borderColor: '#6366f1',
+      backgroundColor: 'transparent',
+    };
+
+    return <Animated.View style={[highlightStyle, { opacity: overlayAnim }]} />;
+  };
+
+  return (
+    <Modal transparent visible animationType="none">
+      {/* Overlay */}
+      <TouchableWithoutFeedback onPress={handleDismiss}>
+        <Animated.View
+          style={[
+            styles.overlay,
+            {
+              opacity: overlayAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [0, 0.7],
+              }),
+            },
+          ]}
+        />
+      </TouchableWithoutFeedback>
+
+      {/* Spotlight */}
+      {renderSpotlight()}
+
+      {/* Tooltip */}
+      <Animated.View
+        style={[
+          styles.tooltip,
+          getTooltipStyle(),
+          {
+            opacity: fadeAnim,
+            transform: [{ scale: scaleAnim }],
+          },
+        ]}
+        onLayout={(event) => {
+          const { width, height } = event.nativeEvent.layout;
+          setTooltipLayout({ width, height });
+        }}
+      >
+        {/* Arrow */}
+        <View style={getArrowStyle()} />
+        
+        {/* Content */}
+        <View style={styles.content}>
+          <Text style={styles.title}>{tooltip.title}</Text>
+          <Text style={styles.description}>{tooltip.content}</Text>
+          
+          {/* Actions */}
+          <View style={styles.actions}>
+            <TouchableOpacity style={styles.dismissButton} onPress={handleDismiss}>
+              <Text style={styles.dismissText}>{t('help.tooltip.dismiss')}</Text>
+            </TouchableOpacity>
+            
+            {showNext && onNext && (
+              <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
+                <Text style={styles.nextText}>{t('help.tooltip.next')}</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        </View>
+      </Animated.View>
+    </Modal>
+  );
+};
+
+const styles = StyleSheet.create({
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'black',
+  },
+  tooltip: {
+    position: 'absolute',
+    maxWidth: screenWidth - 32,
+    backgroundColor: '#1f2937',
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 12,
+    elevation: 8,
+  },
+  content: {
+    padding: 16,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: 'white',
+    marginBottom: 8,
+  },
+  description: {
+    fontSize: 14,
+    color: '#d1d5db',
+    lineHeight: 20,
+    marginBottom: 16,
+  },
+  actions: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    gap: 12,
+  },
+  dismissButton: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 6,
+  },
+  dismissText: {
+    fontSize: 14,
+    color: '#9ca3af',
+  },
+  nextButton: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    backgroundColor: '#6366f1',
+    borderRadius: 6,
+  },
+  nextText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: 'white',
+  },
+});
+
+// Translation helper
+const t = (key: string): string => {
+  const translations: Record<string, string> = {
+    'help.tooltip.dismiss': 'Got it',
+    'help.tooltip.next': 'Next',
+  };
+
+  return translations[key] || key;
+};
+
+export default HelpTooltip;

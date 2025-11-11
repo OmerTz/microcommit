@@ -1,0 +1,10 @@
+module.export = {
+  stories: [
+    '../components/**/*.stories.@(ts|tsx|js|jsx)',
+    '../app/**/*.stories.@(ts|tsx|js|jsx)',
+  ],
+  addons: [
+    '@storybook/addon-ondevice-controls',
+    '@storybook/addon-ondevice-actions',
+  ],
+};

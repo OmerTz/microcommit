@@ -1,0 +1,211 @@
+/* Cosmic DatePicker Styles */
+.cosmic-datepicker {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: rgba(20, 20, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+}
+
+.cosmic-datepicker .react-datepicker__header {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px 12px 0 0;
+  padding: 16px;
+}
+
+.cosmic-datepicker .react-datepicker__current-month {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cosmic-datepicker .react-datepicker__navigation {
+  top: 20px;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cosmic-datepicker .react-datepicker__navigation:hover {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+.cosmic-datepicker .react-datepicker__navigation-icon::before {
+  border-color: #FFFFFF;
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  content: '';
+  display: block;
+  height: 6px;
+  width: 6px;
+}
+
+.cosmic-datepicker .react-datepicker__day-names {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 8px 0;
+}
+
+.cosmic-datepicker .react-datepicker__day-name {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cosmic-datepicker .react-datepicker__month {
+  padding: 8px;
+}
+
+.cosmic-datepicker .react-datepicker__week {
+  display: flex;
+}
+
+.cosmic-day {
+  color: #FFFFFF;
+  background: transparent;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 2px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.cosmic-day:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.3);
+  transform: scale(1.05);
+}
+
+.cosmic-datepicker .react-datepicker__day--selected {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%) !important;
+  color: #FFFFFF !important;
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.cosmic-datepicker .react-datepicker__day--keyboard-selected {
+  background: rgba(139, 92, 246, 0.3) !important;
+  border-color: rgba(139, 92, 246, 0.5) !important;
+}
+
+.cosmic-datepicker .react-datepicker__day--today {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cosmic-datepicker .react-datepicker__day--disabled {
+  color: rgba(255, 255, 255, 0.3) !important;
+  background: transparent !important;
+  cursor: not-allowed !important;
+}
+
+.cosmic-datepicker .react-datepicker__day--disabled:hover {
+  background: transparent !important;
+  transform: none !important;
+}
+
+.cosmic-datepicker .react-datepicker__day--outside-month {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Year and Month Dropdowns */
+.cosmic-datepicker .react-datepicker__year-dropdown,
+.cosmic-datepicker .react-datepicker__month-dropdown {
+  background: rgba(20, 20, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.cosmic-datepicker .react-datepicker__year-option,
+.cosmic-datepicker .react-datepicker__month-option {
+  color: #FFFFFF;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cosmic-datepicker .react-datepicker__year-option:hover,
+.cosmic-datepicker .react-datepicker__month-option:hover {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+.cosmic-datepicker .react-datepicker__year-option--selected_year,
+.cosmic-datepicker .react-datepicker__month-option--selected_month {
+  background: rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Dropdown arrows */
+.cosmic-datepicker .react-datepicker__year-dropdown-container_select,
+.cosmic-datepicker .react-datepicker__month-dropdown-container_select {
+  position: relative;
+}
+
+.cosmic-datepicker .react-datepicker__year-select,
+.cosmic-datepicker .react-datepicker__month-select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #FFFFFF;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.cosmic-datepicker .react-datepicker__year-select:hover,
+.cosmic-datepicker .react-datepicker__month-select:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.cosmic-datepicker .react-datepicker__year-select:focus,
+.cosmic-datepicker .react-datepicker__month-select:focus {
+  background: rgba(139, 92, 246, 0.3);
+  border-color: #8B5CF6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+/* Custom scrollbar for dropdowns */
+.cosmic-datepicker .react-datepicker__year-dropdown::-webkit-scrollbar,
+.cosmic-datepicker .react-datepicker__month-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cosmic-datepicker .react-datepicker__year-dropdown::-webkit-scrollbar-track,
+.cosmic-datepicker .react-datepicker__month-dropdown::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.cosmic-datepicker .react-datepicker__year-dropdown::-webkit-scrollbar-thumb,
+.cosmic-datepicker .react-datepicker__month-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 3px;
+}
+
+.cosmic-datepicker .react-datepicker__year-dropdown::-webkit-scrollbar-thumb:hover,
+.cosmic-datepicker .react-datepicker__month-dropdown::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.7);
+}
