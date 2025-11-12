@@ -17,6 +17,7 @@ function RootLayoutNav() {
       if (isLoading) return;
 
       const inAuthGroup = segments[0] === '(auth)';
+      const inPaymentGroup = segments[0] === '(payment)';
       const inOnboarding = segments[0] === 'onboarding';
       
       // Check if onboarding has been completed
@@ -33,7 +34,7 @@ function RootLayoutNav() {
         currentPath: segments.join('/')
       });
 
-      if (!user) {
+      if (!user && !inPaymentGroup) {
         // User is not authenticated - always redirect to login
         if (!inAuthGroup) {
           console.log('[_LAYOUT] Redirecting to login - user not authenticated');
