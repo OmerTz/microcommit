@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { View } from 'react-native';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { SubscriptionProvider } from '@/context/SubscriptionContext';
@@ -16,6 +17,7 @@ function RootLayoutNav() {
       if (isLoading) return;
 
       const inAuthGroup = segments[0] === '(auth)';
+      const inPaymentGroup = segments[0] === '(payment)';
       const inOnboarding = segments[0] === 'onboarding';
       
       // Check if onboarding has been completed
@@ -32,7 +34,7 @@ function RootLayoutNav() {
         currentPath: segments.join('/')
       });
 
-      if (!user) {
+      if (!user && !inPaymentGroup) {
         // User is not authenticated - always redirect to login
         if (!inAuthGroup) {
           console.log('[_LAYOUT] Redirecting to login - user not authenticated');
@@ -61,11 +63,14 @@ function RootLayoutNav() {
   }, [user, isLoading, segments]);
 
   return (
-    <Stack>
-      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="onboarding" options={{ headerShown: false }} />
-    </Stack>
+    <View testID="app-root" style={{ flex: 1, backgroundColor: 'transparent' }}>
+      <Stack>
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="onboarding" options={{ headerShown: false }} />
+        <Stack.Screen name="(payment)" options={{ headerShown: false }} />
+      </Stack>
+    </View>
   );
 }
 
