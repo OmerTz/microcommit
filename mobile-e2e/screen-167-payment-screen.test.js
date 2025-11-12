@@ -206,6 +206,9 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
       .toExist()
       .withTimeout(2000);
 
+    // Scroll to top to ensure back button is visible (previous test left screen scrolled)
+    await element(by.id('payment-failed-screen')).swipe('down', 'fast', 0.75);
+
     // Verify back button exists and tap it (Detox waits for tappability automatically)
     await expect(element(by.id('payment-failed-back-button'))).toExist();
 
