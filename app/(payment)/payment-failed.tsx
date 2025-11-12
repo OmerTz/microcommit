@@ -13,8 +13,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { t } from '@/constants/translations';
 import * as analytics from '@/services/analytics';
-import { paymentRetryService } from '@/services/paymentRetryService';
-import type { RetryPaymentResult } from '@/services/paymentRetryService';
+import { handlePaymentRetry } from './payment-failed.handlers';
 import { styles } from './payment-failed.styles';
 
 interface PaymentFailedScreenParams {
@@ -96,126 +95,31 @@ export default function PaymentFailedScreen() {
     setRetryDisabled(true);
 
     try {
-      console.log('[PAYMENT_FAILED] Starting payment retry', {
-        paymentIntentId,
-        cardLast4,
-        goalId,
-      });
-
-      const amount = parseInt(commitmentAmount, 10) * 100;
-
-      const result: RetryPaymentResult = await paymentRetryService.retryPayment({
+      await handlePaymentRetry({
         paymentIntentId: paymentIntentId!,
         paymentMethodId: paymentMethodId!,
         userId: userId!,
         goalId,
-        amount,
-        currency: 'usd',
+        commitmentAmount,
         cardLast4,
         cardBrand,
+        onSuccess: () => router.push('/(tabs)/goals' as any),
+        onSameError: () => {
+          setRetryDisabled(true);
+          router.push('/(payment)/add-payment-method' as any);
+        },
+        onDifferentError: () => setRetryDisabled(false),
+        onTimeout: () => setRetryDisabled(false),
+        onMaxAttempts: () => {
+          setRetryDisabled(true);
+          router.push('/(payment)/add-payment-method' as any);
+        },
       });
-
       setIsRetrying(false);
-
-      if (result.success) {
-        console.log('[PAYMENT_FAILED] Retry successful');
-        Alert.alert(
-          t('payment.retry.success.title'),
-          t('payment.retry.success.message'),
-          [
-            {
-              text: t('payment.retry.success.action'),
-              onPress: () => router.push('/(tabs)/goals' as any),
-            },
-          ]
-        );
-        return;
-      }
-
-      if (result.outcome === 'same_error') {
-        console.log('[PAYMENT_FAILED] Same error encountered');
-        Alert.alert(
-          t('payment.retry.sameError.title'),
-          t('payment.retry.sameError.message'),
-          [
-            {
-              text: t('payment.retry.sameError.action'),
-              onPress: () => router.push('/(payment)/add-payment-method' as any),
-            },
-          ]
-        );
-        setRetryDisabled(true);
-        return;
-      }
-
-      if (result.outcome === 'different_error') {
-        console.log('[PAYMENT_FAILED] Different error encountered', result.errorType);
-
-        if (result.requiresAction && result.clientSecret) {
-          console.log('[PAYMENT_FAILED] 3D Secure authentication required');
-          Alert.alert(
-            t('payment.retry.errors.requires_3ds'),
-            t('payment.failed.suggestedActions.requires_3ds'),
-            [{ text: 'OK' }]
-          );
-          setRetryDisabled(false);
-          return;
-        }
-
-        Alert.alert(
-          t('payment.retry.differentError.title'),
-          result.errorMessage || t('payment.retry.differentError.message'),
-          [
-            {
-              text: t('payment.retry.differentError.action'),
-              onPress: () => setRetryDisabled(false),
-            },
-          ]
-        );
-        return;
-      }
-
-      if (result.outcome === 'timeout') {
-        console.log('[PAYMENT_FAILED] Retry timeout');
-        Alert.alert(
-          t('payment.retry.timeout.title'),
-          t('payment.retry.timeout.message'),
-          [
-            {
-              text: t('payment.retry.timeout.actionContinue'),
-              onPress: () => router.push('/(tabs)/goals' as any),
-            },
-            {
-              text: t('payment.retry.timeout.actionWait'),
-              style: 'cancel',
-              onPress: () => setRetryDisabled(false),
-            },
-          ]
-        );
-        return;
-      }
-
-      if (result.outcome === 'max_attempts_reached') {
-        console.log('[PAYMENT_FAILED] Max retry attempts reached');
-        Alert.alert(
-          t('payment.retry.maxAttempts.title'),
-          t('payment.retry.maxAttempts.message'),
-          [
-            {
-              text: t('payment.retry.maxAttempts.action'),
-              onPress: () => router.push('/(payment)/add-payment-method' as any),
-            },
-          ]
-        );
-        setRetryDisabled(true);
-        return;
-      }
-
     } catch (error) {
       console.error('[PAYMENT_FAILED] Retry exception:', error);
       setIsRetrying(false);
       setRetryDisabled(false);
-
       Alert.alert(
         t('payment.failed.errors.navigationError'),
         error instanceof Error ? error.message : t('payment.retry.errors.unknown_error')
