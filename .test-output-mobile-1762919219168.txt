@@ -1,0 +1,103 @@
+05:46:59.473 detox[13901] i ws-server Detox server listening on localhost:49723...
+05:46:59.476 detox[13901] B lifecycle DETOX_BINARY_PATH="/Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Debug-iphonesimulator/MicroCommit.app" jest --config /Users/omertzadiki/Desktop/dev/tzrif86/utils/cli/configs/jest.config.universal.js --json --outputFile=mobile-e2e/test-results.json
+watchman warning:  Recrawled this watch 15 times, most recently because:
+MustScanSubDirs UserDroppedTo resolve, please review the information on
+https://facebook.github.io/watchman/docs/troubleshooting.html#recrawl
+To clear this warning, run:
+`watchman watch-del '/Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit' ; watchman watch-project '/Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit'`
+
+05:47:00.152 detox[13901] B ws-server connection :49723<->:49726
+05:47:00.304 detox[13901] i child-process:EXEC_CMD applesimutils --list --byName MicroCommit --fields udid,os,identifier
+05:47:00.305 detox[13901] i child-process:EXEC_TRY Searching for device by name = "MicroCommit" ...
+05:47:00.410 detox[13901] i device settled on EB482E8B-8936-40AF-8F07-4FC4F295AF90
+  data: {
+    "id": "EB482E8B-8936-40AF-8F07-4FC4F295AF90",
+    "udid": "EB482E8B-8936-40AF-8F07-4FC4F295AF90"
+  }
+05:47:00.410 detox[13901] i child-process:EXEC_CMD applesimutils --list --byId EB482E8B-8936-40AF-8F07-4FC4F295AF90 --maxResults 1 --fields udid,os,version,state
+05:47:00.514 detox[13903] i child-process:EXEC_CMD /usr/bin/xcrun simctl uninstall EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+05:47:00.515 detox[13903] i child-process:EXEC_TRY Uninstalling com.tzrif86.microcommit...
+05:47:00.674 detox[13903] i child-process:EXEC_SUCCESS com.tzrif86.microcommit uninstalled
+05:47:00.677 detox[13903] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+05:47:00.677 detox[13903] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+05:47:01.782 detox[13903] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+05:47:01.864 detox[13903] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+05:47:01.865 detox[13903] i child-process:EXEC_FAIL 
+05:47:01.865 detox[13903] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+05:47:01.865 detox[13903] i child-process:EXEC_CMD /usr/bin/xcrun simctl install EB482E8B-8936-40AF-8F07-4FC4F295AF90 "/Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Debug-iphonesimulator/MicroCommit.app"
+05:47:01.865 detox[13903] i child-process:EXEC_TRY Installing /Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Debug-iphonesimulator/MicroCommit.app...
+05:47:02.146 detox[13903] i child-process:EXEC_SUCCESS /Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Debug-iphonesimulator/MicroCommit.app installed
+05:47:02.147 detox[13903] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+05:47:02.147 detox[13903] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+05:47:03.237 detox[13903] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+05:47:03.331 detox[13903] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+05:47:03.331 detox[13903] i child-process:EXEC_FAIL 
+05:47:03.331 detox[13903] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+05:47:03.436 detox[13903] i lifecycle basic.test.js is assigned to EB482E8B-8936-40AF-8F07-4FC4F295AF90 (undefined)
+05:47:03.438 detox[13903] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+05:47:03.438 detox[13903] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+05:47:04.517 detox[13903] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+05:47:04.610 detox[13903] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+05:47:04.610 detox[13903] i child-process:EXEC_FAIL 
+05:47:04.610 detox[13903] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+05:47:04.611 detox[13903] i child-process:EXEC_CMD applesimutils --byId EB482E8B-8936-40AF-8F07-4FC4F295AF90 --bundle com.tzrif86.microcommit --restartSB --setPermissions notifications=YES
+05:47:04.611 detox[13903] i child-process:EXEC_TRY Trying to set permissions with AppleSimUtils: notifications=YES...
+05:47:04.981 detox[13903] i child-process:EXEC_SUCCESS notifications permissions are set
+05:47:04.984 detox[13903] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+05:47:05.082 detox[13903] i child-process:SPAWN_CMD /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/4DBC7171-343F-43BB-94AF-F25A369FF061/MicroCommit.app\""
+05:47:05.134 detox[13903] i child-process:EXEC_CMD SIMCTL_CHILD_GULGeneratedClassDisposeDisabled=YES SIMCTL_CHILD_DYLD_INSERT_LIBRARIES="/Users/omertzadiki/Library/Detox/ios/framework/c632ef467f16c11d84acd58ddea13a1a407ed9e8/Detox.framework/Detox" /usr/bin/xcrun simctl launch EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit --args -detoxServer ws://localhost:49723 -detoxSessionId 25ab2c72-2151-77bc-39c9-c47a2341f94e -EXDevMenuDisableAutoLaunch true -EXKernelDisableNuxDefaultsKey true -EX_DEV_LAUNCHER_URL http://localhost:8423 -detoxDebugVisibility YES -detoxDisableHierarchyDump YES
+05:47:05.134 detox[13903] i child-process:EXEC_TRY Launching com.tzrif86.microcommit...
+05:47:07.502 detox[13903] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+05:47:07.635 detox[13903] i device com.tzrif86.microcommit launched. To watch simulator logs, run:
+        /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate 'process == "MicroCommit"'
+05:47:07.979 detox[13901] B ws-server connection :49723<->:49788
+05:47:16.105 detox[13903] i lifecycle MicroCommit - Basic app launch and navigation flow: should launch app and complete basic navigation
+05:47:16.171 detox[13903] i child-process:SPAWN_END /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/4DBC7171-343F-43BB-94AF-F25A369FF061/MicroCommit.app\"" exited with code #0
+05:47:16.172 detox[13903] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+05:47:16.267 detox[13903] i child-process:SPAWN_CMD /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/4DBC7171-343F-43BB-94AF-F25A369FF061/MicroCommit.app\""
+05:47:16.320 detox[13903] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-13903-403vDI.detox.png"
+05:47:26.491 detox[13903] i ws-client:APP_STATUS The app is busy with the following tasks:
+• Run loop "Main Run Loop" is awake.
+• There are 2 work items pending on the dispatch queue: "Main Queue (<OS_dispatch_queue_main: com.apple.main-thread>)".

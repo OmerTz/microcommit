@@ -1,0 +1,49 @@
+
+Running 2 tests using 2 workers
+
+  [38;5;45;1mpw:api [0m=> browserType.launch started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> browserType.launch started [38;5;45m+0ms[0m
+  [30;1mpw:browser [0m<launching> /Users/omertzadiki/Library/Caches/ms-playwright/chromium_headless_shell-1187/chrome-mac/headless_shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/playwright_chromiumdev_profile-snLD6I --remote-debugging-pipe --no-startup-window [30m+0ms[0m
+  [30;1mpw:browser [0m<launching> /Users/omertzadiki/Library/Caches/ms-playwright/chromium_headless_shell-1187/chrome-mac/headless_shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/playwright_chromiumdev_profile-u0jYMa --remote-debugging-pipe --no-startup-window [30m+0ms[0m
+  [30;1mpw:browser [0m<launched> pid=40694 [30m+4ms[0m
+  [30;1mpw:browser [0m<launched> pid=40693 [30m+4ms[0m
+  [38;5;45;1mpw:api [0m<= browserType.launch succeeded [38;5;45m+258ms[0m
+  [38;5;45;1mpw:api [0m<= browserType.launch succeeded [38;5;45m+258ms[0m
+  [38;5;45;1mpw:api [0m=> browser.newContext started [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m=> browser.newContext started [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= browser.newContext succeeded [38;5;45m+6ms[0m
+  [38;5;45;1mpw:api [0m<= browser.newContext succeeded [38;5;45m+6ms[0m
+  [38;5;45;1mpw:api [0m=> browserContext.newPage started [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m=> browserContext.newPage started [38;5;45m+4ms[0m
+  [30;1mpw:browser [0m[pid=40693][err] [1112/070252.157773:ERROR:ui/display/mac/cv_display_link_mac.mm:165] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670 [30m+390ms[0m
+  [30;1mpw:browser [0m[pid=40694][err] [1112/070252.157916:ERROR:ui/display/mac/cv_display_link_mac.mm:165] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670 [30m+390ms[0m
+  [38;5;45;1mpw:api [0m<= browserContext.newPage succeeded [38;5;45m+166ms[0m
+  [38;5;45;1mpw:api [0m<= browserContext.newPage succeeded [38;5;45m+166ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+13ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+13ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m=> browserContext.close started [38;5;45m+14ms[0m
+  [38;5;45;1mpw:api [0m=> browserContext.close started [38;5;45m+14ms[0m
+  [38;5;45;1mpw:api [0m<= browserContext.close succeeded [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= browserContext.close succeeded [38;5;45m+3ms[0m
+  ✓  2 [chrome] › web-e2e/flow-102-payment-failure-retry.test.js:11:7 › Payment Failure & Retry Flow › should load successfully (214ms)
+  ✓  1 [chrome] › web-e2e/screen-167-payment-screen.test.js:11:7 › Payment Screen Screen › should load successfully (214ms)
+  [38;5;45;1mpw:api [0m=> browser.close started [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m=> browser.close started [38;5;45m+4ms[0m
+  [30;1mpw:browser [0m[pid=40693] <gracefully close start> [30m+73ms[0m
+  [30;1mpw:browser [0m[pid=40694] <gracefully close start> [30m+74ms[0m
+  [30;1mpw:browser [0m[pid=40694] <process did exit: exitCode=0, signal=null> [30m+10ms[0m
+  [30;1mpw:browser [0m[pid=40694] starting temporary directories cleanup [30m+1ms[0m
+  [30;1mpw:browser [0m[pid=40693] <process did exit: exitCode=0, signal=null> [30m+13ms[0m
+  [30;1mpw:browser [0m[pid=40693] starting temporary directories cleanup [30m+0ms[0m
+  [30;1mpw:browser [0m[pid=40694] finished temporary directories cleanup [30m+4ms[0m
+  [30;1mpw:browser [0m[pid=40694] <gracefully close end> [30m+0ms[0m
+  [38;5;45;1mpw:api [0m<= browser.close succeeded [38;5;45m+16ms[0m
+  [30;1mpw:browser [0m[pid=40693] finished temporary directories cleanup [30m+4ms[0m
+  [30;1mpw:browser [0m[pid=40693] <gracefully close end> [30m+0ms[0m
+  [38;5;45;1mpw:api [0m<= browser.close succeeded [38;5;45m+17ms[0m
+
+  2 passed (795ms)

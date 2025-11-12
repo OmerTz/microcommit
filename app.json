@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "tzrif86-expo-template",
-    "slug": "tzrif86-expo-template",
+    "name": "MicroCommit",
+    "slug": "microcommit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "tzrif86template",
+    "scheme": "microcommit",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.tzrif86.template",
+      "bundleIdentifier": "com.tzrif86.microcommit",
       "buildNumber": "1",
       "runtimeVersion": "1.0.0",
       "infoPlist": {
@@ -22,7 +22,7 @@
       }
     },
     "android": {
-      "package": "com.tzrif86.template",
+      "package": "com.tzrif86.microcommit",
       "runtimeVersion": {
         "policy": "appVersion"
       },

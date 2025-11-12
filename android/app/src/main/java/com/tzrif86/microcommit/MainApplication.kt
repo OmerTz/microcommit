@@ -1,4 +1,4 @@
-package com.tzrif86.mubleexpo
+package com.tzrif86.microcommit
 
 import android.app.Application
 import android.content.res.Configuration

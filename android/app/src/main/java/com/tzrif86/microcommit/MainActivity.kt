@@ -1,4 +1,4 @@
-package com.tzrif86.mubleexpo
+package com.tzrif86.microcommit
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

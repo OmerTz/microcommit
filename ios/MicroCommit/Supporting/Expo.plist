@@ -12,5 +12,7 @@
     <string>1.0.0</string>
     <key>EXUpdatesURL</key>
     <string>https://u.expo.dev/80819e9f-dae9-4b7f-832f-3bd7cae738f5</string>
+    <key>EXDevLauncherUrl</key>
+    <string>http://localhost:8423</string>
   </dict>
 </plist>

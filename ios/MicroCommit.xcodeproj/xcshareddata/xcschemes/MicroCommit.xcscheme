@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "MubleExpo.app"
-               BlueprintName = "MubleExpo"
-               ReferencedContainer = "container:MubleExpo.xcodeproj">
+               BuildableName = "MicroCommit.app"
+               BlueprintName = "MicroCommit"
+               ReferencedContainer = "container:MicroCommit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "MubleExpoTests.xctest"
-               BlueprintName = "MubleExpoTests"
-               ReferencedContainer = "container:MubleExpo.xcodeproj">
+               BuildableName = "MicroCommitTests.xctest"
+               BlueprintName = "MicroCommitTests"
+               ReferencedContainer = "container:MicroCommit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MubleExpo.app"
-            BlueprintName = "MubleExpo"
-            ReferencedContainer = "container:MubleExpo.xcodeproj">
+            BuildableName = "MicroCommit.app"
+            BlueprintName = "MicroCommit"
+            ReferencedContainer = "container:MicroCommit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MubleExpo.app"
-            BlueprintName = "MubleExpo"
-            ReferencedContainer = "container:MubleExpo.xcodeproj">
+            BuildableName = "MicroCommit.app"
+            BlueprintName = "MicroCommit"
+            ReferencedContainer = "container:MicroCommit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

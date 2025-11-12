@@ -18,27 +18,63 @@ describe('MicroCommit - Basic app launch and navigation flow', () => {
   });
 
   it('should launch app and complete basic navigation', async () => {
-    // Step 1: Wait for app to be ready
-    await waitFor(element(by.id('app-root')))
+    // Step 1: Wait for app to be ready - check for actual visible UI element (login screen)
+    await waitFor(element(by.id('login-email-input')))
+      .toExist()
+      .withTimeout(2000);
+
+    await device.takeScreenshot('mobile-e2e/screenshots/01-app-launched-login');
+    await expect(element(by.id('login-email-input'))).toExist();
+    await expect(element(by.id('login-password-input'))).toExist();
+    await expect(element(by.id('login-submit-button'))).toExist();
+
+    // Step 2: Navigate to Create Account screen (tests forward navigation)
+    await waitFor(element(by.id('login-signup-link')))
       .toBeVisible()
-      .withTimeout(10000);
+      .withTimeout(2000);
 
-    // Step 2: Take screenshot of initial state
-    await device.takeScreenshot('mobile-e2e/screenshots/01-app-launched');
+    await element(by.id('login-signup-link')).tap();
 
-    // Step 3: Verify app has loaded by checking for root element
-    await expect(element(by.id('app-root'))).toBeVisible();
+    // Step 3: Wait for Create Account screen to load
+    await waitFor(element(by.id('signup-email-input')))
+      .toExist()
+      .withTimeout(2000);
 
-    // Step 4: Test basic interaction - tap on screen to verify responsiveness
-    // (This is a placeholder - will be replaced with actual navigation in later tests)
-    await device.takeScreenshot('mobile-e2e/screenshots/02-ready-for-interaction');
+    await device.takeScreenshot('mobile-e2e/screenshots/02-create-account-screen');
+    await expect(element(by.id('signup-email-input'))).toExist();
+    await expect(element(by.id('signup-password-input'))).toExist();
 
-    // Step 5: Test that app is still responsive
-    await expect(element(by.id('app-root'))).toBeVisible();
+    // Step 4: Go back to login screen by tapping custom back button (tests back navigation)
+    await waitFor(element(by.id('auth-back-button')))
+      .toBeVisible()
+      .withTimeout(2000);
 
-    // Step 6: Final screenshot showing completed state
-    await device.takeScreenshot('mobile-e2e/screenshots/03-test-complete');
+    await element(by.id('auth-back-button')).tap();
 
-    // Test passes - app launches successfully and is responsive
+    // Step 5: Wait for login screen to reappear
+    await waitFor(element(by.id('login-email-input')))
+      .toExist()
+      .withTimeout(2000);
+
+    await device.takeScreenshot('mobile-e2e/screenshots/03-back-to-login');
+
+    // Step 6: Verify state persists after back navigation
+    await expect(element(by.id('login-email-input'))).toExist();
+    await expect(element(by.id('login-password-input'))).toExist();
+    await expect(element(by.id('login-submit-button'))).toExist();
+
+    // Step 7: Navigate forward again to Create Account (tests forward navigation after back)
+    await element(by.id('login-signup-link')).tap();
+
+    await waitFor(element(by.id('signup-email-input')))
+      .toExist()
+      .withTimeout(2000);
+
+    await device.takeScreenshot('mobile-e2e/screenshots/04-forward-again');
+    await expect(element(by.id('signup-email-input'))).toExist();
+
+    await device.takeScreenshot('mobile-e2e/screenshots/05-test-complete');
+
+    // Test passes - app launches successfully, forward/back/forward navigation works, state persists
   });
 });
