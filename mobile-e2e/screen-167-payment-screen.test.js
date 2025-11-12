@@ -211,6 +211,9 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
 
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/14-before-back-button');
 
+    // Swipe down to scroll to top where back button is located
+    await element(by.id('payment-failed-screen')).swipe('down', 'fast', 0.5);
+
     // Tap back button (should be visible at top of screen)
     await waitFor(element(by.id('payment-failed-back-button')))
       .toBeVisible()
