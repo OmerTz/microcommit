@@ -68,6 +68,47 @@ export const paymentTranslations = {
       subtitle: 'Your goal is now active!',
       viewGoal: 'View My Goal',
       done: 'Done'
+    },
+    retry: {
+      button: 'Retry Payment',
+      processing: 'Processing payment...',
+      processingWithCard: 'Processing payment with card ending {{last4}}...',
+      success: {
+        title: 'Payment Successful!',
+        message: 'Your payment has been processed successfully.',
+        action: 'Continue'
+      },
+      sameError: {
+        title: 'Same Issue Detected',
+        message: 'We encountered the same issue. Please try a different payment method.',
+        action: 'Use Different Card'
+      },
+      differentError: {
+        title: 'New Issue Detected',
+        message: 'A different issue occurred. Please review the error details.',
+        action: 'Try Again'
+      },
+      timeout: {
+        title: 'Processing Taking Longer',
+        message: 'Your payment is still being processed. You can continue in the background or wait.',
+        actionContinue: 'Continue in Background',
+        actionWait: 'Keep Waiting'
+      },
+      maxAttempts: {
+        title: 'Maximum Attempts Reached',
+        message: 'You\'ve reached the maximum retry attempts (3). Please use a different payment method.',
+        action: 'Use Different Card'
+      },
+      errors: {
+        duplicate_retry: 'A retry is already in progress',
+        max_attempts_reached: 'Maximum retry attempts reached',
+        timeout: 'Payment processing timeout',
+        requires_3ds: 'Additional authentication required',
+        unknown_error: 'An unexpected error occurred'
+      },
+      attemptNumber: 'Retry attempt {{number}} of 3',
+      disabled: 'Please wait before retrying',
+      authenticating: 'Completing authentication...'
     }
   }
 };

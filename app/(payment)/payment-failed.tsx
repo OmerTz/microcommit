@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -6,12 +6,15 @@ import {
   ScrollView,
   Alert,
   Linking,
+  ActivityIndicator,
 } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { t } from '@/constants/translations';
 import * as analytics from '@/services/analytics';
+import { paymentRetryService } from '@/services/paymentRetryService';
+import type { RetryPaymentResult } from '@/services/paymentRetryService';
 import { styles } from './payment-failed.styles';
 
 interface PaymentFailedScreenParams {
@@ -21,6 +24,11 @@ interface PaymentFailedScreenParams {
   commitmentAmount?: string;
   charityName?: string;
   goalId?: string;
+  paymentIntentId?: string;
+  paymentMethodId?: string;
+  cardLast4?: string;
+  cardBrand?: string;
+  userId?: string;
 }
 
 export default function PaymentFailedScreen() {
@@ -32,6 +40,16 @@ export default function PaymentFailedScreen() {
   const commitmentAmount = params.commitmentAmount || t('payment.failed.fallbacks.commitmentAmount');
   const charityName = params.charityName || t('payment.failed.fallbacks.charityName');
   const goalId = params.goalId;
+  const paymentIntentId = params.paymentIntentId;
+  const paymentMethodId = params.paymentMethodId;
+  const cardLast4 = params.cardLast4;
+  const cardBrand = params.cardBrand;
+  const userId = params.userId;
+
+  const [isRetrying, setIsRetrying] = useState(false);
+  const [retryDisabled, setRetryDisabled] = useState(false);
+
+  const canRetry = !!(paymentIntentId && paymentMethodId && userId);
 
   useEffect(() => {
     analytics.track('payment_failed', {
@@ -58,12 +76,150 @@ export default function PaymentFailedScreen() {
   };
 
   const handleTryAgain = async () => {
+    if (!canRetry) {
+      console.log('[PAYMENT_FAILED] Cannot retry - missing payment details, navigating back');
+      try {
+        await router.back();
+      } catch (error) {
+        console.error('[PAYMENT_FAILED] Navigation error:', error);
+        Alert.alert(t('payment.failed.errors.navigationError'), t('payment.failed.errors.navigationFailed'));
+      }
+      return;
+    }
+
+    if (isRetrying || retryDisabled) {
+      console.warn('[PAYMENT_FAILED] Retry already in progress or disabled');
+      return;
+    }
+
+    setIsRetrying(true);
+    setRetryDisabled(true);
+
     try {
-      console.log('[PAYMENT_FAILED] User tapped Try Again');
-      await router.back();
+      console.log('[PAYMENT_FAILED] Starting payment retry', {
+        paymentIntentId,
+        cardLast4,
+        goalId,
+      });
+
+      const amount = parseInt(commitmentAmount, 10) * 100;
+
+      const result: RetryPaymentResult = await paymentRetryService.retryPayment({
+        paymentIntentId: paymentIntentId!,
+        paymentMethodId: paymentMethodId!,
+        userId: userId!,
+        goalId,
+        amount,
+        currency: 'usd',
+        cardLast4,
+        cardBrand,
+      });
+
+      setIsRetrying(false);
+
+      if (result.success) {
+        console.log('[PAYMENT_FAILED] Retry successful');
+        Alert.alert(
+          t('payment.retry.success.title'),
+          t('payment.retry.success.message'),
+          [
+            {
+              text: t('payment.retry.success.action'),
+              onPress: () => router.push('/(tabs)/goals' as any),
+            },
+          ]
+        );
+        return;
+      }
+
+      if (result.outcome === 'same_error') {
+        console.log('[PAYMENT_FAILED] Same error encountered');
+        Alert.alert(
+          t('payment.retry.sameError.title'),
+          t('payment.retry.sameError.message'),
+          [
+            {
+              text: t('payment.retry.sameError.action'),
+              onPress: () => router.push('/(payment)/add-payment-method' as any),
+            },
+          ]
+        );
+        setRetryDisabled(true);
+        return;
+      }
+
+      if (result.outcome === 'different_error') {
+        console.log('[PAYMENT_FAILED] Different error encountered', result.errorType);
+
+        if (result.requiresAction && result.clientSecret) {
+          console.log('[PAYMENT_FAILED] 3D Secure authentication required');
+          Alert.alert(
+            t('payment.retry.errors.requires_3ds'),
+            t('payment.failed.suggestedActions.requires_3ds'),
+            [{ text: 'OK' }]
+          );
+          setRetryDisabled(false);
+          return;
+        }
+
+        Alert.alert(
+          t('payment.retry.differentError.title'),
+          result.errorMessage || t('payment.retry.differentError.message'),
+          [
+            {
+              text: t('payment.retry.differentError.action'),
+              onPress: () => setRetryDisabled(false),
+            },
+          ]
+        );
+        return;
+      }
+
+      if (result.outcome === 'timeout') {
+        console.log('[PAYMENT_FAILED] Retry timeout');
+        Alert.alert(
+          t('payment.retry.timeout.title'),
+          t('payment.retry.timeout.message'),
+          [
+            {
+              text: t('payment.retry.timeout.actionContinue'),
+              onPress: () => router.push('/(tabs)/goals' as any),
+            },
+            {
+              text: t('payment.retry.timeout.actionWait'),
+              style: 'cancel',
+              onPress: () => setRetryDisabled(false),
+            },
+          ]
+        );
+        return;
+      }
+
+      if (result.outcome === 'max_attempts_reached') {
+        console.log('[PAYMENT_FAILED] Max retry attempts reached');
+        Alert.alert(
+          t('payment.retry.maxAttempts.title'),
+          t('payment.retry.maxAttempts.message'),
+          [
+            {
+              text: t('payment.retry.maxAttempts.action'),
+              onPress: () => router.push('/(payment)/add-payment-method' as any),
+            },
+          ]
+        );
+        setRetryDisabled(true);
+        return;
+      }
+
     } catch (error) {
-      console.error('[PAYMENT_FAILED] Navigation error:', error);
-      Alert.alert(t('payment.failed.errors.navigationError'), t('payment.failed.errors.navigationFailed'));
+      console.error('[PAYMENT_FAILED] Retry exception:', error);
+      setIsRetrying(false);
+      setRetryDisabled(false);
+
+      Alert.alert(
+        t('payment.failed.errors.navigationError'),
+        error instanceof Error ? error.message : t('payment.retry.errors.unknown_error')
+      );
     }
   };
 
@@ -194,12 +350,29 @@ export default function PaymentFailedScreen() {
           style={styles.actionsContainer}
         >
           <TouchableOpacity
-            style={styles.primaryButton}
+            style={[
+              styles.primaryButton,
+              (isRetrying || retryDisabled) && styles.disabledButton,
+            ]}
             onPress={handleTryAgain}
             testID="payment-failed-try-again-button"
             activeOpacity={0.8}
+            disabled={isRetrying || retryDisabled}
           >
-            <Text style={styles.primaryButtonText}>{t('payment.failed.buttons.tryAgain')}</Text>
+            {isRetrying ? (
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                <ActivityIndicator color="#FFFFFF" size="small" />
+                <Text style={styles.primaryButtonText}>
+                  {cardLast4
+                    ? t('payment.retry.processingWithCard').replace('{{last4}}', cardLast4)
+                    : t('payment.retry.processing')}
+                </Text>
+              </View>
+            ) : (
+              <Text style={styles.primaryButtonText}>
+                {retryDisabled ? t('payment.retry.disabled') : t('payment.failed.buttons.tryAgain')}
+              </Text>
+            )}
           </TouchableOpacity>
 
           <TouchableOpacity
