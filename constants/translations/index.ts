@@ -11,12 +11,14 @@ import { commonTranslations } from './common';
 import { numbersTranslations } from './numbers';
 import { settingsTranslations } from './settings';
 import { profileTranslations } from './profile';
+import { authTranslations } from './auth';
 
 // Main translations object - maintains same structure as original
 export const translations = {
   welcome: welcomeTranslations,
   ...onboardingTranslations,
   ...commonTranslations, // Spread common to expose errors, buttons, etc. at root level
+  ...authTranslations, // Spread auth to expose auth keys at root level
   common: {
     skip: commonTranslations.buttons.skip,
     ...commonTranslations.buttons,
@@ -38,6 +40,7 @@ export {
   numbersTranslations,
   settingsTranslations,
   profileTranslations,
+  authTranslations,
 };
 
 // Default export for backward compatibility
