@@ -27,7 +27,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
   });
 
   it('should complete payment failure and retry flow with all recovery options', async () => {
-    // Wait for app to launch - verify login screen appears
+    // Wait for app to fully launch by checking for login screen
     await waitFor(element(by.id('login-email-input')))
       .toExist()
       .withTimeout(2000);
