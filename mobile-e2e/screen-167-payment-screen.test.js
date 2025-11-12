@@ -42,7 +42,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/00-app-launched-login');
 
     // Test Scenario 1: Insufficient Funds Error
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=insufficient_funds&goalName=Save%20for%20Hawaii&commitmentAmount=25&charityName=Red%20Cross' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=insufficient_funds&goalName=Save%20for%20Hawaii&commitmentAmount=25&charityName=Red%20Cross' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -67,7 +67,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await expect(element(by.id('payment-failed-different-card-button'))).toExist();
 
     // Test Scenario 2: Card Declined Error
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -78,7 +78,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await expect(element(by.id('payment-failed-error-message'))).toExist();
 
     // Test Scenario 3: Invalid Card Details Error
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=invalid_details&goalName=Home%20Renovation&commitmentAmount=100&charityName=Habitat' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=invalid_details&goalName=Home%20Renovation&commitmentAmount=100&charityName=Habitat' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -89,7 +89,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await expect(element(by.id('payment-failed-error-message'))).toExist();
 
     // Test Scenario 4: Expired Card Error
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=expired_card&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=expired_card&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -100,7 +100,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await expect(element(by.id('payment-failed-error-message'))).toExist();
 
     // Test Scenario 5: 3D Secure Required Error
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=3ds_required&goalName=Emergency%20Fund&commitmentAmount=200&charityName=Doctors%20Without%20Borders' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=3ds_required&goalName=Emergency%20Fund&commitmentAmount=200&charityName=Doctors%20Without%20Borders' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -111,7 +111,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await expect(element(by.id('payment-failed-error-message'))).toExist();
 
     // Test Scenario 6: Network Error
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=network_error&goalName=Debt%20Payoff&commitmentAmount=150&charityName=Local%20Food%20Bank' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=network_error&goalName=Debt%20Payoff&commitmentAmount=150&charityName=Local%20Food%20Bank' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -122,7 +122,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await expect(element(by.id('payment-failed-error-message'))).toExist();
 
     // Test Scenario 7: Unknown Error
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=unknown&goalName=Investment%20Portfolio&commitmentAmount=300&charityName=Animal%20Shelter' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=unknown&goalName=Investment%20Portfolio&commitmentAmount=300&charityName=Animal%20Shelter' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -133,7 +133,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await expect(element(by.id('payment-failed-error-message'))).toExist();
 
     // Test Scenario 8: Try Again button navigation
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -155,7 +155,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/09-after-try-again');
 
     // Test Scenario 9: Use Different Card button navigation
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -176,7 +176,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/11-after-different-card');
 
     // Test Scenario 10: Need Help link
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -200,7 +200,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/13-cancel-link-visible');
 
     // Test back button navigation
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -225,7 +225,7 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/15-after-back-button');
 
     // Final screenshot showing test completion
-    await device.openURL({ url: 'microcommit://payment-failed?errorType=insufficient_funds&goalName=Final%20Test&commitmentAmount=99&charityName=Final%20Charity' });
+    await device.openURL({ url: 'microcommit:///payment-failed?errorType=insufficient_funds&goalName=Final%20Test&commitmentAmount=99&charityName=Final%20Charity' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
