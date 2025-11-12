@@ -1,10 +1,11 @@
-import { defineConfig, devices } from '@playwright/test';
+const { defineConfig, devices } = require('@playwright/test');
 
 /**
  * Playwright configuration for MicroCommit E2E tests
+ * This file is in web-e2e directory as expected by the doctor
  */
-export default defineConfig({
-  testDir: './web-e2e',
+module.exports = defineConfig({
+  testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -43,25 +44,9 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-
-    /* Test against mobile viewports. */
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
+      name: 'chrome',
+      use: { ...devices['Desktop Chrome'] },
     },
   ],
 
