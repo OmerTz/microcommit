@@ -182,13 +182,20 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
       .toExist()
       .withTimeout(2000);
 
-    // Verify help link exists (element may be below viewport)
-    await expect(element(by.id('payment-failed-help-link'))).toExist();
+    // Scroll down to bring help and cancel links into viewport
+    await element(by.id('payment-failed-screen')).atIndex(0).scroll(300, 'down');
+
+    // Verify help link is visible after scroll
+    await waitFor(element(by.id('payment-failed-help-link')))
+      .toBeVisible()
+      .withTimeout(2000);
 
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/12-help-link-visible');
 
-    // Test Scenario 11: Cancel Goal confirmation flow - verify link exists (element may be below viewport)
-    await expect(element(by.id('payment-failed-cancel-link'))).toExist();
+    // Test Scenario 11: Cancel Goal confirmation flow - verify cancel link is visible
+    await waitFor(element(by.id('payment-failed-cancel-link')))
+      .toBeVisible()
+      .withTimeout(2000);
 
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/13-cancel-link-visible');
 
