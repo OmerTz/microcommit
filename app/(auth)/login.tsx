@@ -19,6 +19,7 @@ import { AuthInput } from '@/components/auth/AuthInput';
 import { AuthButton } from '@/components/auth/AuthButton';
 import { useInputAnimation, useButtonAnimation } from '@/hooks/useInputAnimation';
 import { validateEmail, validatePassword } from '@/hooks/useAuthValidation';
+import { t } from '@/constants/translations';
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -38,13 +39,13 @@ export default function LoginScreen() {
     setError('');
 
     if (!email.trim() || !password.trim()) {
-      setError('Required');
+      setError(t('auth.errors.required'));
       return;
     }
 
     const emailValidation = validateEmail(email);
     if (!emailValidation.isValid) {
-      setError(emailValidation.error || 'Invalid Email');
+      setError(emailValidation.error || t('auth.errors.invalidEmail'));
       return;
     }
 
@@ -70,7 +71,7 @@ export default function LoginScreen() {
       }
     } catch (error) {
       console.error('[LOGIN] Login error:', error);
-      setError(error.message || 'Please check your credentials and try again');
+      setError(error.message || t('auth.errors.loginFailed'));
     } finally {
       setLoading(false);
     }
@@ -81,7 +82,7 @@ export default function LoginScreen() {
   };
 
   const handleForgotPassword = () => {
-    Alert.alert('Password Reset', 'Password reset functionality coming soon');
+    Alert.alert(t('auth.passwordReset.title'), t('auth.passwordReset.message'));
   };
 
   return (
@@ -94,7 +95,7 @@ export default function LoginScreen() {
           contentContainerStyle={authStyles.scrollContent}
           showsVerticalScrollIndicator={false}
         >
-          <AuthHeader title="Sign In" />
+          <AuthHeader title={t('auth.login.title')} />
 
           <Animated.View
             entering={FadeInUp.duration(600).delay(200).springify()}
@@ -111,11 +112,11 @@ export default function LoginScreen() {
               ) : null}
 
               <AuthInput
-                label="Email"
+                label={t('auth.login.email')}
                 icon="mail-outline"
                 isFocused={emailFocused}
                 animatedStyle={emailAnimation.animatedStyle}
-                placeholder="your.email@example.com"
+                placeholder={t('auth.login.emailPlaceholder')}
                 value={email}
                 onChangeText={setEmail}
                 onFocus={() => {
@@ -134,11 +135,11 @@ export default function LoginScreen() {
               />
 
               <AuthInput
-                label="Password"
+                label={t('auth.login.password')}
                 icon="lock-closed-outline"
                 isFocused={passwordFocused}
                 animatedStyle={passwordAnimation.animatedStyle}
-                placeholder="Enter your password"
+                placeholder={t('auth.login.passwordPlaceholder')}
                 value={password}
                 onChangeText={setPassword}
                 onFocus={() => {
@@ -158,13 +159,13 @@ export default function LoginScreen() {
                 onTogglePassword={() => setShowPassword(!showPassword)}
                 labelRight={
                   <TouchableOpacity onPress={handleForgotPassword}>
-                    <Text style={authStyles.forgotLink}>Forgot?</Text>
+                    <Text style={authStyles.forgotLink}>{t('auth.login.forgot')}</Text>
                   </TouchableOpacity>
                 }
               />
 
               <AuthButton
-                text="Sign In"
+                text={t('auth.login.submit')}
                 onPress={() => buttonAnimation.onPress(handleLogin)}
                 loading={loading}
                 animatedStyle={buttonAnimation.animatedStyle}
@@ -173,7 +174,7 @@ export default function LoginScreen() {
 
               <View style={authStyles.divider}>
                 <View style={authStyles.dividerLine} />
-                <Text style={authStyles.dividerText}>OR</Text>
+                <Text style={authStyles.dividerText}>{t('auth.login.divider')}</Text>
                 <View style={authStyles.dividerLine} />
               </View>
 
@@ -184,7 +185,7 @@ export default function LoginScreen() {
                 testID="login-signup-link"
                 activeOpacity={0.7}
               >
-                <Text style={authStyles.secondaryButtonText}>Create New Account</Text>
+                <Text style={authStyles.secondaryButtonText}>{t('auth.login.createAccount')}</Text>
                 <Ionicons name="person-add-outline" size={18} color="#6b7280" />
               </TouchableOpacity>
           </Animated.View>
@@ -193,9 +194,9 @@ export default function LoginScreen() {
             entering={FadeInUp.duration(600).delay(400).springify()}
             style={[authStyles.testInfo, authStyles.testInfoBlur]}
           >
-            <Text style={authStyles.testInfoTitle}>Test Accounts:</Text>
-            <Text style={authStyles.testInfoText}>User: owner@test.com / Test123!</Text>
-            <Text style={authStyles.testInfoText}>Admin: vet@test.com / Test123!</Text>
+            <Text style={authStyles.testInfoTitle}>{t('auth.login.testAccounts')}</Text>
+            <Text style={authStyles.testInfoText}>{t('auth.login.testUser')}</Text>
+            <Text style={authStyles.testInfoText}>{t('auth.login.testAdmin')}</Text>
           </Animated.View>
         </ScrollView>
       </KeyboardAvoidingView>

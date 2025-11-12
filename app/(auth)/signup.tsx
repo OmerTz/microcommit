@@ -23,6 +23,7 @@ import {
   validatePasswordMatch,
   validateFullName,
 } from '@/hooks/useAuthValidation';
+import { t } from '@/constants/translations';
 
 export default function SignupScreen() {
   const router = useRouter();
@@ -50,28 +51,28 @@ export default function SignupScreen() {
 
     if (!email.trim() || !password.trim() || !confirmPassword.trim() || !fullName.trim()) {
       console.log('[SIGNUP] Validation failed: empty fields');
-      Alert.alert('Required', 'Please fill in all fields');
+      Alert.alert(t('auth.errors.required'), t('auth.errors.fillAllFields'));
       return;
     }
 
     const emailValidation = validateEmail(email);
     if (!emailValidation.isValid) {
       console.log('[SIGNUP] Validation failed: invalid email format');
-      Alert.alert('Invalid Email', emailValidation.error || 'Please enter a valid email address');
+      Alert.alert(t('auth.errors.invalidEmail'), emailValidation.error || t('auth.errors.invalidEmailMessage'));
       return;
     }
 
     const passwordValidation = validatePassword(password);
     if (!passwordValidation.isValid) {
       console.log('[SIGNUP] Validation failed: weak password');
-      Alert.alert('Weak Password', passwordValidation.error || 'Password must be at least 6 characters');
+      Alert.alert(t('auth.errors.weakPassword'), passwordValidation.error || t('auth.errors.weakPasswordMessage'));
       return;
     }
 
     const passwordMatchValidation = validatePasswordMatch(password, confirmPassword);
     if (!passwordMatchValidation.isValid) {
       console.log('[SIGNUP] Validation failed: password mismatch');
-      Alert.alert('Password Mismatch', passwordMatchValidation.error || 'Passwords do not match');
+      Alert.alert(t('auth.errors.passwordMismatch'), passwordMatchValidation.error || t('auth.errors.passwordMismatchMessage'));
       return;
     }
 
@@ -115,14 +116,14 @@ export default function SignupScreen() {
         router.replace('/onboarding');
       } else {
         console.error('[SIGNUP] No user returned from Supabase');
-        throw new Error('Account creation failed - no user returned');
+        throw new Error(t('auth.errors.accountCreationFailed'));
       }
     } catch (error) {
       console.error('[SIGNUP] Signup error:', error);
       if (error.message?.includes('already registered')) {
-        Alert.alert('Account Exists', 'This email is already registered. Please sign in instead.');
+        Alert.alert(t('auth.errors.accountExists'), t('auth.errors.accountExistsMessage'));
       } else {
-        Alert.alert('Sign Up Failed', error.message || 'Failed to create account. Please try again.');
+        Alert.alert(t('auth.errors.signupFailed'), error.message || t('auth.errors.signupFailedMessage'));
       }
     } finally {
       console.log('[SIGNUP] Setting loading to false');
@@ -144,18 +145,18 @@ export default function SignupScreen() {
           contentContainerStyle={authStyles.scrollContent}
           showsVerticalScrollIndicator={false}
         >
-          <AuthHeader title="Create Account" />
+          <AuthHeader title={t('auth.signup.title')} />
 
           <Animated.View
             entering={FadeInUp.duration(600).delay(200).springify()}
             style={authStyles.formCard}
           >
               <AuthInput
-                label="Full Name"
+                label={t('auth.signup.fullName')}
                 icon="person-outline"
                 isFocused={nameFocused}
                 animatedStyle={nameAnimation.animatedStyle}
-                placeholder="Your full name"
+                placeholder={t('auth.signup.fullNamePlaceholder')}
                 value={fullName}
                 onChangeText={setFullName}
                 onFocus={() => {
@@ -172,11 +173,11 @@ export default function SignupScreen() {
               />
 
               <AuthInput
-                label="Email"
+                label={t('auth.signup.email')}
                 icon="mail-outline"
                 isFocused={emailFocused}
                 animatedStyle={emailAnimation.animatedStyle}
-                placeholder="your.email@example.com"
+                placeholder={t('auth.signup.emailPlaceholder')}
                 value={email}
                 onChangeText={setEmail}
                 onFocus={() => {
@@ -195,11 +196,11 @@ export default function SignupScreen() {
               />
 
               <AuthInput
-                label="Password"
+                label={t('auth.signup.password')}
                 icon="lock-closed-outline"
                 isFocused={passwordFocused}
                 animatedStyle={passwordAnimation.animatedStyle}
-                placeholder="Create a strong password"
+                placeholder={t('auth.signup.passwordPlaceholder')}
                 value={password}
                 onChangeText={setPassword}
                 onFocus={() => {
@@ -217,15 +218,15 @@ export default function SignupScreen() {
                 showPasswordToggle
                 showPassword={showPassword}
                 onTogglePassword={() => setShowPassword(!showPassword)}
-                hint="Minimum 6 characters"
+                hint={t('auth.signup.passwordHint')}
               />
 
               <AuthInput
-                label="Confirm Password"
+                label={t('auth.signup.confirmPassword')}
                 icon="lock-closed-outline"
                 isFocused={confirmPasswordFocused}
                 animatedStyle={confirmPasswordAnimation.animatedStyle}
-                placeholder="Re-enter your password"
+                placeholder={t('auth.signup.confirmPasswordPlaceholder')}
                 value={confirmPassword}
                 onChangeText={setConfirmPassword}
                 onFocus={() => {
@@ -246,7 +247,7 @@ export default function SignupScreen() {
               />
 
               <AuthButton
-                text="Create Account"
+                text={t('auth.signup.submit')}
                 onPress={() => buttonAnimation.onPress(handleSignup)}
                 loading={loading}
                 animatedStyle={buttonAnimation.animatedStyle}
@@ -255,7 +256,7 @@ export default function SignupScreen() {
 
               <View style={authStyles.divider}>
                 <View style={authStyles.dividerLine} />
-                <Text style={authStyles.dividerText}>OR</Text>
+                <Text style={authStyles.dividerText}>{t('auth.signup.divider')}</Text>
                 <View style={authStyles.dividerLine} />
               </View>
 
@@ -265,7 +266,7 @@ export default function SignupScreen() {
                 disabled={loading}
                 activeOpacity={0.7}
               >
-                <Text style={authStyles.secondaryButtonText}>Already have an account? Sign In</Text>
+                <Text style={authStyles.secondaryButtonText}>{t('auth.signup.hasAccount')}</Text>
               </TouchableOpacity>
           </Animated.View>
 
@@ -274,10 +275,10 @@ export default function SignupScreen() {
             style={[authStyles.terms, authStyles.termsBlur]}
           >
             <Text style={authStyles.termsText}>
-              By creating an account, you agree to our{' '}
-              <Text style={authStyles.termsLink}>Terms of Service</Text>
-              {' '}and{' '}
-              <Text style={authStyles.termsLink}>Privacy Policy</Text>
+              {t('auth.signup.termsPrefix')}{' '}
+              <Text style={authStyles.termsLink}>{t('auth.signup.terms')}</Text>
+              {' '}{t('auth.signup.termsAnd')}{' '}
+              <Text style={authStyles.termsLink}>{t('auth.signup.privacy')}</Text>
             </Text>
           </Animated.View>
         </ScrollView>
