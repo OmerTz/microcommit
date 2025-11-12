@@ -35,7 +35,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
     await device.takeScreenshot('mobile-e2e/screenshots/flow-102/00-app-launched-login');
 
     // Navigate to payment failed screen with insufficient funds error
-    await device.openURL({ url: 'microcommit://(payment)/payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123' });
+    await device.openURL({ url: 'microcommit://payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -65,7 +65,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
     await device.takeScreenshot('mobile-e2e/screenshots/flow-102/04-after-retry-navigation');
 
     // Navigate back to payment failed screen for next flow test
-    await device.openURL({ url: 'microcommit://(payment)/payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF&goalId=test-goal-456' });
+    await device.openURL({ url: 'microcommit://payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF&goalId=test-goal-456' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -89,7 +89,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
     await device.takeScreenshot('mobile-e2e/screenshots/flow-102/07-after-change-payment-method');
 
     // Navigate back to payment failed screen for help flow
-    await device.openURL({ url: 'microcommit://(payment)/payment-failed?errorType=network_error&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF&goalId=test-goal-789' });
+    await device.openURL({ url: 'microcommit://payment-failed?errorType=network_error&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF&goalId=test-goal-789' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
@@ -126,7 +126,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
     for (let i = 0; i < errorTypes.length; i++) {
       const { type, name } = errorTypes[i];
       await device.openURL({
-        url: `microcommit://(payment)/payment-failed?errorType=${type}&goalName=${encodeURIComponent(name)}&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-${i}`
+        url: `microcommit://payment-failed?errorType=${type}&goalName=${encodeURIComponent(name)}&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-${i}`
       });
 
       await waitFor(element(by.id('payment-failed-screen')))
@@ -143,7 +143,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
     }
 
     // Final screenshot - complete flow tested
-    await device.openURL({ url: 'microcommit://(payment)/payment-failed?errorType=insufficient_funds&goalName=Final%20Flow%20Test&commitmentAmount=200&charityName=Final%20Charity&goalId=final-test' });
+    await device.openURL({ url: 'microcommit://payment-failed?errorType=insufficient_funds&goalName=Final%20Flow%20Test&commitmentAmount=200&charityName=Final%20Charity&goalId=final-test' });
 
     await waitFor(element(by.id('payment-failed-screen')))
       .toExist()
