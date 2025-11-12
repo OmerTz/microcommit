@@ -97,6 +97,9 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
 
     await device.takeScreenshot('mobile-e2e/screenshots/flow-102/08-network-error-screen');
 
+    // Scroll down to reveal help and cancel links
+    await element(by.id('payment-failed-screen')).scroll(300, 'down');
+
     // Test help flow - verify Need Help link exists
     await waitFor(element(by.id('payment-failed-help-link')))
       .toBeVisible()
