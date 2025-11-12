@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -6,11 +6,14 @@ import {
   ScrollView,
   StyleSheet,
   Platform,
+  Alert,
+  Linking,
 } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { t } from '@/constants/translations';
+import * as analytics from '@/services/analytics';
 
 interface PaymentFailedScreenParams {
   errorType?: 'insufficient_funds' | 'card_declined' | 'invalid_details' |
@@ -18,6 +21,7 @@ interface PaymentFailedScreenParams {
   goalName?: string;
   commitmentAmount?: string;
   charityName?: string;
+  goalId?: string;
 }
 
 export default function PaymentFailedScreen() {
@@ -25,9 +29,21 @@ export default function PaymentFailedScreen() {
   const params = useLocalSearchParams<PaymentFailedScreenParams>();
 
   const errorType = params.errorType || 'unknown';
-  const goalName = params.goalName || 'Your goal';
-  const commitmentAmount = params.commitmentAmount || '0';
-  const charityName = params.charityName || 'Selected charity';
+  const goalName = params.goalName || t('payment.failed.fallbacks.goalName');
+  const commitmentAmount = params.commitmentAmount || t('payment.failed.fallbacks.commitmentAmount');
+  const charityName = params.charityName || t('payment.failed.fallbacks.charityName');
+  const goalId = params.goalId;
+
+  useEffect(() => {
+    analytics.track('payment_failed', {
+      error_type: errorType,
+      goal_id: goalId || 'unknown',
+      goal_name: goalName,
+      commitment_amount: commitmentAmount,
+      charity_name: charityName,
+      timestamp: new Date().toISOString()
+    });
+  }, [errorType, goalId, goalName, commitmentAmount, charityName]);
 
   const getErrorMessage = () => {
     const errorMessages = {
@@ -42,24 +58,57 @@ export default function PaymentFailedScreen() {
     return errorMessages[errorType] || errorMessages.unknown;
   };
 
-  const handleTryAgain = () => {
-    console.log('[PAYMENT_FAILED] User tapped Try Again');
-    router.back();
+  const handleTryAgain = async () => {
+    try {
+      console.log('[PAYMENT_FAILED] User tapped Try Again');
+      await router.back();
+    } catch (error) {
+      console.error('[PAYMENT_FAILED] Navigation error:', error);
+      Alert.alert('Navigation Error', 'Failed to go back. Please try again.');
+    }
   };
 
-  const handleUseDifferentCard = () => {
-    console.log('[PAYMENT_FAILED] User tapped Use Different Card');
-    router.push('/(payment)/payment-method');
+  const handleUseDifferentCard = async () => {
+    try {
+      console.log('[PAYMENT_FAILED] User tapped Use Different Card');
+      await router.push('/(payment)/add-payment-method' as any);
+    } catch (error) {
+      console.error('[PAYMENT_FAILED] Navigation error:', error);
+      Alert.alert('Navigation Error', 'Failed to navigate. Please try again.');
+    }
   };
 
-  const handleNeedHelp = () => {
-    console.log('[PAYMENT_FAILED] User tapped Need Help');
-    router.push('/(tabs)/help');
+  const handleNeedHelp = async () => {
+    try {
+      console.log('[PAYMENT_FAILED] User tapped Need Help');
+      await Linking.openURL('https://support.microcommit.app/payment-issues');
+    } catch (error) {
+      console.error('[PAYMENT_FAILED] Failed to open help link:', error);
+      Alert.alert('Error', 'Failed to open help page. Please try again later.');
+    }
   };
 
-  const handleCancelGoal = () => {
-    console.log('[PAYMENT_FAILED] User tapped Cancel Goal');
-    router.push('/(tabs)');
+  const handleCancelGoal = async () => {
+    try {
+      console.log('[PAYMENT_FAILED] User tapped Cancel Goal');
+      Alert.alert(
+        'Cancel Goal',
+        'Are you sure you want to cancel creating this goal?',
+        [
+          { text: 'No, Keep It', style: 'cancel' },
+          {
+            text: 'Yes, Cancel',
+            style: 'destructive',
+            onPress: async () => {
+              await router.push('/(tabs)/goals' as any);
+            }
+          }
+        ]
+      );
+    } catch (error) {
+      console.error('[PAYMENT_FAILED] Cancel goal error:', error);
+      Alert.alert('Error', 'Failed to cancel goal. Please try again.');
+    }
   };
 
   return (

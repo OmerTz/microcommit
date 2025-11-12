@@ -22,6 +22,11 @@ export const paymentTranslations = {
         title: 'Goal Summary',
         commitment: 'Commitment',
         charity: 'Charity'
+      },
+      fallbacks: {
+        goalName: 'Your goal',
+        commitmentAmount: '0',
+        charityName: 'Selected charity'
       }
     },
     processing: {
