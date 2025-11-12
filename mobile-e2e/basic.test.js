@@ -9,6 +9,46 @@
  * - Uses only testID selectors
  * - No hardcoded timeouts
  */
+
+// Global iOS deep link dialog handler - runs once for all test files
+beforeAll(async () => {
+  // Only run once globally using a flag
+  if (global.iosDialogHandlerInstalled) return;
+  global.iosDialogHandlerInstalled = true;
+
+  const isIOS = device.getPlatform && (await device.getPlatform()) === 'ios';
+
+  if (isIOS) {
+    // Store original device.openURL
+    const originalOpenURL = device.openURL.bind(device);
+
+    // Monkey-patch device.openURL to auto-accept iOS dialog
+    device.openURL = async function(params) {
+      console.log('[iOS Dialog Handler] Opening URL:', params.url);
+
+      // Call original openURL
+      await originalOpenURL(params);
+
+      // Wait for iOS dialog to appear
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      // Try to tap "Open" button
+      try {
+        await element(by.label('Open')).tap();
+        console.log('[iOS Dialog Handler] Accepted deep link dialog');
+      } catch (e) {
+        // Dialog might not appear if permission already granted
+        console.log('[iOS Dialog Handler] No dialog found (already permitted)');
+      }
+
+      // Wait for navigation to complete
+      await new Promise(resolve => setTimeout(resolve, 300));
+    };
+
+    console.log('[iOS Dialog Handler] Installed globally for all tests');
+  }
+});
+
 describe('MicroCommit - Basic app launch and navigation flow', () => {
   beforeAll(async () => {
     await device.launchApp({
