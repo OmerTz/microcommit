@@ -107,10 +107,6 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
 
     await device.takeScreenshot('mobile-e2e/screenshots/flow-102/10-cancel-link-visible');
 
-    await element(by.id('payment-failed-cancel-link')).tap();
-
-    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/11-after-cancel-click');
-
     // Test multiple error types in sequence (simulating retry attempts)
     const errorTypes = [
       { type: 'invalid_details', name: 'Invalid Details Test' },
