@@ -12,6 +12,23 @@ export const paymentTranslations = {
       unknown: 'Something went wrong. Please try again or contact support.',
       reassurance: 'Your goal hasn\'t been created yet. You can try again or use a different payment method.',
       noCharges: 'No charges have been made.',
+      errorMessages: {
+        insufficient_funds: 'Your card doesn\'t have enough funds for this commitment',
+        card_declined: 'Your card was declined. Please try a different payment method.',
+        invalid_card_details: 'Card details appear to be incorrect. Please check and try again.',
+        expired_card: 'This card has expired. Please use a different card.',
+        requires_3ds: 'Your bank requires additional authentication.',
+        network_error: 'Connection issue. Please check your internet and try again.',
+        unknown_error: 'Something went wrong. Please try again or contact support.'
+      },
+      suggestedActions: {
+        insufficient_funds: 'Add funds to your card or try a different card',
+        card_declined: 'Contact your bank or try a different card',
+        invalid_card_details: 'Check your card details and try again',
+        expired_card: 'Use a card that has not expired',
+        requires_3ds: 'Complete authentication with your bank',
+        network_error: 'Check your internet connection and try again'
+      },
       buttons: {
         tryAgain: 'Try Again',
         differentCard: 'Use Different Card',

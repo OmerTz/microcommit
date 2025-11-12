@@ -1,8 +1,8 @@
 /**
- * Basic infrastructure tests for Tzrif86 Template
+ * Basic infrastructure tests for MicroCommit
  */
 
-describe('Tzrif86 Template Infrastructure', () => {
+describe('MicroCommit Infrastructure', () => {
   test('package.json should have correct name', () => {
     const pkg = require('../package.json');
     expect(pkg.name).toBe('tzrif86-expo-template');
@@ -10,8 +10,8 @@ describe('Tzrif86 Template Infrastructure', () => {
 
   test('app.json should have correct configuration', () => {
     const appConfig = require('../app.json');
-    expect(appConfig.expo.name).toBe('tzrif86-expo-template');
-    expect(appConfig.expo.slug).toBe('tzrif86-expo-template');
+    expect(appConfig.expo.name).toBe('MicroCommit');
+    expect(appConfig.expo.slug).toBe('microcommit');
   });
 
   test('should load without crashing', () => {
