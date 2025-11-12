@@ -182,10 +182,10 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
       .toExist()
       .withTimeout(2000);
 
-    // Scroll down to bring help and cancel links into viewport
-    await element(by.id('payment-failed-screen')).atIndex(0).scroll(300, 'down');
+    // Swipe up to bring help and cancel links into viewport
+    await element(by.id('payment-failed-screen')).swipe('up', 'fast', 0.5);
 
-    // Verify help link is visible after scroll
+    // Verify help link is visible after swipe
     await waitFor(element(by.id('payment-failed-help-link')))
       .toBeVisible()
       .withTimeout(2000);
