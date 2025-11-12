@@ -11,3 +11,16 @@ global.console = {
   warn: jest.fn(),
   error: jest.fn(),
 };
+
+// Mock expo-constants for unit tests
+jest.mock('expo-constants', () => ({
+  __esModule: true,
+  default: {
+    expoConfig: {
+      extra: {
+        EXPO_PUBLIC_SUPABASE_URL: 'https://test.supabase.co',
+        EXPO_PUBLIC_SUPABASE_ANON_KEY: 'test-anon-key',
+      },
+    },
+  },
+}));

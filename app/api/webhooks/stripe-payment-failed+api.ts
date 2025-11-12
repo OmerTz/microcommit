@@ -3,27 +3,35 @@
  * Handles payment failures and creates payment attempt records
  */
 
+import Stripe from 'stripe';
 import { paymentAttemptsService } from '@/services/paymentAttemptsService';
 import type { PaymentFailedWebhookPayload } from '@/services/paymentErrorTypes';
 
 /**
- * Verify Stripe webhook signature
- * TODO: Implement actual signature verification using Stripe SDK
+ * Verify Stripe webhook signature using Stripe SDK
+ * Returns the parsed event if valid, null if invalid
  */
 function verifyWebhookSignature(
   payload: string,
   signature: string,
   secret: string
-): boolean {
-  // Placeholder - implement with Stripe SDK
-  // const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-  // try {
-  //   stripe.webhooks.constructEvent(payload, signature, secret);
-  //   return true;
-  // } catch (err) {
-  //   return false;
-  // }
-  return true;
+): Stripe.Event | null {
+  if (!process.env.STRIPE_SECRET_KEY) {
+    console.error('[Webhook] Missing STRIPE_SECRET_KEY');
+    return null;
+  }
+
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: '2024-11-20.acacia',
+  });
+
+  try {
+    const event = stripe.webhooks.constructEvent(payload, signature, secret);
+    return event;
+  } catch (err) {
+    console.error('[Webhook] Signature verification failed:', err);
+    return null;
+  }
 }
 
 /**
@@ -55,16 +63,14 @@ export async function POST(request: Request) {
 
     const body = await request.text();
 
-    const isValid = verifyWebhookSignature(body, signature, webhookSecret);
-    if (!isValid) {
-      console.warn('[Webhook] Invalid signature');
+    const event = verifyWebhookSignature(body, signature, webhookSecret);
+    if (!event) {
+      console.warn('[Webhook] Invalid signature or verification failed');
       return new Response(JSON.stringify({ error: 'Invalid signature' }), {
         status: 401,
         headers: { 'Content-Type': 'application/json' },
       });
     }
-
-    const event: PaymentFailedWebhookPayload = JSON.parse(body);
 
     if (event.type !== 'payment_intent.payment_failed') {
       return new Response(

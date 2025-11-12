@@ -16,8 +16,8 @@ describe('StripeErrorCategorizationService', () => {
 
       expect(result.type).toBe('insufficient_funds');
       expect(result.retryable).toBe(true);
-      expect(result.userMessage).toContain('enough funds');
-      expect(result.suggestedAction).toContain('Add funds');
+      expect(result.userMessage).toBe('payment.failed.errorMessages.insufficient_funds');
+      expect(result.suggestedAction).toBe('payment.failed.suggestedActions.insufficient_funds');
     });
   });
 
@@ -29,7 +29,7 @@ describe('StripeErrorCategorizationService', () => {
 
       expect(result.type).toBe('card_declined');
       expect(result.retryable).toBe(false);
-      expect(result.userMessage).toContain('declined');
+      expect(result.userMessage).toBe('payment.failed.errorMessages.card_declined');
     });
 
     it('should categorize fraudulent decline', () => {
@@ -59,7 +59,7 @@ describe('StripeErrorCategorizationService', () => {
 
       expect(result.type).toBe('invalid_card_details');
       expect(result.retryable).toBe(true);
-      expect(result.userMessage).toContain('incorrect');
+      expect(result.userMessage).toBe('payment.failed.errorMessages.invalid_card_details');
     });
 
     it('should categorize invalid_cvc', () => {
@@ -89,7 +89,7 @@ describe('StripeErrorCategorizationService', () => {
 
       expect(result.type).toBe('expired_card');
       expect(result.retryable).toBe(false);
-      expect(result.userMessage).toContain('expired');
+      expect(result.userMessage).toBe('payment.failed.errorMessages.expired_card');
     });
 
     it('should categorize expired_card decline_code', () => {
@@ -110,7 +110,7 @@ describe('StripeErrorCategorizationService', () => {
 
       expect(result.type).toBe('requires_3ds');
       expect(result.retryable).toBe(true);
-      expect(result.userMessage).toContain('authentication');
+      expect(result.userMessage).toBe('payment.failed.errorMessages.requires_3ds');
     });
 
     it('should categorize authentication_required decline_code', () => {
@@ -140,7 +140,7 @@ describe('StripeErrorCategorizationService', () => {
 
       expect(result.type).toBe('network_error');
       expect(result.retryable).toBe(true);
-      expect(result.userMessage).toContain('Connection');
+      expect(result.userMessage).toBe('payment.failed.errorMessages.network_error');
     });
 
     it('should categorize api_error', () => {
@@ -170,7 +170,7 @@ describe('StripeErrorCategorizationService', () => {
 
       expect(result.type).toBe('unknown_error');
       expect(result.retryable).toBe(false);
-      expect(result.userMessage).toContain('wrong');
+      expect(result.userMessage).toBe('payment.failed.errorMessages.unknown_error');
     });
 
     it('should categorize unrecognized error codes', () => {

@@ -149,21 +149,21 @@ class StripeErrorCategorizationService {
   }
 
   /**
-   * Get user-friendly error message
+   * Get translation key for user-friendly error message
+   * Returns i18n key that should be resolved on the frontend
    */
   private getUserMessage(type: PaymentErrorType): string {
-    const messages: Record<PaymentErrorType, string> = {
-      insufficient_funds: "Your card doesn't have enough funds for this commitment",
-      card_declined: 'Your card was declined. Please try a different payment method.',
-      invalid_card_details:
-        'Card details appear to be incorrect. Please check and try again.',
-      expired_card: 'This card has expired. Please use a different card.',
-      requires_3ds: 'Your bank requires additional authentication.',
-      network_error: 'Connection issue. Please check your internet and try again.',
-      unknown_error: 'Something went wrong. Please try again or contact support.',
+    const translationKeys: Record<PaymentErrorType, string> = {
+      insufficient_funds: 'payment.failed.errorMessages.insufficient_funds',
+      card_declined: 'payment.failed.errorMessages.card_declined',
+      invalid_card_details: 'payment.failed.errorMessages.invalid_card_details',
+      expired_card: 'payment.failed.errorMessages.expired_card',
+      requires_3ds: 'payment.failed.errorMessages.requires_3ds',
+      network_error: 'payment.failed.errorMessages.network_error',
+      unknown_error: 'payment.failed.errorMessages.unknown_error',
     };
 
-    return messages[type];
+    return translationKeys[type];
   }
 
   /**
@@ -181,19 +181,20 @@ class StripeErrorCategorizationService {
   }
 
   /**
-   * Get suggested action for user to resolve error
+   * Get translation key for suggested action to resolve error
+   * Returns i18n key that should be resolved on the frontend
    */
   private getSuggestedAction(type: PaymentErrorType): string | undefined {
-    const actions: Partial<Record<PaymentErrorType, string>> = {
-      insufficient_funds: 'Add funds to your card or try a different card',
-      card_declined: 'Contact your bank or try a different card',
-      invalid_card_details: 'Check your card details and try again',
-      expired_card: 'Use a card that has not expired',
-      requires_3ds: 'Complete authentication with your bank',
-      network_error: 'Check your internet connection and try again',
+    const translationKeys: Partial<Record<PaymentErrorType, string>> = {
+      insufficient_funds: 'payment.failed.suggestedActions.insufficient_funds',
+      card_declined: 'payment.failed.suggestedActions.card_declined',
+      invalid_card_details: 'payment.failed.suggestedActions.invalid_card_details',
+      expired_card: 'payment.failed.suggestedActions.expired_card',
+      requires_3ds: 'payment.failed.suggestedActions.requires_3ds',
+      network_error: 'payment.failed.suggestedActions.network_error',
     };
 
-    return actions[type];
+    return translationKeys[type];
   }
 }
 

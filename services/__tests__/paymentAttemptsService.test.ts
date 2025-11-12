@@ -25,7 +25,7 @@ describe('PaymentAttemptsService Integration Tests', () => {
       const mockData = {
         id: 'attempt-123',
         error_type: 'insufficient_funds',
-        error_message: "Your card doesn't have enough funds for this commitment",
+        error_message: 'payment.failed.errorMessages.insufficient_funds',
         amount: 5000,
       };
 
