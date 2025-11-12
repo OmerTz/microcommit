@@ -206,8 +206,10 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
       .toExist()
       .withTimeout(2000);
 
+    // Scroll to top to reset scroll position from previous test
+    await element(by.id('payment-failed-scrollview')).scrollTo('top');
+
     // Verify back button exists and tap it (Detox waits for tappability automatically)
-    // Screen opens at top by default - no scroll needed
     await expect(element(by.id('payment-failed-back-button'))).toExist();
 
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/14-before-back-button');

@@ -115,6 +115,7 @@ export default function PaymentFailedScreen() {
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
+        testID="payment-failed-scrollview"
       >
         <Animated.View
           entering={FadeInUp.duration(400).springify()}
