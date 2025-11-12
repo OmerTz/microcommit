@@ -63,7 +63,7 @@ export default function PaymentFailedScreen() {
       await router.back();
     } catch (error) {
       console.error('[PAYMENT_FAILED] Navigation error:', error);
-      Alert.alert('Navigation Error', 'Failed to go back. Please try again.');
+      Alert.alert(t('payment.failed.errors.navigationError'), t('payment.failed.errors.navigationFailed'));
     }
   };
 
@@ -73,7 +73,7 @@ export default function PaymentFailedScreen() {
       await router.push('/(payment)/add-payment-method' as any);
     } catch (error) {
       console.error('[PAYMENT_FAILED] Navigation error:', error);
-      Alert.alert('Navigation Error', 'Failed to navigate. Please try again.');
+      Alert.alert(t('payment.failed.errors.navigationError'), t('payment.failed.errors.navigateToCardFailed'));
     }
   };
 
@@ -83,7 +83,7 @@ export default function PaymentFailedScreen() {
       await Linking.openURL('https://support.microcommit.app/payment-issues');
     } catch (error) {
       console.error('[PAYMENT_FAILED] Failed to open help link:', error);
-      Alert.alert('Error', 'Failed to open help page. Please try again later.');
+      Alert.alert(t('payment.failed.errors.helpLinkError'), t('payment.failed.errors.helpLinkFailed'));
     }
   };
 
@@ -91,12 +91,12 @@ export default function PaymentFailedScreen() {
     try {
       console.log('[PAYMENT_FAILED] User tapped Cancel Goal');
       Alert.alert(
-        'Cancel Goal',
-        'Are you sure you want to cancel creating this goal?',
+        t('payment.failed.errors.cancelGoalTitle'),
+        t('payment.failed.errors.cancelGoalMessage'),
         [
-          { text: 'No, Keep It', style: 'cancel' },
+          { text: t('payment.failed.errors.cancelGoalKeep'), style: 'cancel' },
           {
-            text: 'Yes, Cancel',
+            text: t('payment.failed.errors.cancelGoalConfirm'),
             style: 'destructive',
             onPress: async () => {
               await router.push('/(tabs)/goals' as any);
@@ -106,7 +106,7 @@ export default function PaymentFailedScreen() {
       );
     } catch (error) {
       console.error('[PAYMENT_FAILED] Cancel goal error:', error);
-      Alert.alert('Error', 'Failed to cancel goal. Please try again.');
+      Alert.alert(t('payment.failed.errors.helpLinkError'), t('payment.failed.errors.cancelGoalFailed'));
     }
   };
 

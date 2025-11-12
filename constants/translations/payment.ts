@@ -27,6 +27,18 @@ export const paymentTranslations = {
         goalName: 'Your goal',
         commitmentAmount: '0',
         charityName: 'Selected charity'
+      },
+      errors: {
+        navigationError: 'Navigation Error',
+        navigationFailed: 'Failed to go back. Please try again.',
+        navigateToCardFailed: 'Failed to navigate. Please try again.',
+        helpLinkError: 'Error',
+        helpLinkFailed: 'Failed to open help page. Please try again later.',
+        cancelGoalTitle: 'Cancel Goal',
+        cancelGoalMessage: 'Are you sure you want to cancel creating this goal?',
+        cancelGoalKeep: 'No, Keep It',
+        cancelGoalConfirm: 'Yes, Cancel',
+        cancelGoalFailed: 'Failed to cancel goal. Please try again.'
       }
     },
     processing: {
