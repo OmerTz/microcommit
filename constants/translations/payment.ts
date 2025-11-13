@@ -115,6 +115,42 @@ export const paymentTranslations = {
       attemptNumber: 'Retry attempt {{number}} of 3',
       disabled: 'Please wait before retrying',
       authenticating: 'Completing authentication...'
+    },
+    addPaymentMethod: {
+      title: 'Add Payment Method',
+      subtitle: 'Enter your card details securely',
+      fields: {
+        cardNumber: 'Card Number',
+        expiryDate: 'Expiry Date',
+        cvc: 'CVC',
+        cardholderName: 'Cardholder Name',
+        cardholderNamePlaceholder: 'Name on card',
+        billingZip: 'Billing ZIP Code',
+        billingZipPlaceholder: '12345',
+        saveForFuture: 'Save this card for future goals'
+      },
+      buttons: {
+        processPayment: 'Save Payment Method',
+        back: 'Back',
+        useApplePay: 'Apple Pay',
+        useGooglePay: 'Google Pay'
+      },
+      security: {
+        securedByStripe: 'Secured by Stripe',
+        neverStoreDetails: 'We never store your full card details. All payment information is encrypted and handled by Stripe.'
+      },
+      alternativePayments: {
+        orPayWith: 'Or pay with'
+      },
+      errors: {
+        cardNumberInvalid: 'Please enter a valid card number',
+        expiryInvalid: 'Card expiry date is invalid or in the past',
+        cvcInvalid: 'Please enter a valid CVC code',
+        cardholderNameInvalid: 'Please enter the cardholder name (at least 2 characters)',
+        billingZipInvalid: 'Please enter a valid 5-digit ZIP code',
+        tokenizationFailed: 'Failed to process payment method. Please try again.',
+        generalError: 'Something went wrong. Please try again.'
+      }
     }
   }
 };
