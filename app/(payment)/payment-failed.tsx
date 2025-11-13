@@ -182,7 +182,13 @@ export default function PaymentFailedScreen() {
           style={styles.header}
         >
           <TouchableOpacity
-            onPress={() => router.back()}
+            onPress={() => {
+              if (router.canGoBack()) {
+                router.back();
+              } else {
+                router.push('/(tabs)' as any);
+              }
+            }}
             style={styles.backButton}
             testID="payment-failed-back-button"
           >
