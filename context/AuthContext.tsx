@@ -82,11 +82,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     // Add timeout fallback to prevent infinite loading
     timeoutId = setTimeout(() => {
       if (isMounted && isLoading) {
-        console.log('[AUTH] TIMEOUT: Forcing isLoading to false after 10 seconds');
+        console.log('[AUTH] TIMEOUT: Forcing isLoading to false after 2 seconds');
         setIsLoading(false);
         setError('Authentication initialization timed out');
       }
-    }, 10000);
+    }, 2000);
 
     initializeAuth();
 
