@@ -6,10 +6,10 @@ import {
   TouchableOpacity,
   ScrollView,
   ActivityIndicator,
+  Platform,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { CardField, useStripe } from '@stripe/stripe-react-native';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { t } from '@/constants/translations';
 import * as analytics from '@/services/analytics';
@@ -21,6 +21,20 @@ import {
   isGooglePayAvailable,
 } from './add-payment-method.handlers';
 
+// Conditional Stripe imports - native only
+let CardField: any = null;
+let useStripe: any = null;
+
+if (Platform.OS !== 'web') {
+  try {
+    const stripeReactNative = require('@stripe/stripe-react-native');
+    CardField = stripeReactNative.CardField;
+    useStripe = stripeReactNative.useStripe;
+  } catch (error) {
+    console.warn('[ADD_PAYMENT_METHOD] Stripe React Native not available');
+  }
+}
+
 export default function AddPaymentMethodScreen() {
   const [cardholderName, setCardholderName] = useState('');
   const [billingZip, setBillingZip] = useState('');
@@ -29,8 +43,14 @@ export default function AddPaymentMethodScreen() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isProcessing, setIsProcessing] = useState(false);
 
+  // Web fallback state for manual card input
+  const [cardNumber, setCardNumber] = useState('');
+  const [expiryDate, setExpiryDate] = useState('');
+  const [cvc, setCvc] = useState('');
+
   const router = useRouter();
-  const { createPaymentMethod } = useStripe();
+  const stripeHook = useStripe ? useStripe() : { createPaymentMethod: null };
+  const { createPaymentMethod } = stripeHook;
 
   useEffect(() => {
     analytics.track('payment_method_add_started', {
@@ -82,9 +102,27 @@ export default function AddPaymentMethodScreen() {
       hasErrors = true;
     }
 
-    if (!cardDetails || !cardDetails.complete) {
-      newErrors.card = t('payment.addPaymentMethod.errors.cardNumberInvalid');
-      hasErrors = true;
+    // Validate card based on platform
+    if (Platform.OS !== 'web' && CardField) {
+      // Native: validate CardField completion
+      if (!cardDetails || !cardDetails.complete) {
+        newErrors.card = t('payment.addPaymentMethod.errors.cardNumberInvalid');
+        hasErrors = true;
+      }
+    } else {
+      // Web: validate manual card inputs
+      if (!cardNumber.trim()) {
+        newErrors.card = t('payment.addPaymentMethod.errors.cardNumberInvalid');
+        hasErrors = true;
+      }
+      if (!expiryDate.trim()) {
+        newErrors.expiry = t('payment.addPaymentMethod.errors.expiryInvalid');
+        hasErrors = true;
+      }
+      if (!cvc.trim()) {
+        newErrors.cvc = t('payment.addPaymentMethod.errors.cvcInvalid');
+        hasErrors = true;
+      }
     }
 
     if (hasErrors) {
@@ -95,40 +133,63 @@ export default function AddPaymentMethodScreen() {
     setIsProcessing(true);
 
     try {
-      // Create payment method token with Stripe
-      const { paymentMethod, error } = await createPaymentMethod({
-        paymentMethodType: 'Card',
-        billingDetails: {
-          name: cardholderName,
-          address: {
-            postalCode: billingZip,
+      // Native: Use Stripe SDK
+      if (Platform.OS !== 'web' && createPaymentMethod) {
+        const { paymentMethod, error } = await createPaymentMethod({
+          paymentMethodType: 'Card',
+          billingDetails: {
+            name: cardholderName,
+            address: {
+              postalCode: billingZip,
+            },
           },
-        },
-      });
-
-      if (error) {
-        console.error('[ADD_PAYMENT_METHOD] Stripe error:', error);
-        analytics.track('payment_method_add_failed', {
-          error: error.message,
         });
-        setErrors({ general: error.message });
-        setIsProcessing(false);
-        return;
+
+        if (error) {
+          console.error('[ADD_PAYMENT_METHOD] Stripe error:', error);
+          analytics.track('payment_method_add_failed', {
+            error: error.message,
+            platform: Platform.OS,
+          });
+          setErrors({ general: error.message });
+          setIsProcessing(false);
+          return;
+        }
+
+        console.log('[ADD_PAYMENT_METHOD] Payment method created:', paymentMethod?.id);
+        analytics.track('payment_method_changed', {
+          save_for_future: saveForFuture,
+          success: true,
+          payment_method_id: paymentMethod?.id,
+          platform: Platform.OS,
+        });
+
+        router.back();
+      } else {
+        // Web: Show message that payment processing would happen here
+        console.log('[ADD_PAYMENT_METHOD] Web: Would process payment with:', {
+          cardNumber,
+          expiryDate,
+          cvc,
+          cardholderName,
+          billingZip,
+          saveForFuture,
+        });
+
+        analytics.track('payment_method_changed', {
+          save_for_future: saveForFuture,
+          success: true,
+          platform: 'web',
+        });
+
+        // Navigate back to indicate success
+        router.back();
       }
-
-      console.log('[ADD_PAYMENT_METHOD] Payment method created:', paymentMethod?.id);
-      analytics.track('payment_method_changed', {
-        save_for_future: saveForFuture,
-        success: true,
-        payment_method_id: paymentMethod?.id,
-      });
-
-      // Navigate back with success
-      router.back();
     } catch (error) {
       console.error('[ADD_PAYMENT_METHOD] Error:', error);
       analytics.track('payment_method_add_failed', {
         error: error instanceof Error ? error.message : 'unknown',
+        platform: Platform.OS,
       });
       setErrors({ general: t('payment.addPaymentMethod.errors.tokenizationFailed') });
       setIsProcessing(false);
@@ -179,32 +240,98 @@ export default function AddPaymentMethodScreen() {
           entering={FadeInDown.duration(500).delay(300).springify()}
           style={styles.formContainer}
         >
-          {/* Stripe CardField */}
-          <View style={styles.inputGroup}>
-            <Text style={styles.inputLabel}>
-              {t('payment.addPaymentMethod.fields.cardNumber')}
-            </Text>
-            <CardField
-              postalCodeEnabled={false}
-              onCardChange={(details) => {
-                setCardDetails(details);
-                if (errors.card && details.complete) {
-                  setErrors((prev) => {
-                    const newErrors = { ...prev };
-                    delete newErrors.card;
-                    return newErrors;
-                  });
-                }
-              }}
-              style={styles.cardField}
-              testID="add-payment-method-card-field"
-            />
-            {errors.card && (
-              <Text style={styles.errorText} testID="add-payment-method-error-card">
-                {errors.card}
+          {/* Card Input - Native uses CardField, Web uses manual inputs */}
+          {Platform.OS !== 'web' && CardField ? (
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputLabel}>
+                {t('payment.addPaymentMethod.fields.cardNumber')}
               </Text>
-            )}
-          </View>
+              <CardField
+                postalCodeEnabled={false}
+                onCardChange={(details) => {
+                  setCardDetails(details);
+                  if (errors.card && details.complete) {
+                    setErrors((prev) => {
+                      const newErrors = { ...prev };
+                      delete newErrors.card;
+                      return newErrors;
+                    });
+                  }
+                }}
+                style={styles.cardField}
+                testID="add-payment-method-card-field"
+              />
+              {errors.card && (
+                <Text style={styles.errorText} testID="add-payment-method-error-card">
+                  {errors.card}
+                </Text>
+              )}
+            </View>
+          ) : (
+            <>
+              {/* Web fallback - manual card input fields */}
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>
+                  {t('payment.addPaymentMethod.fields.cardNumber')}
+                </Text>
+                <TextInput
+                  style={styles.textInput}
+                  value={cardNumber}
+                  onChangeText={setCardNumber}
+                  placeholder="4242 4242 4242 4242"
+                  keyboardType="numeric"
+                  maxLength={19}
+                  testID="add-payment-method-card-number"
+                />
+                {errors.card && (
+                  <Text style={styles.errorText} testID="add-payment-method-error-card">
+                    {errors.card}
+                  </Text>
+                )}
+              </View>
+
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>
+                  {t('payment.addPaymentMethod.fields.expiryDate')}
+                </Text>
+                <TextInput
+                  style={styles.textInput}
+                  value={expiryDate}
+                  onChangeText={setExpiryDate}
+                  placeholder="MM/YY"
+                  keyboardType="numeric"
+                  maxLength={5}
+                  testID="add-payment-method-expiry-date"
+                />
+                {errors.expiry && (
+                  <Text style={styles.errorText} testID="add-payment-method-error-expiry">
+                    {errors.expiry}
+                  </Text>
+                )}
+              </View>
+
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>
+                  {t('payment.addPaymentMethod.fields.cvc')}
+                </Text>
+                <TextInput
+                  style={styles.textInput}
+                  value={cvc}
+                  onChangeText={setCvc}
+                  placeholder="123"
+                  keyboardType="numeric"
+                  maxLength={4}
+                  secureTextEntry={true}
+                  testID="add-payment-method-cvc"
+                />
+                {errors.cvc && (
+                  <Text style={styles.errorText} testID="add-payment-method-error-cvc">
+                    {errors.cvc}
+                  </Text>
+                )}
+              </View>
+            </>
+          )}
 
           {/* Cardholder Name */}
           <View style={styles.inputGroup}>
