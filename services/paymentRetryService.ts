@@ -10,12 +10,21 @@ import { paymentAttemptsService } from './paymentAttemptsService';
 import { track } from './analytics';
 import type { StripeError } from './paymentErrorTypes';
 
-let Stripe: any = null;
-if (Platform.OS !== 'web') {
+/**
+ * Dynamic Stripe import that prevents Metro bundler from trying to resolve
+ * the 'stripe' package on web platform. Using eval() makes the require truly
+ * dynamic so Metro won't attempt to bundle it.
+ */
+function getStripeModule(): any {
+  if (Platform.OS === 'web') {
+    return null;
+  }
   try {
-    Stripe = require('stripe');
+    // Use eval to prevent Metro from resolving this at build time
+    return eval('require')('stripe');
   } catch (error) {
     console.warn('[PaymentRetryService] Stripe SDK not available on this platform');
+    return null;
   }
 }
 
@@ -57,14 +66,15 @@ class PaymentRetryService {
     }
 
     if (!this.stripe) {
-      if (!Stripe) {
+      const StripeModule = getStripeModule();
+      if (!StripeModule) {
         throw new Error('Stripe SDK is not available');
       }
       const apiKey = process.env.STRIPE_SECRET_KEY;
       if (!apiKey) {
         throw new Error('STRIPE_SECRET_KEY is not configured');
       }
-      this.stripe = new Stripe(apiKey, {
+      this.stripe = new StripeModule(apiKey, {
         apiVersion: '2024-11-20.acacia',
       });
     }
