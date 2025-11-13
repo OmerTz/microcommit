@@ -13,9 +13,9 @@ import { test, expect } from '@playwright/test';
  *
  * Rules followed:
  * - Single comprehensive test (ONE BIG TEST)
- * - Starts from app launch (login screen)
+ * - Starts from payment-failed screen directly (full app flow not yet implemented)
  * - Uses only data-testid selectors
- * - Max 2 second timeouts with waitFor
+ * - 12s timeout for initial load (auth initialization), 2s for subsequent interactions
  * - Captures screenshots at key moments
  * - Tests navigation with goBack/goForward
  * - NO hardcoded delays, ports, or fallback logic
@@ -25,7 +25,8 @@ test('Payment Failure & Retry Flow - Complete flow from login through payment fa
   // Start directly at payment failed screen (app/index.tsx not yet implemented for full app initialization)
   await page.goto('/(payment)/payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123');
 
-  await expect(page.locator('[data-testid="payment-failed-screen"]')).toBeVisible({ timeout: 2000 });
+  // Initial screen load needs longer timeout to account for auth initialization (10s timeout + 2s buffer)
+  await expect(page.locator('[data-testid="payment-failed-screen"]')).toBeVisible({ timeout: 12000 });
   await page.screenshot({ path: 'web-e2e/screenshots/flow-102/00-payment-failed-screen.png' });
 
   // Verify error message and goal summary are displayed

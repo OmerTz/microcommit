@@ -104,7 +104,13 @@ export const paymentTranslations = {
         max_attempts_reached: 'Maximum retry attempts reached',
         timeout: 'Payment processing timeout',
         requires_3ds: 'Additional authentication required',
-        unknown_error: 'An unexpected error occurred'
+        unknown_error: 'An unexpected error occurred',
+        platform_not_supported: 'Payment retry is not supported on web platform',
+        stripe_sdk_unavailable: 'Stripe SDK is not available',
+        stripe_key_not_configured: 'STRIPE_SECRET_KEY is not configured'
+      },
+      action: {
+        ok: 'OK'
       },
       attemptNumber: 'Retry attempt {{number}} of 3',
       disabled: 'Please wait before retrying',

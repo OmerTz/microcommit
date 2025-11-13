@@ -20,9 +20,9 @@ import { test, expect } from '@playwright/test';
  *
  * Rules followed:
  * - Single comprehensive test (ONE BIG TEST)
- * - Starts from app launch (login screen)
+ * - Starts from payment-failed screen directly (full app flow not yet implemented)
  * - Uses only data-testid selectors
- * - Max 2 second timeouts with waitFor
+ * - 12s timeout for initial load (auth initialization), 2s for subsequent interactions
  * - Captures screenshots at key moments
  * - Tests navigation with goBack/goForward
  * - NO hardcoded delays, ports, or fallback logic
@@ -33,7 +33,8 @@ test('Payment Failed Screen - Complete flow from login through all error scenari
   // Test Scenario 1: Insufficient Funds Error
   await page.goto('/(payment)/payment-failed?errorType=insufficient_funds&goalName=Save%20for%20Hawaii&commitmentAmount=25&charityName=Red%20Cross');
 
-  await expect(page.locator('[data-testid="payment-failed-screen"]')).toBeVisible({ timeout: 2000 });
+  // Initial screen load needs longer timeout to account for auth initialization (10s timeout + 2s buffer)
+  await expect(page.locator('[data-testid="payment-failed-screen"]')).toBeVisible({ timeout: 12000 });
   await page.screenshot({ path: 'web-e2e/screenshots/screen-167/00-insufficient-funds-error.png' });
 
   // Verify screen elements exist

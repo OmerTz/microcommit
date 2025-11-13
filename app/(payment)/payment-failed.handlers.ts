@@ -86,7 +86,7 @@ export async function handlePaymentRetry(params: RetryHandlerParams): Promise<vo
       Alert.alert(
         t('payment.retry.errors.requires_3ds'),
         t('payment.failed.suggestedActions.requires_3ds'),
-        [{ text: 'OK', onPress: onDifferentError }]
+        [{ text: t('payment.retry.action.ok'), onPress: onDifferentError }]
       );
       return;
     }

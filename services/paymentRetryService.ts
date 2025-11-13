@@ -8,6 +8,7 @@ import { Platform } from 'react-native';
 import { stripeErrorCategorizationService } from './stripeErrorCategorizationService';
 import { paymentAttemptsService } from './paymentAttemptsService';
 import { track } from './analytics';
+import { t } from '@/constants/translations';
 import type { StripeError } from './paymentErrorTypes';
 
 /**
@@ -62,17 +63,17 @@ class PaymentRetryService {
    */
   private getStripeClient(): any {
     if (Platform.OS === 'web') {
-      throw new Error('Payment retry is not supported on web platform');
+      throw new Error(t('payment.retry.errors.platform_not_supported'));
     }
 
     if (!this.stripe) {
       const StripeModule = getStripeModule();
       if (!StripeModule) {
-        throw new Error('Stripe SDK is not available');
+        throw new Error(t('payment.retry.errors.stripe_sdk_unavailable'));
       }
       const apiKey = process.env.STRIPE_SECRET_KEY;
       if (!apiKey) {
-        throw new Error('STRIPE_SECRET_KEY is not configured');
+        throw new Error(t('payment.retry.errors.stripe_key_not_configured'));
       }
       this.stripe = new StripeModule(apiKey, {
         apiVersion: '2024-11-20.acacia',
