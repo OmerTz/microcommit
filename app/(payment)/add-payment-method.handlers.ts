@@ -119,6 +119,27 @@ export function validateCardholderName(name: string): { valid: boolean; error?: 
 }
 
 /**
+ * Update errors state for a specific field
+ * @param prevErrors - Previous errors object
+ * @param fieldName - Field to update
+ * @param error - Error message (null to clear)
+ * @returns New errors object
+ */
+export function updateFieldError(
+  prevErrors: Record<string, string>,
+  fieldName: string,
+  error: string | null
+): Record<string, string> {
+  const newErrors = { ...prevErrors };
+  if (error) {
+    newErrors[fieldName] = error;
+  } else {
+    delete newErrors[fieldName];
+  }
+  return newErrors;
+}
+
+/**
  * Checks if Apple Pay is available on this device
  * @returns boolean indicating if Apple Pay is supported
  */
@@ -132,4 +153,119 @@ export function isApplePayAvailable(): boolean {
  */
 export function isGooglePayAvailable(): boolean {
   return Platform.OS === 'android';
+}
+
+/**
+ * Process payment method creation
+ * @param params - Payment processing parameters
+ * @returns Promise with success status and optional error message
+ */
+export async function processPaymentMethod(params: {
+  cardholderName: string;
+  billingZip: string;
+  cardDetails: any;
+  cardNumber?: string;
+  expiryDate?: string;
+  cvc?: string;
+  saveForFuture: boolean;
+  createPaymentMethod?: any;
+  platform: string;
+}): Promise<{ success: boolean; error?: string; paymentMethodId?: string }> {
+  const {
+    cardholderName,
+    billingZip,
+    cardDetails,
+    cardNumber,
+    expiryDate,
+    cvc,
+    createPaymentMethod,
+    platform,
+  } = params;
+
+  try {
+    // Native: Use Stripe SDK
+    if (platform !== 'web' && createPaymentMethod) {
+      const { paymentMethod, error } = await createPaymentMethod({
+        paymentMethodType: 'Card',
+        billingDetails: {
+          name: cardholderName,
+          address: {
+            postalCode: billingZip,
+          },
+        },
+      });
+
+      if (error) {
+        console.error('[ADD_PAYMENT_METHOD] Stripe error:', error);
+        return { success: false, error: error.message };
+      }
+
+      console.log('[ADD_PAYMENT_METHOD] Payment method created:', paymentMethod?.id);
+      return { success: true, paymentMethodId: paymentMethod?.id };
+    } else {
+      // Web: Mock payment processing (production would call backend API)
+      console.log('[ADD_PAYMENT_METHOD] Web: Would process payment with:', {
+        cardNumber: cardNumber?.substring(0, 4) + '****',
+        expiryDate,
+        cardholderName,
+        billingZip,
+      });
+      return { success: true };
+    }
+  } catch (error) {
+    console.error('[ADD_PAYMENT_METHOD] Error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : t('payment.addPaymentMethod.errors.tokenizationFailed'),
+    };
+  }
+}
+
+/**
+ * Validate all payment method fields
+ * @param params - Fields to validate
+ * @returns Object with hasErrors boolean and errors record
+ */
+export function validatePaymentFields(params: {
+  cardholderName: string;
+  billingZip: string;
+  cardDetails: any;
+  cardNumber?: string;
+  expiryDate?: string;
+  cvc?: string;
+  platform: string;
+  hasCardField: boolean;
+}): { hasErrors: boolean; errors: Record<string, string> } {
+  const { cardholderName, billingZip, cardDetails, cardNumber, expiryDate, cvc, platform, hasCardField } = params;
+  const errors: Record<string, string> = {};
+
+  const nameValidation = validateCardholderName(cardholderName);
+  if (!nameValidation.valid) {
+    errors.cardholderName = nameValidation.error!;
+  }
+
+  if (!validateBillingZip(billingZip)) {
+    errors.billingZip = t('payment.addPaymentMethod.errors.billingZipInvalid');
+  }
+
+  // Validate card based on platform
+  if (platform !== 'web' && hasCardField) {
+    // Native: validate CardField completion
+    if (!cardDetails || !cardDetails.complete) {
+      errors.card = t('payment.addPaymentMethod.errors.cardNumberInvalid');
+    }
+  } else {
+    // Web: validate manual card inputs
+    if (!cardNumber?.trim()) {
+      errors.card = t('payment.addPaymentMethod.errors.cardNumberInvalid');
+    }
+    if (!expiryDate?.trim()) {
+      errors.expiry = t('payment.addPaymentMethod.errors.expiryInvalid');
+    }
+    if (!cvc?.trim()) {
+      errors.cvc = t('payment.addPaymentMethod.errors.cvcInvalid');
+    }
+  }
+
+  return { hasErrors: Object.keys(errors).length > 0, errors };
 }

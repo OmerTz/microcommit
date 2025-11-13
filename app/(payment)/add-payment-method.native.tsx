@@ -19,6 +19,9 @@ import {
   validateBillingZip,
   isApplePayAvailable,
   isGooglePayAvailable,
+  validatePaymentFields,
+  processPaymentMethod,
+  updateFieldError,
 } from './add-payment-method.handlers';
 
 // Conditional Stripe imports - native only
@@ -60,140 +63,66 @@ export default function AddPaymentMethodScreen() {
 
   const handleCardholderNameBlur = () => {
     const validation = validateCardholderName(cardholderName);
-    if (!validation.valid) {
-      setErrors((prev) => ({ ...prev, cardholderName: validation.error! }));
-    } else {
-      setErrors((prev) => {
-        const newErrors = { ...prev };
-        delete newErrors.cardholderName;
-        return newErrors;
-      });
-    }
+    setErrors((prev) => updateFieldError(prev, 'cardholderName', validation.valid ? null : validation.error!));
   };
 
   const handleBillingZipBlur = () => {
-    if (!validateBillingZip(billingZip)) {
-      setErrors((prev) => ({
-        ...prev,
-        billingZip: t('payment.addPaymentMethod.errors.billingZipInvalid'),
-      }));
-    } else {
-      setErrors((prev) => {
-        const newErrors = { ...prev };
-        delete newErrors.billingZip;
-        return newErrors;
-      });
-    }
+    const isValid = validateBillingZip(billingZip);
+    setErrors((prev) =>
+      updateFieldError(prev, 'billingZip', isValid ? null : t('payment.addPaymentMethod.errors.billingZipInvalid'))
+    );
   };
 
   const handleProcessPayment = async () => {
     // Validate all fields
-    let hasErrors = false;
-    const newErrors: Record<string, string> = {};
+    const validation = validatePaymentFields({
+      cardholderName,
+      billingZip,
+      cardDetails,
+      cardNumber,
+      expiryDate,
+      cvc,
+      platform: Platform.OS,
+      hasCardField: !!CardField,
+    });
 
-    const nameValidation = validateCardholderName(cardholderName);
-    if (!nameValidation.valid) {
-      newErrors.cardholderName = nameValidation.error!;
-      hasErrors = true;
-    }
-
-    if (!validateBillingZip(billingZip)) {
-      newErrors.billingZip = t('payment.addPaymentMethod.errors.billingZipInvalid');
-      hasErrors = true;
-    }
-
-    // Validate card based on platform
-    if (Platform.OS !== 'web' && CardField) {
-      // Native: validate CardField completion
-      if (!cardDetails || !cardDetails.complete) {
-        newErrors.card = t('payment.addPaymentMethod.errors.cardNumberInvalid');
-        hasErrors = true;
-      }
-    } else {
-      // Web: validate manual card inputs
-      if (!cardNumber.trim()) {
-        newErrors.card = t('payment.addPaymentMethod.errors.cardNumberInvalid');
-        hasErrors = true;
-      }
-      if (!expiryDate.trim()) {
-        newErrors.expiry = t('payment.addPaymentMethod.errors.expiryInvalid');
-        hasErrors = true;
-      }
-      if (!cvc.trim()) {
-        newErrors.cvc = t('payment.addPaymentMethod.errors.cvcInvalid');
-        hasErrors = true;
-      }
-    }
-
-    if (hasErrors) {
-      setErrors(newErrors);
+    if (validation.hasErrors) {
+      setErrors(validation.errors);
       return;
     }
 
     setIsProcessing(true);
 
-    try {
-      // Native: Use Stripe SDK
-      if (Platform.OS !== 'web' && createPaymentMethod) {
-        const { paymentMethod, error } = await createPaymentMethod({
-          paymentMethodType: 'Card',
-          billingDetails: {
-            name: cardholderName,
-            address: {
-              postalCode: billingZip,
-            },
-          },
-        });
+    const result = await processPaymentMethod({
+      cardholderName,
+      billingZip,
+      cardDetails,
+      cardNumber,
+      expiryDate,
+      cvc,
+      saveForFuture,
+      createPaymentMethod,
+      platform: Platform.OS,
+    });
 
-        if (error) {
-          console.error('[ADD_PAYMENT_METHOD] Stripe error:', error);
-          analytics.track('payment_method_add_failed', {
-            error: error.message,
-            platform: Platform.OS,
-          });
-          setErrors({ general: error.message });
-          setIsProcessing(false);
-          return;
-        }
-
-        console.log('[ADD_PAYMENT_METHOD] Payment method created:', paymentMethod?.id);
-        analytics.track('payment_method_changed', {
-          save_for_future: saveForFuture,
-          success: true,
-          payment_method_id: paymentMethod?.id,
-          platform: Platform.OS,
-        });
-
-        router.back();
-      } else {
-        // Web: Show message that payment processing would happen here
-        console.log('[ADD_PAYMENT_METHOD] Web: Would process payment with:', {
-          cardNumber,
-          expiryDate,
-          cvc,
-          cardholderName,
-          billingZip,
-          saveForFuture,
-        });
-
-        analytics.track('payment_method_changed', {
-          save_for_future: saveForFuture,
-          success: true,
-          platform: 'web',
-        });
-
-        // Navigate back to indicate success
-        router.back();
-      }
-    } catch (error) {
-      console.error('[ADD_PAYMENT_METHOD] Error:', error);
+    if (!result.success) {
       analytics.track('payment_method_add_failed', {
-        error: error instanceof Error ? error.message : 'unknown',
+        error: result.error,
         platform: Platform.OS,
       });
-      setErrors({ general: t('payment.addPaymentMethod.errors.tokenizationFailed') });
+      setErrors({ general: result.error || t('payment.addPaymentMethod.errors.tokenizationFailed') });
       setIsProcessing(false);
+      return;
     }
+
+    analytics.track('payment_method_changed', {
+      save_for_future: saveForFuture,
+      success: true,
+      payment_method_id: result.paymentMethodId,
+      platform: Platform.OS,
+    });
+
+    router.back();
   };
 
   return (
@@ -251,11 +180,7 @@ export default function AddPaymentMethodScreen() {
                 onCardChange={(details) => {
                   setCardDetails(details);
                   if (errors.card && details.complete) {
-                    setErrors((prev) => {
-                      const newErrors = { ...prev };
-                      delete newErrors.card;
-                      return newErrors;
-                    });
+                    setErrors((prev) => updateFieldError(prev, 'card', null));
                   }
                 }}
                 style={styles.cardField}
