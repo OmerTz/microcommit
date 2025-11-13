@@ -13,19 +13,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:horoscope": "playwright test tests/horoscope.spec.ts",
-    "test:e2e:web": "playwright test web-e2e --project=chromium",
-    "test:e2e:mobile": "detox test -c ios.sim.debug",
     "seed": "ts-node scripts/seedDatabase.ts",
     "android": "expo run:android",
-    "ios": "expo run:ios",
-    "playwright:report": "playwright show-report web-e2e/test-results/html-report",
-    "doctor": "node doctor.js",
-    "doctor:quick": "node doctor-quick.js",
-    "doctor:ci": "node doctor-ci.js",
-    "health": "npm run doctor:quick",
-    "health:full": "npm run doctor",
-    "health:ci": "npm run doctor:ci"
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.2.3",
