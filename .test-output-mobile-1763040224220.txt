@@ -1,0 +1,407 @@
+15:23:48.048 detox[84773] i ws-server Detox server listening on localhost:59800...
+15:23:48.051 detox[84773] B lifecycle DETOX_BINARY_PATH="/Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app" jest --config /Users/omertzadiki/Desktop/dev/tzrif86/utils/cli/configs/jest.config.universal.js --json --outputFile=mobile-e2e/test-results.json
+15:23:55.485 detox[84773] B ws-server connection :59800<->:59816
+15:23:56.880 detox[84773] i child-process:EXEC_CMD applesimutils --list --byName MicroCommit --fields udid,os,identifier
+15:23:56.880 detox[84773] i child-process:EXEC_TRY Searching for device by name = "MicroCommit" ...
+15:23:58.091 detox[84773] i device settled on EB482E8B-8936-40AF-8F07-4FC4F295AF90
+  data: {
+    "id": "EB482E8B-8936-40AF-8F07-4FC4F295AF90",
+    "udid": "EB482E8B-8936-40AF-8F07-4FC4F295AF90"
+  }
+15:23:58.092 detox[84773] i child-process:EXEC_CMD applesimutils --list --byId EB482E8B-8936-40AF-8F07-4FC4F295AF90 --maxResults 1 --fields udid,os,version,state
+15:23:58.867 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl uninstall EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:23:58.867 detox[84779] i child-process:EXEC_TRY Uninstalling com.tzrif86.microcommit...
+15:24:06.615 detox[84779] i child-process:EXEC_SUCCESS com.tzrif86.microcommit uninstalled
+15:24:06.847 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:24:06.848 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:24:10.587 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:24:17.192 detox[84779] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+15:24:17.196 detox[84779] i child-process:EXEC_FAIL 
+15:24:17.196 detox[84779] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+15:24:17.203 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl install EB482E8B-8936-40AF-8F07-4FC4F295AF90 "/Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app"
+15:24:17.204 detox[84779] i child-process:EXEC_TRY Installing /Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app...
+15:24:34.763 detox[84779] i child-process:EXEC_SUCCESS /Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app installed
+15:24:34.813 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:24:34.813 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:24:39.490 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:24:40.194 detox[84779] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+15:24:40.194 detox[84779] i child-process:EXEC_FAIL 
+15:24:40.194 detox[84779] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+15:24:45.377 detox[84779] i lifecycle flow-102-payment-failure-and-retry.test.js is assigned to EB482E8B-8936-40AF-8F07-4FC4F295AF90 (undefined)
+15:24:45.484 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:24:45.484 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:24:47.472 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:24:47.608 detox[84779] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+15:24:47.608 detox[84779] i child-process:EXEC_FAIL 
+15:24:47.608 detox[84779] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+15:24:47.609 detox[84779] i child-process:EXEC_CMD applesimutils --byId EB482E8B-8936-40AF-8F07-4FC4F295AF90 --bundle com.tzrif86.microcommit --restartSB --setPermissions notifications=YES
+15:24:47.609 detox[84779] i child-process:EXEC_TRY Trying to set permissions with AppleSimUtils: notifications=YES...
+15:24:49.668 detox[84779] i child-process:EXEC_SUCCESS notifications permissions are set
+15:24:49.676 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:24:49.818 detox[84779] i child-process:SPAWN_CMD /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/1D1B81E5-94DB-4618-BEF0-94C1A3614EBF/MicroCommit.app\""
+15:24:49.871 detox[84779] i child-process:EXEC_CMD SIMCTL_CHILD_GULGeneratedClassDisposeDisabled=YES SIMCTL_CHILD_DYLD_INSERT_LIBRARIES="/Users/omertzadiki/Library/Detox/ios/framework/c632ef467f16c11d84acd58ddea13a1a407ed9e8/Detox.framework/Detox" /usr/bin/xcrun simctl launch EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit --args -detoxServer ws://localhost:59800 -detoxSessionId 29ae5857-77d7-9e53-eaf6-df2a64eae51c -EXDevMenuDisableAutoLaunch true -EXKernelDisableNuxDefaultsKey true -EX_DEV_LAUNCHER_URL http://localhost:8423 -detoxDebugVisibility YES -detoxDisableHierarchyDump YES
+15:24:49.871 detox[84779] i child-process:EXEC_TRY Launching com.tzrif86.microcommit...
+15:25:29.210 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:25:36.581 detox[84779] i device com.tzrif86.microcommit launched. To watch simulator logs, run:
+        /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate 'process == "MicroCommit"'
+15:25:38.488 detox[84773] B ws-server connection :59800<->:59868
+15:25:45.442 detox[84779] i lifecycle Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry: should complete payment failure and retry flow with all recovery options
+15:25:45.611 detox[84779] i child-process:SPAWN_END /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/1D1B81E5-94DB-4618-BEF0-94C1A3614EBF/MicroCommit.app\"" exited with code #0
+15:25:45.624 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:25:49.291 detox[84779] i child-process:SPAWN_CMD /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/1D1B81E5-94DB-4618-BEF0-94C1A3614EBF/MicroCommit.app\""
+15:25:49.349 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-rdxdcv.detox.png"
+15:25:52.873 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-gmAIvy.detox.png"
+15:25:56.375 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-m4s95o.detox.png"
+15:25:56.823 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-8u6GSB.detox.png"
+15:25:59.044 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-BcJBLL.detox.png"
+15:26:00.906 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-oUL7QE.detox.png"
+15:26:03.241 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-2Ycn9p.detox.png"
+15:26:03.638 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-gL0squ.detox.png"
+15:26:05.070 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-ie7KQ5.detox.png"
+15:26:06.920 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-bdGTG0.detox.png"
+15:26:07.303 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-43vcsg.detox.png"
+15:26:09.388 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-zCE780.detox.png"
+15:26:11.660 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-Wx4wRp.detox.png"
+15:26:11.947 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-yOcvn9.detox.png"
+15:26:12.364 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-iHstwn.detox.png"
+15:26:14.301 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-pO0vJZ.detox.png"
+15:26:16.158 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-H9SSqA.detox.png"
+15:26:18.361 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-i0C4Bs.detox.png"
+15:26:20.236 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-siwYuO.detox.png"
+15:26:22.048 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-H7wVLC.detox.png"
+15:26:23.113 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-4V9Qdx.detox.png"
+15:26:23.880 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-6EofXd.detox.png"
+15:26:24.066 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-rdxdcv.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/testStart.png
+15:26:24.074 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-gmAIvy.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_00-app-launched-login.png
+15:26:24.075 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-m4s95o.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_01-payment-failed-screen.png
+15:26:24.075 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-8u6GSB.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_02-error-and-summary-displayed.png
+15:26:24.076 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-BcJBLL.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_03-before-retry-same-card.png
+15:26:24.076 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-oUL7QE.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_04-after-retry-navigation.png
+15:26:24.077 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-2Ycn9p.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_05-retry-with-payment-details.png
+15:26:24.077 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-gL0squ.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_06-retry-button-enabled.png
+15:26:24.078 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-ie7KQ5.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_07-retry-loading-state.png
+15:26:24.079 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-bdGTG0.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_08-new-error-card-declined.png
+15:26:24.079 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-43vcsg.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_09-before-change-payment-method.png
+15:26:24.080 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-zCE780.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_10-after-change-payment-method.png
+15:26:24.080 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-Wx4wRp.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_11-network-error-screen.png
+15:26:24.081 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-yOcvn9.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_12-help-link-visible.png
+15:26:24.081 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-iHstwn.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_13-cancel-link-visible.png
+15:26:24.081 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-pO0vJZ.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_14-error-type-invalid_details.png
+15:26:24.082 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-H9SSqA.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_14-error-type-expired_card.png
+15:26:24.082 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-i0C4Bs.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_14-error-type-3ds_required.png
+15:26:24.083 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-siwYuO.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_14-error-type-unknown.png
+15:26:24.083 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-H7wVLC.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_18-flow-complete.png
+15:26:24.084 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-4V9Qdx.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/mobile-e2e_screenshots_flow-102_19-final-back-navigation.png
+15:26:24.084 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-6EofXd.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry should complete payment failure and retry flow with all recovery options/testDone.png
+15:26:24.183 detox[84779] i child-process:SPAWN_END /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/1D1B81E5-94DB-4618-BEF0-94C1A3614EBF/MicroCommit.app\"" exited with code #0
+15:26:24.187 detox[84779] i lifecycle Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry: should complete payment failure and retry flow with all recovery options [OK]
+
+15:26:24.369 detox[84773] E ws-server connection :59800<->:59816
+PASS mobile-e2e/flow-102-payment-failure-and-retry.test.js (150.971 s)
+  Payment Failure & Retry Flow - Complete flow from app launch through payment failure and retry
+    ✓ should complete payment failure and retry flow with all recovery options (38434 ms)
+
+15:26:24.706 detox[84773] B ws-server connection :59800<->:59884
+15:26:24.747 detox[84773] i child-process:EXEC_CMD applesimutils --list --byName MicroCommit --fields udid,os,identifier
+15:26:24.747 detox[84773] i child-process:EXEC_TRY Searching for device by name = "MicroCommit" ...
+15:26:25.777 detox[84773] i device settled on EB482E8B-8936-40AF-8F07-4FC4F295AF90
+  data: {
+    "id": "EB482E8B-8936-40AF-8F07-4FC4F295AF90",
+    "udid": "EB482E8B-8936-40AF-8F07-4FC4F295AF90"
+  }
+15:26:25.778 detox[84773] i child-process:EXEC_CMD applesimutils --list --byId EB482E8B-8936-40AF-8F07-4FC4F295AF90 --maxResults 1 --fields udid,os,version,state
+15:26:25.956 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl uninstall EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:26:25.956 detox[84779] i child-process:EXEC_TRY Uninstalling com.tzrif86.microcommit...
+15:26:26.607 detox[84773] E ws-server connection :59800<->:59868
+15:26:28.291 detox[84779] i child-process:EXEC_SUCCESS com.tzrif86.microcommit uninstalled
+15:26:28.294 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:26:28.294 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:26:30.124 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:26:30.416 detox[84779] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+15:26:30.416 detox[84779] i child-process:EXEC_FAIL 
+15:26:30.416 detox[84779] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+15:26:30.417 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl install EB482E8B-8936-40AF-8F07-4FC4F295AF90 "/Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app"
+15:26:30.417 detox[84779] i child-process:EXEC_TRY Installing /Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app...
+15:26:33.916 detox[84779] i child-process:EXEC_SUCCESS /Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app installed
+15:26:33.918 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:26:33.919 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:26:35.593 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:26:36.410 detox[84779] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+15:26:36.411 detox[84779] i child-process:EXEC_FAIL 
+15:26:36.411 detox[84779] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+15:26:38.015 detox[84779] i lifecycle screen-167-payment-screen.test.js is assigned to EB482E8B-8936-40AF-8F07-4FC4F295AF90 (undefined)
+15:26:38.026 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:26:38.026 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:26:39.448 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:26:40.690 detox[84779] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+15:26:40.691 detox[84779] i child-process:EXEC_FAIL 
+15:26:40.691 detox[84779] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+15:26:40.691 detox[84779] i child-process:EXEC_CMD applesimutils --byId EB482E8B-8936-40AF-8F07-4FC4F295AF90 --bundle com.tzrif86.microcommit --restartSB --setPermissions notifications=YES
+15:26:40.691 detox[84779] i child-process:EXEC_TRY Trying to set permissions with AppleSimUtils: notifications=YES...
+15:26:43.475 detox[84779] i child-process:EXEC_SUCCESS notifications permissions are set
+15:26:43.490 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:26:44.327 detox[84779] i child-process:SPAWN_CMD /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/E82E0E81-E8CF-4453-AD08-FE7FA24DC493/MicroCommit.app\""
+15:26:44.382 detox[84779] i child-process:EXEC_CMD SIMCTL_CHILD_GULGeneratedClassDisposeDisabled=YES SIMCTL_CHILD_DYLD_INSERT_LIBRARIES="/Users/omertzadiki/Library/Detox/ios/framework/c632ef467f16c11d84acd58ddea13a1a407ed9e8/Detox.framework/Detox" /usr/bin/xcrun simctl launch EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit --args -detoxServer ws://localhost:59800 -detoxSessionId 29ae5857-77d7-9e53-eaf6-df2a64eae51c -EXDevMenuDisableAutoLaunch true -EXKernelDisableNuxDefaultsKey true -EX_DEV_LAUNCHER_URL http://localhost:8423 -detoxDebugVisibility YES -detoxDisableHierarchyDump YES
+15:26:44.384 detox[84779] i child-process:EXEC_TRY Launching com.tzrif86.microcommit...
+15:27:19.173 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:27:24.938 detox[84779] i device com.tzrif86.microcommit launched. To watch simulator logs, run:
+        /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate 'process == "MicroCommit"'
+15:27:26.524 detox[84773] B ws-server connection :59800<->:59909
+15:27:31.225 detox[84779] i lifecycle Payment Failed Screen - Complete flow from app launch through all error scenarios: should display all error types, test navigation, and user interactions
+15:27:31.337 detox[84779] i child-process:SPAWN_END /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/E82E0E81-E8CF-4453-AD08-FE7FA24DC493/MicroCommit.app\"" exited with code #0
+15:27:31.361 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:27:34.563 detox[84779] i child-process:SPAWN_CMD /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/E82E0E81-E8CF-4453-AD08-FE7FA24DC493/MicroCommit.app\""
+15:27:34.619 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-dlKGdQ.detox.png"
+15:27:36.122 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-Qcg77H.detox.png"
+15:27:39.521 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-JGEpkq.detox.png"
+15:27:40.065 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-Z3L2xD.detox.png"
+15:27:40.613 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-cO6prT.detox.png"
+15:27:41.805 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-3pDKuj.detox.png"
+15:27:42.083 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-nfVTH0.detox.png"
+15:27:42.337 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-ERyj1w.detox.png"
+15:27:42.625 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-NY0SOx.detox.png"
+15:27:43.868 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-97g3gt.detox.png"
+15:27:48.830 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-vxKN9I.detox.png"
+15:27:50.882 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-tN16Yd.detox.png"
+15:27:52.683 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-pGoBCU.detox.png"
+15:27:55.422 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-3s5osK.detox.png"
+15:27:55.704 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-IWjhrK.detox.png"
+15:28:00.534 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-fJEady.detox.png"
+15:28:01.611 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-6WkHIF.detox.png"
+15:28:03.582 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-JlwR43.detox.png"
+15:28:03.977 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-2enMGz.detox.png"
+15:28:04.204 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-dlKGdQ.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/testStart.png
+15:28:04.205 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-Qcg77H.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_00-app-launched-login.png
+15:28:04.206 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-JGEpkq.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_01-insufficient-funds-error.png
+15:28:04.206 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-Z3L2xD.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_02-card-declined-error.png
+15:28:04.207 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-cO6prT.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_03-invalid-details-error.png
+15:28:04.208 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-3pDKuj.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_04-expired-card-error.png
+15:28:04.208 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-nfVTH0.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_05-3ds-required-error.png
+15:28:04.209 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-ERyj1w.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_06-network-error.png
+15:28:04.210 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-NY0SOx.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_07-unknown-error.png
+15:28:04.210 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-97g3gt.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_08-before-try-again.png
+15:28:04.211 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-vxKN9I.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_09-after-try-again.png
+15:28:04.212 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-tN16Yd.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_10-before-different-card.png
+15:28:04.212 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-pGoBCU.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_11-after-different-card.png
+15:28:04.213 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-3s5osK.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_12-help-link-visible.png
+15:28:04.213 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-IWjhrK.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_13-cancel-link-visible.png
+15:28:04.214 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-fJEady.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_14-before-back-button.png
+15:28:04.214 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-6WkHIF.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_15-after-back-button.png
+15:28:04.215 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-JlwR43.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/mobile-e2e_screenshots_screen-167_16-test-complete.png
+15:28:04.215 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-2enMGz.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ Payment Failed Screen - Complete flow from app launch through all error scenarios should display all error types, test navigation, and user interactions/testDone.png
+15:28:04.278 detox[84779] i child-process:SPAWN_END /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/E82E0E81-E8CF-4453-AD08-FE7FA24DC493/MicroCommit.app\"" exited with code #0
+15:28:04.282 detox[84779] i lifecycle Payment Failed Screen - Complete flow from app launch through all error scenarios: should display all error types, test navigation, and user interactions [OK]
+
+15:28:05.684 detox[84773] E ws-server connection :59800<->:59884
+PASS mobile-e2e/screen-167-payment-screen.test.js (99.64 s)
+  Payment Failed Screen - Complete flow from app launch through all error scenarios
+    ✓ should display all error types, test navigation, and user interactions (32744 ms)
+
+15:28:05.809 detox[84773] B ws-server connection :59800<->:59921
+15:28:05.812 detox[84773] i child-process:EXEC_CMD applesimutils --list --byName MicroCommit --fields udid,os,identifier
+15:28:05.812 detox[84773] i child-process:EXEC_TRY Searching for device by name = "MicroCommit" ...
+15:28:07.101 detox[84773] i device settled on EB482E8B-8936-40AF-8F07-4FC4F295AF90
+  data: {
+    "id": "EB482E8B-8936-40AF-8F07-4FC4F295AF90",
+    "udid": "EB482E8B-8936-40AF-8F07-4FC4F295AF90"
+  }
+15:28:07.102 detox[84773] i child-process:EXEC_CMD applesimutils --list --byId EB482E8B-8936-40AF-8F07-4FC4F295AF90 --maxResults 1 --fields udid,os,version,state
+15:28:07.271 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl uninstall EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:28:07.271 detox[84779] i child-process:EXEC_TRY Uninstalling com.tzrif86.microcommit...
+15:28:07.597 detox[84773] E ws-server connection :59800<->:59909
+15:28:08.182 detox[84779] i child-process:EXEC_SUCCESS com.tzrif86.microcommit uninstalled
+15:28:08.182 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:28:08.182 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:28:09.413 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:28:10.265 detox[84779] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+15:28:10.265 detox[84779] i child-process:EXEC_FAIL 
+15:28:10.266 detox[84779] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+15:28:10.267 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl install EB482E8B-8936-40AF-8F07-4FC4F295AF90 "/Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app"
+15:28:10.267 detox[84779] i child-process:EXEC_TRY Installing /Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app...
+15:28:13.201 detox[84779] i child-process:EXEC_SUCCESS /Users/omertzadiki/Desktop/dev/tzrif86/products/MicroCommit/build/Build/Products/Release-iphonesimulator/MicroCommit.app installed
+15:28:13.203 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:28:13.203 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:28:14.388 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:28:14.619 detox[84779] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+15:28:14.619 detox[84779] i child-process:EXEC_FAIL 
+15:28:14.619 detox[84779] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+15:28:17.398 detox[84779] i lifecycle basic.test.js is assigned to EB482E8B-8936-40AF-8F07-4FC4F295AF90 (undefined)
+15:28:17.399 detox[84779] i user [iOS Dialog Handler] Installed globally for all tests
+  origin: at mobile-e2e/basic.test.js:30:13
+15:28:17.402 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:28:17.402 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:28:19.299 detox[84779] i child-process:EXEC_TRY Terminating com.tzrif86.microcommit...
+15:28:19.807 detox[84779] i child-process:EXEC_FAIL "/usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit" failed with error = Error: Command failed: /usr/bin/xcrun simctl terminate EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+ (code=3), stdout and stderr:
+
+15:28:19.807 detox[84779] i child-process:EXEC_FAIL 
+15:28:19.807 detox[84779] i child-process:EXEC_FAIL An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate com.tzrif86.microcommit.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "com.tzrif86.microcommit" failed. found nothing to terminate
+	found nothing to terminate
+
+15:28:19.808 detox[84779] i child-process:EXEC_CMD applesimutils --byId EB482E8B-8936-40AF-8F07-4FC4F295AF90 --bundle com.tzrif86.microcommit --restartSB --setPermissions notifications=YES
+15:28:19.808 detox[84779] i child-process:EXEC_TRY Trying to set permissions with AppleSimUtils: notifications=YES...
+15:28:23.363 detox[84779] i child-process:EXEC_SUCCESS notifications permissions are set
+15:28:23.378 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:28:23.796 detox[84779] i child-process:SPAWN_CMD /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/06DD0894-250C-4FC2-B99D-1C197D7A20BD/MicroCommit.app\""
+15:28:23.848 detox[84779] i child-process:EXEC_CMD SIMCTL_CHILD_GULGeneratedClassDisposeDisabled=YES SIMCTL_CHILD_DYLD_INSERT_LIBRARIES="/Users/omertzadiki/Library/Detox/ios/framework/c632ef467f16c11d84acd58ddea13a1a407ed9e8/Detox.framework/Detox" /usr/bin/xcrun simctl launch EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit --args -detoxServer ws://localhost:59800 -detoxSessionId 29ae5857-77d7-9e53-eaf6-df2a64eae51c -EXDevMenuDisableAutoLaunch true -EXKernelDisableNuxDefaultsKey true -EX_DEV_LAUNCHER_URL http://localhost:8423 -detoxDebugVisibility YES -detoxDisableHierarchyDump YES
+15:28:23.848 detox[84779] i child-process:EXEC_TRY Launching com.tzrif86.microcommit...
+15:28:51.956 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:28:55.496 detox[84779] i device com.tzrif86.microcommit launched. To watch simulator logs, run:
+        /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate 'process == "MicroCommit"'
+15:28:57.231 detox[84773] B ws-server connection :59800<->:59947
+15:29:01.834 detox[84779] i lifecycle MicroCommit - Basic app launch and navigation flow: should launch app and complete basic navigation
+15:29:01.949 detox[84779] i child-process:SPAWN_END /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/06DD0894-250C-4FC2-B99D-1C197D7A20BD/MicroCommit.app\"" exited with code #0
+15:29:01.960 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl get_app_container EB482E8B-8936-40AF-8F07-4FC4F295AF90 com.tzrif86.microcommit
+15:29:04.553 detox[84779] i child-process:SPAWN_CMD /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/06DD0894-250C-4FC2-B99D-1C197D7A20BD/MicroCommit.app\""
+15:29:04.607 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-rr1Diy.detox.png"
+15:29:05.872 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-LxzjOb.detox.png"
+15:29:10.452 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-rwA09O.detox.png"
+15:29:13.264 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-U8BoLh.detox.png"
+15:29:15.144 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-EpKEpq.detox.png"
+15:29:15.319 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-7SX3tp.detox.png"
+15:29:16.062 detox[84779] i child-process:EXEC_CMD /usr/bin/xcrun simctl io EB482E8B-8936-40AF-8F07-4FC4F295AF90 screenshot "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-Y18YuF.detox.png"
+15:29:17.796 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-rr1Diy.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ MicroCommit - Basic app launch and navigation flow should launch app and complete basic navigation/testStart.png
+15:29:17.799 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-LxzjOb.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ MicroCommit - Basic app launch and navigation flow should launch app and complete basic navigation/mobile-e2e_screenshots_01-app-launched-login.png
+15:29:17.801 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-rwA09O.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ MicroCommit - Basic app launch and navigation flow should launch app and complete basic navigation/mobile-e2e_screenshots_02-create-account-screen.png
+15:29:17.802 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-U8BoLh.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ MicroCommit - Basic app launch and navigation flow should launch app and complete basic navigation/mobile-e2e_screenshots_03-back-to-login.png
+15:29:17.803 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-EpKEpq.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ MicroCommit - Basic app launch and navigation flow should launch app and complete basic navigation/mobile-e2e_screenshots_04-forward-again.png
+15:29:17.807 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-7SX3tp.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ MicroCommit - Basic app launch and navigation flow should launch app and complete basic navigation/mobile-e2e_screenshots_05-test-complete.png
+15:29:17.808 detox[84779] i artifact:MOVE_FILE moving "/private/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/detox-84779-Y18YuF.detox.png" to mobile-e2e/.artifacts/ios.2025-11-13 13-23-48Z/✓ MicroCommit - Basic app launch and navigation flow should launch app and complete basic navigation/testDone.png
+15:29:17.860 detox[84779] i child-process:SPAWN_END /usr/bin/xcrun simctl spawn EB482E8B-8936-40AF-8F07-4FC4F295AF90 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/omertzadiki/Library/Developer/CoreSimulator/Devices/EB482E8B-8936-40AF-8F07-4FC4F295AF90/data/Containers/Bundle/Application/06DD0894-250C-4FC2-B99D-1C197D7A20BD/MicroCommit.app\"" exited with code #0
+15:29:17.864 detox[84779] i lifecycle MicroCommit - Basic app launch and navigation flow: should launch app and complete basic navigation [OK]
+15:29:18.074 detox[84773] E ws-server connection :59800<->:59921
+PASS mobile-e2e/basic.test.js (72.097 s)
+  MicroCommit - Basic app launch and navigation flow
+    ✓ should launch app and complete basic navigation (14225 ms)
+
+Test Suites: 3 passed, 3 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        326.306 s
+Ran all test suites.
+
+Test results written to: mobile-e2e/test-results.json
+15:29:18.384 detox[84773] i ws-server Detox server has been closed gracefully
+15:29:18.391 detox[84773] E ws-server connection :59800<->:59947

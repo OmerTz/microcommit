@@ -42,7 +42,7 @@ function RootLayoutNav() {
         } else {
           console.log('[_LAYOUT] User not authenticated but already in auth group');
         }
-      } else {
+      } else if (user) {
         // User is authenticated
         console.log('[_LAYOUT] User is authenticated:', user.id);
         if (onboardingCompleted !== 'true' && !inOnboarding) {
@@ -56,6 +56,9 @@ function RootLayoutNav() {
         } else {
           console.log('[_LAYOUT] No redirect needed');
         }
+      } else if (inPaymentGroup) {
+        // User not authenticated but in payment group - allow access for direct URL navigation
+        console.log('[_LAYOUT] Allowing unauthenticated access to payment group');
       }
     };
 

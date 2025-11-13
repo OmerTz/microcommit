@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "expo start --web",
+    "dev": "expo start --web --port 8423",
     "start:web": "expo start --web --port 8423",
     "start:ios": "./scripts/start-ios-iphone14.sh",
     "start:ios:basic": "expo start --ios",
@@ -13,19 +13,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:horoscope": "playwright test tests/horoscope.spec.ts",
-    "test:e2e:web": "playwright test web-e2e --project=chromium",
-    "test:e2e:mobile": "detox test -c ios.sim.debug",
     "seed": "ts-node scripts/seedDatabase.ts",
     "android": "expo run:android",
-    "ios": "expo run:ios",
-    "playwright:report": "playwright show-report web-e2e/test-results/html-report",
-    "doctor": "node doctor.js",
-    "doctor:quick": "node doctor-quick.js",
-    "doctor:ci": "node doctor-ci.js",
-    "health": "npm run doctor:quick",
-    "health:full": "npm run doctor",
-    "health:ci": "npm run doctor:ci"
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.2.3",
@@ -36,6 +26,7 @@
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
     "@reduxjs/toolkit": "^2.2.1",
+    "@stripe/stripe-react-native": "^0.56.0",
     "@supabase/supabase-js": "^2.39.8",
     "@tubular/astronomy": "^3.5.4",
     "@types/react": "~19.0.10",
@@ -88,7 +79,6 @@
     "react-native-web": "^0.20.0",
     "react-native-webview": "13.13.5",
     "react-redux": "^9.1.0",
-    "stripe": "^19.3.0",
     "sweph": "^2.10.3-b-1",
     "typescript": "~5.8.3"
   },

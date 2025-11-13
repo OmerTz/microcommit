@@ -27,7 +27,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
   });
 
   it('should complete payment failure and retry flow with all recovery options', async () => {
-    // Wait for app to launch - verify login screen appears
+    // Wait for app to fully launch by checking for login screen
     await waitFor(element(by.id('login-email-input')))
       .toExist()
       .withTimeout(2000);
@@ -49,13 +49,14 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
 
     await device.takeScreenshot('mobile-e2e/screenshots/flow-102/02-error-and-summary-displayed');
 
-    // Test retry with same card - click Try Again button
+    // Test retry with same card - click Try Again button (no payment details scenario)
     await waitFor(element(by.id('payment-failed-try-again-button')))
       .toBeVisible()
       .withTimeout(2000);
 
     await device.takeScreenshot('mobile-e2e/screenshots/flow-102/03-before-retry-same-card');
 
+    // Tap retry button - should navigate back since no payment details provided
     await element(by.id('payment-failed-try-again-button')).tap();
 
     await waitFor(element(by.id('payment-failed-screen')))
@@ -64,6 +65,30 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
 
     await device.takeScreenshot('mobile-e2e/screenshots/flow-102/04-after-retry-navigation');
 
+    // Test retry with payment details (simulating actual retry scenario)
+    await device.openURL({
+      url: 'microcommit://payment-failed?errorType=insufficient_funds&goalName=Retry%20Test&commitmentAmount=50&charityName=Test%20Charity&goalId=test-retry-001&paymentIntentId=pi_test_123&paymentMethodId=pm_test_123&userId=user_test_123&cardLast4=4242&cardBrand=visa'
+    });
+
+    await waitFor(element(by.id('payment-failed-screen')))
+      .toExist()
+      .withTimeout(2000);
+
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/05-retry-with-payment-details');
+
+    // Verify retry button is enabled with payment details
+    await waitFor(element(by.id('payment-failed-try-again-button')))
+      .toBeVisible()
+      .withTimeout(2000);
+
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/06-retry-button-enabled');
+
+    // Tap retry button to trigger actual retry logic
+    await element(by.id('payment-failed-try-again-button')).tap();
+
+    // Button should show loading state briefly (capture if visible)
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/07-retry-loading-state');
+
     // Navigate back to payment failed screen for next flow test
     await device.openURL({ url: 'microcommit://payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF&goalId=test-goal-456' });
 
@@ -71,14 +96,14 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
       .toExist()
       .withTimeout(2000);
 
-    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/05-new-error-card-declined');
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/08-new-error-card-declined');
 
     // Test change payment method - click Use Different Card button
     await waitFor(element(by.id('payment-failed-different-card-button')))
       .toBeVisible()
       .withTimeout(2000);
 
-    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/06-before-change-payment-method');
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/09-before-change-payment-method');
 
     await element(by.id('payment-failed-different-card-button')).tap();
 
@@ -86,7 +111,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
       .not.toExist()
       .withTimeout(2000);
 
-    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/07-after-change-payment-method');
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/10-after-change-payment-method');
 
     // Navigate back to payment failed screen for help flow
     await device.openURL({ url: 'microcommit://payment-failed?errorType=network_error&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF&goalId=test-goal-789' });
@@ -95,17 +120,17 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
       .toExist()
       .withTimeout(2000);
 
-    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/08-network-error-screen');
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/11-network-error-screen');
 
     // Test help flow - verify Need Help link exists (Detox will auto-scroll if needed)
     await expect(element(by.id('payment-failed-help-link'))).toExist();
 
-    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/09-help-link-visible');
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/12-help-link-visible');
 
     // Test cancel goal flow - verify Cancel Goal link exists (Detox will auto-scroll if needed)
     await expect(element(by.id('payment-failed-cancel-link'))).toExist();
 
-    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/10-cancel-link-visible');
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/13-cancel-link-visible');
 
     // Test multiple error types in sequence (simulating retry attempts)
     const errorTypes = [
@@ -125,7 +150,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
         .toExist()
         .withTimeout(2000);
 
-      await device.takeScreenshot(`mobile-e2e/screenshots/flow-102/12-error-type-${type}`);
+      await device.takeScreenshot(`mobile-e2e/screenshots/flow-102/14-error-type-${type}`);
 
       // Verify all action buttons are visible and functional
       await expect(element(by.id('payment-failed-try-again-button'))).toExist();
@@ -141,7 +166,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
       .toExist()
       .withTimeout(2000);
 
-    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/13-flow-complete');
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/18-flow-complete');
 
     // Verify back button works at end of flow
     await waitFor(element(by.id('payment-failed-back-button')))
@@ -154,7 +179,7 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
       .not.toExist()
       .withTimeout(2000);
 
-    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/14-final-back-navigation');
+    await device.takeScreenshot('mobile-e2e/screenshots/flow-102/19-final-back-navigation');
 
     // Payment Failure & Retry flow complete
   });

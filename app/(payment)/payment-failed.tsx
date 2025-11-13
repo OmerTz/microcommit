@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -6,12 +6,14 @@ import {
   ScrollView,
   Alert,
   Linking,
+  ActivityIndicator,
 } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { t } from '@/constants/translations';
 import * as analytics from '@/services/analytics';
+import { handlePaymentRetry } from './payment-failed.handlers';
 import { styles } from './payment-failed.styles';
 
 interface PaymentFailedScreenParams {
@@ -21,6 +23,11 @@ interface PaymentFailedScreenParams {
   commitmentAmount?: string;
   charityName?: string;
   goalId?: string;
+  paymentIntentId?: string;
+  paymentMethodId?: string;
+  cardLast4?: string;
+  cardBrand?: string;
+  userId?: string;
 }
 
 export default function PaymentFailedScreen() {
@@ -32,6 +39,16 @@ export default function PaymentFailedScreen() {
   const commitmentAmount = params.commitmentAmount || t('payment.failed.fallbacks.commitmentAmount');
   const charityName = params.charityName || t('payment.failed.fallbacks.charityName');
   const goalId = params.goalId;
+  const paymentIntentId = params.paymentIntentId;
+  const paymentMethodId = params.paymentMethodId;
+  const cardLast4 = params.cardLast4;
+  const cardBrand = params.cardBrand;
+  const userId = params.userId;
+
+  const [isRetrying, setIsRetrying] = useState(false);
+  const [retryDisabled, setRetryDisabled] = useState(false);
+
+  const canRetry = !!(paymentIntentId && paymentMethodId && userId);
 
   useEffect(() => {
     analytics.track('payment_failed', {
@@ -58,12 +75,55 @@ export default function PaymentFailedScreen() {
   };
 
   const handleTryAgain = async () => {
+    if (!canRetry) {
+      console.log('[PAYMENT_FAILED] Cannot retry - missing payment details, navigating to home');
+      try {
+        await router.push('/(tabs)' as any);
+      } catch (error) {
+        console.error('[PAYMENT_FAILED] Navigation error:', error);
+        Alert.alert(t('payment.failed.errors.navigationError'), t('payment.failed.errors.navigationFailed'));
+      }
+      return;
+    }
+
+    if (isRetrying || retryDisabled) {
+      console.warn('[PAYMENT_FAILED] Retry already in progress or disabled');
+      return;
+    }
+
+    setIsRetrying(true);
+    setRetryDisabled(true);
+
     try {
-      console.log('[PAYMENT_FAILED] User tapped Try Again');
-      await router.back();
+      await handlePaymentRetry({
+        paymentIntentId: paymentIntentId!,
+        paymentMethodId: paymentMethodId!,
+        userId: userId!,
+        goalId,
+        commitmentAmount,
+        cardLast4,
+        cardBrand,
+        onSuccess: () => router.push('/(tabs)/goals' as any),
+        onSameError: () => {
+          setRetryDisabled(true);
+          router.push('/(payment)/add-payment-method' as any);
+        },
+        onDifferentError: () => setRetryDisabled(false),
+        onTimeout: () => setRetryDisabled(false),
+        onMaxAttempts: () => {
+          setRetryDisabled(true);
+          router.push('/(payment)/add-payment-method' as any);
+        },
+      });
+      setIsRetrying(false);
     } catch (error) {
-      console.error('[PAYMENT_FAILED] Navigation error:', error);
-      Alert.alert(t('payment.failed.errors.navigationError'), t('payment.failed.errors.navigationFailed'));
+      console.error('[PAYMENT_FAILED] Retry exception:', error);
+      setIsRetrying(false);
+      setRetryDisabled(false);
+      Alert.alert(
+        t('payment.failed.errors.navigationError'),
+        error instanceof Error ? error.message : t('payment.retry.errors.unknown_error')
+      );
     }
   };
 
@@ -122,7 +182,13 @@ export default function PaymentFailedScreen() {
           style={styles.header}
         >
           <TouchableOpacity
-            onPress={() => router.back()}
+            onPress={() => {
+              if (router.canGoBack()) {
+                router.back();
+              } else {
+                router.push('/(tabs)' as any);
+              }
+            }}
             style={styles.backButton}
             testID="payment-failed-back-button"
           >
@@ -194,12 +260,29 @@ export default function PaymentFailedScreen() {
           style={styles.actionsContainer}
         >
           <TouchableOpacity
-            style={styles.primaryButton}
+            style={[
+              styles.primaryButton,
+              (isRetrying || retryDisabled) && styles.disabledButton,
+            ]}
             onPress={handleTryAgain}
             testID="payment-failed-try-again-button"
             activeOpacity={0.8}
+            disabled={isRetrying || retryDisabled}
           >
-            <Text style={styles.primaryButtonText}>{t('payment.failed.buttons.tryAgain')}</Text>
+            {isRetrying ? (
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                <ActivityIndicator color="#FFFFFF" size="small" />
+                <Text style={styles.primaryButtonText}>
+                  {cardLast4
+                    ? t('payment.retry.processingWithCard').replace('{{last4}}', cardLast4)
+                    : t('payment.retry.processing')}
+                </Text>
+              </View>
+            ) : (
+              <Text style={styles.primaryButtonText}>
+                {retryDisabled ? t('payment.retry.disabled') : t('payment.failed.buttons.tryAgain')}
+              </Text>
+            )}
           </TouchableOpacity>
 
           <TouchableOpacity

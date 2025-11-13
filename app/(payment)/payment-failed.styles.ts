@@ -149,6 +149,11 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
   },
+  disabledButton: {
+    backgroundColor: '#9CA3AF',
+    shadowOpacity: 0.1,
+    opacity: 0.6,
+  },
   secondaryButton: {
     height: 48,
     backgroundColor: 'transparent',
