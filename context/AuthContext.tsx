@@ -80,13 +80,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
 
     // Add timeout fallback to prevent infinite loading
+    // Using 1500ms to ensure auth completes before E2E test timeout (2000ms)
     timeoutId = setTimeout(() => {
       if (isMounted && isLoading) {
-        console.log('[AUTH] TIMEOUT: Forcing isLoading to false after 2 seconds');
+        console.log('[AUTH] TIMEOUT: Forcing isLoading to false after 1.5 seconds');
         setIsLoading(false);
         setError('Authentication initialization timed out');
       }
-    }, 2000);
+    }, 1500);
 
     initializeAuth();
 
