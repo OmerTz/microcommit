@@ -76,9 +76,9 @@ export default function PaymentFailedScreen() {
 
   const handleTryAgain = async () => {
     if (!canRetry) {
-      console.log('[PAYMENT_FAILED] Cannot retry - missing payment details, navigating back');
+      console.log('[PAYMENT_FAILED] Cannot retry - missing payment details, navigating to home');
       try {
-        await router.back();
+        await router.replace('/(tabs)' as any);
       } catch (error) {
         console.error('[PAYMENT_FAILED] Navigation error:', error);
         Alert.alert(t('payment.failed.errors.navigationError'), t('payment.failed.errors.navigationFailed'));
