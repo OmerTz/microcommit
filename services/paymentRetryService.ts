@@ -4,11 +4,20 @@
  * Supports 3D Secure authentication and tracks retry attempts
  */
 
-import Stripe from 'stripe';
+import { Platform } from 'react-native';
 import { stripeErrorCategorizationService } from './stripeErrorCategorizationService';
 import { paymentAttemptsService } from './paymentAttemptsService';
 import { track } from './analytics';
 import type { StripeError } from './paymentErrorTypes';
+
+let Stripe: any = null;
+if (Platform.OS !== 'web') {
+  try {
+    Stripe = require('stripe');
+  } catch (error) {
+    console.warn('[PaymentRetryService] Stripe SDK not available on this platform');
+  }
+}
 
 const MAX_RETRY_ATTEMPTS = 3;
 const RETRY_TIMEOUT_MS = 10000;
@@ -36,14 +45,21 @@ export interface RetryPaymentResult {
 }
 
 class PaymentRetryService {
-  private stripe: Stripe | null = null;
+  private stripe: any | null = null;
   private retryLocks: Map<string, boolean> = new Map();
 
   /**
    * Initialize Stripe client (lazy loading)
    */
-  private getStripeClient(): Stripe {
+  private getStripeClient(): any {
+    if (Platform.OS === 'web') {
+      throw new Error('Payment retry is not supported on web platform');
+    }
+
     if (!this.stripe) {
+      if (!Stripe) {
+        throw new Error('Stripe SDK is not available');
+      }
       const apiKey = process.env.STRIPE_SECRET_KEY;
       if (!apiKey) {
         throw new Error('STRIPE_SECRET_KEY is not configured');
@@ -227,7 +243,7 @@ class PaymentRetryService {
    * Execute the actual retry using Stripe confirmCardPayment
    */
   private async executeRetry(
-    stripe: Stripe,
+    stripe: any,
     paymentIntentId: string,
     paymentMethodId: string,
     context: {
