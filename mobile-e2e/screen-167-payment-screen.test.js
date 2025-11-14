@@ -173,7 +173,23 @@ describe('Payment Failed Screen - Complete flow from app launch through all erro
       .not.toExist()
       .withTimeout(2000);
 
+    // Verify add-payment-method screen loads
+    await waitFor(element(by.id('add-payment-method-screen')))
+      .toExist()
+      .withTimeout(2000);
+
     await device.takeScreenshot('mobile-e2e/screenshots/screen-167/11-after-different-card');
+
+    // Test add-payment-method screen elements
+    await waitFor(element(by.id('add-payment-method-security-badge')))
+      .toBeVisible()
+      .withTimeout(2000);
+
+    await waitFor(element(by.id('add-payment-method-process-button')))
+      .toBeVisible()
+      .withTimeout(2000);
+
+    await device.takeScreenshot('mobile-e2e/screenshots/screen-167/11a-add-payment-elements');
 
     // Test Scenario 10: Need Help link
     await device.openURL({ url: 'microcommit:///payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity' });

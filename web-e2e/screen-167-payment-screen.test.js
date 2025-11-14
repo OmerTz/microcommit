@@ -138,7 +138,24 @@ test('Payment Failed Screen - Complete flow from login through all error scenari
 
   await differentCardButton.click();
   await expect(page.locator('[data-testid="payment-failed-screen"]')).not.toBeVisible({ timeout: 2000 });
+
+  // Verify add-payment-method screen loads
+  await expect(page.locator('[data-testid="add-payment-method-screen"]')).toBeVisible({ timeout: 2000 });
   await page.screenshot({ path: 'web-e2e/screenshots/screen-167/13-after-different-card.png' });
+
+  // Test goBack/goForward navigation with add-payment-method
+  await page.goBack();
+  await expect(page.locator('[data-testid="payment-failed-screen"]')).toBeVisible({ timeout: 2000 });
+  await page.screenshot({ path: 'web-e2e/screenshots/screen-167/13a-after-goback.png' });
+
+  await page.goForward();
+  await expect(page.locator('[data-testid="add-payment-method-screen"]')).toBeVisible({ timeout: 2000 });
+  await page.screenshot({ path: 'web-e2e/screenshots/screen-167/13b-after-goforward.png' });
+
+  // Test add-payment-method screen elements
+  await expect(page.locator('[data-testid="add-payment-method-security-badge"]')).toBeVisible();
+  await expect(page.locator('[data-testid="add-payment-method-card-number"]')).toBeVisible();
+  await expect(page.locator('[data-testid="add-payment-method-process-button"]')).toBeVisible();
 
   // Navigate back to payment failed screen for next test
   await page.goto('/(payment)/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity');

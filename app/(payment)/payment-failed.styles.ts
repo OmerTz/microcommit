@@ -1,9 +1,10 @@
 import { StyleSheet, Platform } from 'react-native';
+import { PaymentColors } from '@/constants/paymentColors';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: PaymentColors.background.page,
   },
   scrollContent: {
     flexGrow: 1,
@@ -18,10 +19,10 @@ export const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 12,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: PaymentColors.background.surface,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
+    shadowColor: PaymentColors.shadow.black,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -38,7 +39,7 @@ export const styles = StyleSheet.create({
     width: 96,
     height: 96,
     borderRadius: 48,
-    backgroundColor: '#FEF3C7',
+    backgroundColor: PaymentColors.background.warning,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -49,7 +50,7 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '700',
     lineHeight: 32,
-    color: '#111827',
+    color: PaymentColors.text.primary,
     textAlign: 'center',
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
   },
@@ -60,16 +61,16 @@ export const styles = StyleSheet.create({
   errorMessage: {
     fontSize: 16,
     lineHeight: 24,
-    color: '#374151',
+    color: PaymentColors.text.tertiary,
     textAlign: 'center',
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
   },
   goalSummaryCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: PaymentColors.background.surface,
     borderRadius: 12,
     padding: 16,
     marginBottom: 24,
-    shadowColor: '#000',
+    shadowColor: PaymentColors.shadow.black,
     shadowOffset: {
       width: 0,
       height: 4,
@@ -78,13 +79,13 @@ export const styles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 3,
     borderWidth: 1,
-    borderColor: '#E5E7EB',
+    borderColor: PaymentColors.border.light,
   },
   summaryTitle: {
     fontSize: 14,
     fontWeight: '600',
     lineHeight: 20,
-    color: '#111827',
+    color: PaymentColors.text.primary,
     marginBottom: 12,
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
   },
@@ -97,13 +98,13 @@ export const styles = StyleSheet.create({
   summaryLabel: {
     fontSize: 14,
     lineHeight: 20,
-    color: '#6B7280',
+    color: PaymentColors.text.secondary,
     flex: 1,
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
   },
   summaryValue: {
     fontWeight: '600',
-    color: '#111827',
+    color: PaymentColors.text.primary,
   },
   reassuranceContainer: {
     marginBottom: 32,
@@ -112,7 +113,7 @@ export const styles = StyleSheet.create({
   reassuranceText: {
     fontSize: 14,
     lineHeight: 20,
-    color: '#6B7280',
+    color: PaymentColors.text.secondary,
     textAlign: 'center',
     marginBottom: 8,
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
@@ -120,7 +121,7 @@ export const styles = StyleSheet.create({
   noChargesText: {
     fontSize: 14,
     lineHeight: 20,
-    color: '#6B7280',
+    color: PaymentColors.text.secondary,
     textAlign: 'center',
     fontWeight: '600',
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
@@ -130,11 +131,11 @@ export const styles = StyleSheet.create({
   },
   primaryButton: {
     height: 56,
-    backgroundColor: '#2DD4BF',
+    backgroundColor: PaymentColors.primary.main,
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#2DD4BF',
+    shadowColor: PaymentColors.primary.shadow,
     shadowOffset: {
       width: 0,
       height: 4,
@@ -146,11 +147,11 @@ export const styles = StyleSheet.create({
   primaryButtonText: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: PaymentColors.text.onPrimary,
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
   },
   disabledButton: {
-    backgroundColor: '#9CA3AF',
+    backgroundColor: PaymentColors.button.disabled,
     shadowOpacity: 0.1,
     opacity: 0.6,
   },
@@ -159,14 +160,14 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: '#2DD4BF',
+    borderColor: PaymentColors.border.primary,
     justifyContent: 'center',
     alignItems: 'center',
   },
   secondaryButtonText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#2DD4BF',
+    color: PaymentColors.primary.main,
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
   },
   linkButton: {
@@ -178,7 +179,7 @@ export const styles = StyleSheet.create({
   linkText: {
     fontSize: 16,
     fontWeight: '500',
-    color: '#2DD4BF',
+    color: PaymentColors.primary.main,
     textDecorationLine: 'underline',
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
   },
@@ -191,7 +192,7 @@ export const styles = StyleSheet.create({
   cancelText: {
     fontSize: 14,
     fontWeight: '400',
-    color: '#9CA3AF',
+    color: PaymentColors.text.disabled,
     fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
   },
 });

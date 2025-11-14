@@ -17,6 +17,7 @@ import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { t } from '@/constants/translations';
 import * as analytics from '@/services/analytics';
 import { styles } from './add-payment-method.styles';
+import { PaymentColors } from '@/constants/paymentColors';
 import {
   validateCardholderName,
   validateBillingZip,
@@ -152,7 +153,7 @@ export default function AddPaymentMethodScreen() {
             style={styles.backButton}
             testID="add-payment-method-back-button"
           >
-            <Ionicons name="arrow-back" size={24} color="#111827" />
+            <Ionicons name="arrow-back" size={24} color={PaymentColors.text.primary} />
           </TouchableOpacity>
         </Animated.View>
 
@@ -171,7 +172,7 @@ export default function AddPaymentMethodScreen() {
           style={styles.securityBadge}
           testID="add-payment-method-security-badge"
         >
-          <Ionicons name="lock-closed" size={16} color="#6B7280" />
+          <Ionicons name="lock-closed" size={16} color={PaymentColors.text.secondary} />
           <Text style={styles.securityText}>
             {t('payment.addPaymentMethod.security.securedByStripe')}
           </Text>
@@ -191,7 +192,7 @@ export default function AddPaymentMethodScreen() {
               style={styles.textInput}
               value={cardNumber}
               onChangeText={setCardNumber}
-              placeholder="4242 4242 4242 4242"
+              placeholder={t('payment.addPaymentMethod.fields.cardNumberPlaceholder')}
               keyboardType="numeric"
               maxLength={19}
               testID="add-payment-method-card-number"
@@ -211,7 +212,7 @@ export default function AddPaymentMethodScreen() {
               style={styles.textInput}
               value={expiryDate}
               onChangeText={setExpiryDate}
-              placeholder="MM/YY"
+              placeholder={t('payment.addPaymentMethod.fields.expiryDatePlaceholder')}
               keyboardType="numeric"
               maxLength={5}
               testID="add-payment-method-expiry-date"
@@ -231,7 +232,7 @@ export default function AddPaymentMethodScreen() {
               style={styles.textInput}
               value={cvc}
               onChangeText={setCvc}
-              placeholder="123"
+              placeholder={t('payment.addPaymentMethod.fields.cvcPlaceholder')}
               keyboardType="numeric"
               maxLength={4}
               secureTextEntry={true}
@@ -296,7 +297,7 @@ export default function AddPaymentMethodScreen() {
             <Ionicons
               name={saveForFuture ? 'checkbox' : 'square-outline'}
               size={24}
-              color="#2DD4BF"
+              color={PaymentColors.primary.main}
             />
             <Text style={styles.checkboxLabel}>
               {t('payment.addPaymentMethod.fields.saveForFuture')}

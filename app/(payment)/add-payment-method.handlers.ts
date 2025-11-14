@@ -203,14 +203,12 @@ export async function processPaymentMethod(params: {
       console.log('[ADD_PAYMENT_METHOD] Payment method created:', paymentMethod?.id);
       return { success: true, paymentMethodId: paymentMethod?.id };
     } else {
-      // Web: Mock payment processing (production would call backend API)
-      console.log('[ADD_PAYMENT_METHOD] Web: Would process payment with:', {
-        cardNumber: cardNumber?.substring(0, 4) + '****',
-        expiryDate,
-        cardholderName,
-        billingZip,
-      });
-      return { success: true };
+      // Web: Payment processing not yet implemented
+      console.error('[ADD_PAYMENT_METHOD] Web payment processing not implemented');
+      return {
+        success: false,
+        error: t('payment.addPaymentMethod.errors.webNotSupported'),
+      };
     }
   } catch (error) {
     console.error('[ADD_PAYMENT_METHOD] Error:', error);

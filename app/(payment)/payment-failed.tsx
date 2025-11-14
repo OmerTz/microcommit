@@ -15,6 +15,7 @@ import { t } from '@/constants/translations';
 import * as analytics from '@/services/analytics';
 import { handlePaymentRetry } from './payment-failed.handlers';
 import { styles } from './payment-failed.styles';
+import { PaymentColors } from '@/constants/paymentColors';
 
 interface PaymentFailedScreenParams {
   errorType?: 'insufficient_funds' | 'card_declined' | 'invalid_details' |
@@ -192,7 +193,7 @@ export default function PaymentFailedScreen() {
             style={styles.backButton}
             testID="payment-failed-back-button"
           >
-            <Ionicons name="arrow-back" size={24} color="#111827" />
+            <Ionicons name="arrow-back" size={24} color={PaymentColors.text.primary} />
           </TouchableOpacity>
         </Animated.View>
 
@@ -201,7 +202,7 @@ export default function PaymentFailedScreen() {
           style={styles.iconContainer}
         >
           <View style={styles.warningIconCircle}>
-            <Ionicons name="alert-circle" size={64} color="#F59E0B" />
+            <Ionicons name="alert-circle" size={64} color={PaymentColors.warning.main} />
           </View>
         </Animated.View>
 
@@ -228,19 +229,19 @@ export default function PaymentFailedScreen() {
           <Text style={styles.summaryTitle}>{t('payment.failed.goalSummary.title')}</Text>
 
           <View style={styles.summaryItem}>
-            <Ionicons name="flag" size={20} color="#6B7280" />
+            <Ionicons name="flag" size={20} color={PaymentColors.text.secondary} />
             <Text style={styles.summaryLabel}>{goalName}</Text>
           </View>
 
           <View style={styles.summaryItem}>
-            <Ionicons name="cash" size={20} color="#6B7280" />
+            <Ionicons name="cash" size={20} color={PaymentColors.text.secondary} />
             <Text style={styles.summaryLabel}>
               {t('payment.failed.goalSummary.commitment')}: <Text style={styles.summaryValue}>${commitmentAmount}</Text>
             </Text>
           </View>
 
           <View style={styles.summaryItem}>
-            <Ionicons name="heart" size={20} color="#6B7280" />
+            <Ionicons name="heart" size={20} color={PaymentColors.text.secondary} />
             <Text style={styles.summaryLabel}>
               {t('payment.failed.goalSummary.charity')}: <Text style={styles.summaryValue}>{charityName}</Text>
             </Text>
@@ -271,7 +272,7 @@ export default function PaymentFailedScreen() {
           >
             {isRetrying ? (
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                <ActivityIndicator color="#FFFFFF" size="small" />
+                <ActivityIndicator color={PaymentColors.text.onPrimary} size="small" />
                 <Text style={styles.primaryButtonText}>
                   {cardLast4
                     ? t('payment.retry.processingWithCard').replace('{{last4}}', cardLast4)

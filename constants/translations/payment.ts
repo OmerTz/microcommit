@@ -121,8 +121,11 @@ export const paymentTranslations = {
       subtitle: 'Enter your card details securely',
       fields: {
         cardNumber: 'Card Number',
+        cardNumberPlaceholder: '4242 4242 4242 4242',
         expiryDate: 'Expiry Date',
+        expiryDatePlaceholder: 'MM/YY',
         cvc: 'CVC',
+        cvcPlaceholder: '123',
         cardholderName: 'Cardholder Name',
         cardholderNamePlaceholder: 'Name on card',
         billingZip: 'Billing ZIP Code',
