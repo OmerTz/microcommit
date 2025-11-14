@@ -152,7 +152,8 @@ export const paymentTranslations = {
         cardholderNameInvalid: 'Please enter the cardholder name (at least 2 characters)',
         billingZipInvalid: 'Please enter a valid 5-digit ZIP code',
         tokenizationFailed: 'Failed to process payment method. Please try again.',
-        generalError: 'Something went wrong. Please try again.'
+        generalError: 'Something went wrong. Please try again.',
+        webNotSupported: 'Web payment processing is not yet available. Please use the mobile app.'
       }
     }
   }

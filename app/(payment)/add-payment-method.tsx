@@ -21,6 +21,7 @@ import { PaymentColors } from '@/constants/paymentColors';
 import {
   validateCardholderName,
   validateBillingZip,
+  processPaymentMethod,
 } from './add-payment-method.handlers';
 
 // Web version - no Stripe imports needed
