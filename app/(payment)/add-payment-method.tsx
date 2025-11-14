@@ -341,7 +341,7 @@ export default function AddPaymentMethodScreen() {
             testID="add-payment-method-process-button"
           >
             {isProcessing ? (
-              <ActivityIndicator color="#FFF" />
+              <ActivityIndicator color={PaymentColors.text.onPrimary} />
             ) : (
               <Text style={styles.primaryButtonText}>
                 {t('payment.addPaymentMethod.buttons.processPayment')}

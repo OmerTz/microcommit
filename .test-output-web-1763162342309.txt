@@ -1,0 +1,1125 @@
+
+Running 2 tests using 2 workers
+
+  [38;5;45;1mpw:api [0m=> browserType.launch started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> browserType.launch started [38;5;45m+0ms[0m
+  [30;1mpw:browser [0m<launching> /Users/omertzadiki/Library/Caches/ms-playwright/chromium_headless_shell-1187/chrome-mac/headless_shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/playwright_chromiumdev_profile-gDobRa --remote-debugging-pipe --no-startup-window [30m+0ms[0m
+  [30;1mpw:browser [0m<launching> /Users/omertzadiki/Library/Caches/ms-playwright/chromium_headless_shell-1187/chrome-mac/headless_shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/rd/k24blmdd00b3mgzccyf3ndc00000gn/T/playwright_chromiumdev_profile-4I3RY9 --remote-debugging-pipe --no-startup-window [30m+0ms[0m
+  [30;1mpw:browser [0m<launched> pid=46117 [30m+2ms[0m
+  [30;1mpw:browser [0m<launched> pid=46118 [30m+1ms[0m
+  [38;5;45;1mpw:api [0m<= browserType.launch succeeded [38;5;45m+334ms[0m
+  [38;5;45;1mpw:api [0m<= browserType.launch succeeded [38;5;45m+333ms[0m
+  [38;5;45;1mpw:api [0m=> browser.newContext started [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m=> browser.newContext started [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= browser.newContext succeeded [38;5;45m+8ms[0m
+  [38;5;45;1mpw:api [0m<= browser.newContext succeeded [38;5;45m+8ms[0m
+  [38;5;45;1mpw:api [0m=> browserContext.newPage started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> browserContext.newPage started [38;5;45m+1ms[0m
+  [30;1mpw:browser [0m[pid=46118][err] [1115/011903.846449:ERROR:ui/display/mac/cv_display_link_mac.mm:165] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670 [30m+446ms[0m
+  [30;1mpw:browser [0m[pid=46117][err] [1115/011903.846438:ERROR:ui/display/mac/cv_display_link_mac.mm:165] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670 [30m+446ms[0m
+  [38;5;45;1mpw:api [0m<= browserContext.newPage succeeded [38;5;45m+184ms[0m
+  [38;5;45;1mpw:api [0m<= browserContext.newPage succeeded [38;5;45m+184ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=insufficient_funds&goalName=Save%20for%20Hawaii&commitmentAmount=25&charityName=Red%20Cross", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+14ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+14ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=insufficient_funds&goalName=Save%20for%20Hawaii&commitmentAmount=25&charityName=Red%20Cross" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+212ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+212ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 12000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 12000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+81ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+81ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123" [38;5;45m+8ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=insufficient_funds&goalName=Save%20for%20Hawaii&commitmentAmount=25&charityName=Red%20Cross" [38;5;45m+9ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+9ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+9ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+69ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+69ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-error-message"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-error-message"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+103ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+104ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+252ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+253ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-goal-summary"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-goal-summary"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-goal-summary" class="css-view-g5y9jx r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1q9bdsx r-borderWidth-rs99b7 r-boxShadow-ldasuw r-marginBottom-1peese0 r-padding-nsbfu8">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-goal-summary" class="css-view-g5y9jx r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1q9bdsx r-borderWidth-rs99b7 r-boxShadow-ldasuw r-marginBottom-1peese0 r-padding-nsbfu8">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> locator.textContent started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-error-message"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toContainText started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toContainText" with timeout 5000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-goal-summary"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= locator.textContent succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-goal-summary" class="css-view-g5y9jx r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1q9bdsx r-borderWidth-rs99b7 r-boxShadow-ldasuw r-marginBottom-1peese0 r-padding-nsbfu8">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toContainText succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toContainText started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toContainText started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toContainText" with timeout 5000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toContainText" with timeout 5000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-goal-summary"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-goal-summary"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-goal-summary" class="css-view-g5y9jx r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1q9bdsx r-borderWidth-rs99b7 r-boxShadow-ldasuw r-marginBottom-1peese0 r-padding-nsbfu8">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toContainText succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toContainText started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-goal-summary" class="css-view-g5y9jx r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1q9bdsx r-borderWidth-rs99b7 r-boxShadow-ldasuw r-marginBottom-1peese0 r-padding-nsbfu8">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toContainText succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toContainText started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toContainText" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-goal-summary"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toContainText" with timeout 5000ms [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-goal-summary"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-goal-summary" class="css-view-g5y9jx r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1q9bdsx r-borderWidth-rs99b7 r-boxShadow-ldasuw r-marginBottom-1peese0 r-padding-nsbfu8">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-goal-summary" class="css-view-g5y9jx r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1q9bdsx r-borderWidth-rs99b7 r-boxShadow-ldasuw r-marginBottom-1peese0 r-padding-nsbfu8">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toContainText succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toContainText succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toContainText started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toContainText" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-goal-summary"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-goal-summary" class="css-view-g5y9jx r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1q9bdsx r-borderWidth-rs99b7 r-boxShadow-ldasuw r-marginBottom-1peese0 r-padding-nsbfu8">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toContainText succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-back-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-back-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1q9bdsx r-boxShadow-r1kdcf r-height-1ugchlj r-justifyContent-1777fci r-width-usgzl9">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-try-again-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+35ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+41ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+21ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-try-again-button"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+68ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+106ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+6ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+50ms[0m
+  [38;5;45;1mpw:api [0m=> locator.click started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-try-again-button"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mattempting click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+21ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+33ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting 20ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+23ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+26ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting 100ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+255ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-different-card-button"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+6ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+102ms[0m
+  [38;5;45;1mpw:api [0m  element is visible, enabled and stable [38;5;45m+31ms[0m
+  [38;5;45;1mpw:api [0m  scrolling into view if needed [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  done scrolling [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  performing click action [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+100ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF" [38;5;45m+24ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/" [38;5;45m+35ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+8ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+5ms[0m
+  [38;5;45;1mpw:api [0m  click action done [38;5;45m+32ms[0m
+  [38;5;45;1mpw:api [0m  waiting for scheduled navigations to finish [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigations have finished [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= locator.click succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.not.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "not toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.not.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+41ms[0m
+  [38;5;45;1mpw:api [0m=> locator.textContent started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-error-message"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= locator.textContent succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=invalid_details&goalName=Home%20Renovation&commitmentAmount=100&charityName=Habitat", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=invalid_details&goalName=Home%20Renovation&commitmentAmount=100&charityName=Habitat" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+59ms[0m
+  [38;5;45;1mpw:api [0m=> page.goBack started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for navigation until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123" [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goBack succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123" [38;5;45m+8ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=insufficient_funds&goalName=Emergency%20Fund&commitmentAmount=100&charityName=Red%20Cross&goalId=test-goal-123" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+90ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+51ms[0m
+  [38;5;45;1mpw:api [0m=> page.goForward started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for navigation until "load" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goForward succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.not.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "not toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=invalid_details&goalName=Home%20Renovation&commitmentAmount=100&charityName=Habitat" [38;5;45m+23ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+6ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.not.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+40ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+40ms[0m
+  [38;5;45;1mpw:api [0m=> locator.textContent started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-error-message"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF&goalId=test-goal-456", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= locator.textContent succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=expired_card&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF&goalId=test-goal-456" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=expired_card&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+93ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+107ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Fitness%20Goal&commitmentAmount=50&charityName=UNICEF&goalId=test-goal-456" [38;5;45m+23ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=expired_card&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF" [38;5;45m+20ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+40ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-different-card-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+41ms[0m
+  [38;5;45;1mpw:api [0m=> locator.textContent started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-error-message"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= locator.textContent succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=3ds_required&goalName=Emergency%20Fund&commitmentAmount=200&charityName=Doctors%20Without%20Borders", waiting until "load" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=3ds_required&goalName=Emergency%20Fund&commitmentAmount=200&charityName=Doctors%20Without%20Borders" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+102ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+87ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=3ds_required&goalName=Emergency%20Fund&commitmentAmount=200&charityName=Doctors%20Without%20Borders" [38;5;45m+22ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+44ms[0m
+  [38;5;45;1mpw:api [0m=> locator.textContent started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-error-message"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= locator.textContent succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=network_error&goalName=Debt%20Payoff&commitmentAmount=150&charityName=Local%20Food%20Bank", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=network_error&goalName=Debt%20Payoff&commitmentAmount=150&charityName=Local%20Food%20Bank" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+87ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=network_error&goalName=Debt%20Payoff&commitmentAmount=150&charityName=Local%20Food%20Bank" [38;5;45m+23ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+43ms[0m
+  [38;5;45;1mpw:api [0m=> locator.textContent started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-error-message"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= locator.textContent succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=unknown&goalName=Investment%20Portfolio&commitmentAmount=300&charityName=Animal%20Shelter", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=unknown&goalName=Investment%20Portfolio&commitmentAmount=300&charityName=Animal%20Shelter" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+251ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+88ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+104ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=unknown&goalName=Investment%20Portfolio&commitmentAmount=300&charityName=Animal%20Shelter" [38;5;45m+19ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+43ms[0m
+  [38;5;45;1mpw:api [0m=> locator.textContent started [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-error-message"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-error-message" class="css-view-g5y9jx r-marginBottom-1peese0 r-paddingInline-3pj75a">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= locator.textContent succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+95ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+20ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-try-again-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+103ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+399ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+43ms[0m
+  [38;5;45;1mpw:api [0m=> locator.click started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-different-card-button"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mattempting click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is visible, enabled and stable [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  scrolling into view if needed [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  done scrolling [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  performing click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/add-payment-method" [38;5;45m+10ms[0m
+  [38;5;45;1mpw:api [0m  click action done [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  waiting for scheduled navigations to finish [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigations have finished [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= locator.click succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.not.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "not toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.not.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+42ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=network_error&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF&goalId=test-goal-789", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=network_error&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF&goalId=test-goal-789" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+251ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+107ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=network_error&goalName=Vacation%20Fund&commitmentAmount=75&charityName=WWF&goalId=test-goal-789" [38;5;45m+25ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+7ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+149ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+50ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-help-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+102ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+355ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+251ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+58ms[0m
+  [38;5;45;1mpw:api [0m=> locator.click started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-try-again-button"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mattempting click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is visible, enabled and stable [38;5;45m+27ms[0m
+  [38;5;45;1mpw:api [0m  scrolling into view if needed [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  done scrolling [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  performing click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+97ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/" [38;5;45m+23ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+11ms[0m
+  [38;5;45;1mpw:api [0m  click action done [38;5;45m+37ms[0m
+  [38;5;45;1mpw:api [0m  waiting for scheduled navigations to finish [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigations have finished [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= locator.click succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.not.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "not toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.not.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+62ms[0m
+  [38;5;45;1mpw:api [0m=> page.goBack started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for navigation until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goBack succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+6ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+40ms[0m
+  [38;5;45;1mpw:api [0m=> page.goForward started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for navigation until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goForward succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.not.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "not toBeVisible" with timeout 2000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+6ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.not.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+39ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+89ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+24ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-different-card-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+407ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+27ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-cancel-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-cancel-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+102ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+31ms[0m
+  [38;5;45;1mpw:api [0m=> locator.click started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-cancel-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-cancel-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mattempting click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is visible, enabled and stable [38;5;45m+24ms[0m
+  [38;5;45;1mpw:api [0m  scrolling into view if needed [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  done scrolling [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  performing click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  click action done [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  waiting for scheduled navigations to finish [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigations have finished [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= locator.click succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+35ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=invalid_details&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-0", waiting until "load" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=invalid_details&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-0" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+89ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=invalid_details&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-0" [38;5;45m+21ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+251ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+44ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-try-again-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+103ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+145ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+253ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+99ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+357ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+54ms[0m
+  [38;5;45;1mpw:api [0m=> locator.click started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-different-card-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mattempting click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is visible, enabled and stable [38;5;45m+23ms[0m
+  [38;5;45;1mpw:api [0m  scrolling into view if needed [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  done scrolling [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  performing click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/add-payment-method" [38;5;45m+8ms[0m
+  [38;5;45;1mpw:api [0m  click action done [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  waiting for scheduled navigations to finish [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigations have finished [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= locator.click succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.not.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "not toBeVisible" with timeout 2000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.not.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="add-payment-method-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="add-payment-method-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+56ms[0m
+  [38;5;45;1mpw:api [0m=> page.goBack started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for navigation until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goBack succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+6ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+58ms[0m
+  [38;5;45;1mpw:api [0m=> page.goForward started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for navigation until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/add-payment-method" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/add-payment-method" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goForward succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="add-payment-method-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/add-payment-method" [38;5;45m+5ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/add-payment-method" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="add-payment-method-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+40ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="add-payment-method-security-badge"]') [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="add-payment-method-security-badge" class="css-view-g5y9jx r-alignItems-1awozwy r-alignSelf-1kihuf0 r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-flexDirection-18u37iz r-gap-1cmwbt1 r-justifyContent-1777fci r-marginBottom-1peese0 r-paddingBlock-11f147o r-paddingInline-3pj75a">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="add-payment-method-security-badge" class="css-view-g5y9jx r-alignItems-1awozwy r-alignSelf-1kihuf0 r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-flexDirection-18u37iz r-gap-1cmwbt1 r-justifyContent-1777fci r-marginBottom-1peese0 r-paddingBlock-11f147o r-paddingInline-3pj75a">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+402ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-different-card-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-help-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-cancel-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-cancel-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=expired_card&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-1", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=expired_card&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-1" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="add-payment-method-security-badge" class="css-view-g5y9jx r-alignItems-1awozwy r-alignSelf-1kihuf0 r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-flexDirection-18u37iz r-gap-1cmwbt1 r-justifyContent-1777fci r-marginBottom-1peese0 r-paddingBlock-11f147o r-paddingInline-3pj75a">…</div> [38;5;45m+101ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+89ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=expired_card&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-1" [38;5;45m+22ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+5ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+47ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-try-again-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="add-payment-method-security-badge" class="css-view-g5y9jx r-alignItems-1awozwy r-alignSelf-1kihuf0 r-backgroundColor-14lw9ot r-borderColor-1w15a45 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-flexDirection-18u37iz r-gap-1cmwbt1 r-justifyContent-1777fci r-marginBottom-1peese0 r-paddingBlock-11f147o r-paddingInline-3pj75a">…</div> [38;5;45m+252ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="add-payment-method-card-number"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <input rows="1" value="" dir="auto" maxlength="19" autocorrect="on" autocomplete="on" spellcheck="true" inputmode="numeric" autocapitalize="sentences" virtualkeyboardpolicy="auto" placeholder="4242 4242 4242 4242" data-testid="add-payment-method-card-number" class="css-textinput-11aywtz r-placeholderTextColor-6taxm2 r-backgroundColor-14lw9ot r-borderColor-m4suti r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-color-18zdu8c r-fontFamily-1x2decy r-fontSize-ubezar r-height-h3s6tt r-paddingInline-3pj75a"/> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="add-payment-method-process-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="add-payment-method-process-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="add-payment-method-process-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+103ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="add-payment-method-process-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+103ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+254ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="add-payment-method-process-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+255ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+96ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+7ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+98ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+23ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-help-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+102ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+407ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-different-card-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-help-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-cancel-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-cancel-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=3ds_required&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-2", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=3ds_required&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-2" [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+252ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+89ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=3ds_required&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-2" [38;5;45m+20ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+46ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-try-again-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+152ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+102ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+253ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+351ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+99ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+60ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-cancel-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-cancel-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+26ms[0m
+  [38;5;45;1mpw:api [0m=> locator.click started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-cancel-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-cancel-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mattempting click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is visible, enabled and stable [38;5;45m+7ms[0m
+  [38;5;45;1mpw:api [0m  scrolling into view if needed [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  done scrolling [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  performing click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  click action done [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  waiting for scheduled navigations to finish [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigations have finished [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= locator.click succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+40ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+97ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=card_declined&goalName=Test%20Goal&commitmentAmount=10&charityName=Test%20Charity" [38;5;45m+22ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-back-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-back-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1q9bdsx r-boxShadow-r1kdcf r-height-1ugchlj r-justifyContent-1777fci r-width-usgzl9">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-back-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1q9bdsx r-boxShadow-r1kdcf r-height-1ugchlj r-justifyContent-1777fci r-width-usgzl9">…</div> [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-back-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1q9bdsx r-boxShadow-r1kdcf r-height-1ugchlj r-justifyContent-1777fci r-width-usgzl9">…</div> [38;5;45m+103ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+41ms[0m
+  [38;5;45;1mpw:api [0m=> locator.click started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-back-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-back-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1q9bdsx r-boxShadow-r1kdcf r-height-1ugchlj r-justifyContent-1777fci r-width-usgzl9">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mattempting click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+404ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-different-card-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-help-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+27ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-cancel-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-cancel-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=unknown&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-3", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=unknown&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-3" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+32ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting 20ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+22ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+29ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting 100ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+96ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=unknown&goalName=Retry%20Test&commitmentAmount=25&charityName=Test%20Charity&goalId=test-retry-3" [38;5;45m+22ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+42ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-try-again-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+102ms[0m
+  [38;5;45;1mpw:api [0m  element is visible, enabled and stable [38;5;45m+31ms[0m
+  [38;5;45;1mpw:api [0m  scrolling into view if needed [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  done scrolling [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  performing click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/" [38;5;45m+9ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+5ms[0m
+  [38;5;45;1mpw:api [0m  click action done [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0m  waiting for scheduled navigations to finish [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigations have finished [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= locator.click succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.not.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "not toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.not.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+103ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+50ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=insufficient_funds&goalName=Final%20Test&commitmentAmount=99&charityName=Final%20Charity", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=insufficient_funds&goalName=Final%20Test&commitmentAmount=99&charityName=Final%20Charity" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+88ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=insufficient_funds&goalName=Final%20Test&commitmentAmount=99&charityName=Final%20Charity" [38;5;45m+21ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+44ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> browserContext.close started [38;5;45m+48ms[0m
+  [38;5;45;1mpw:api [0m<= browserContext.close succeeded [38;5;45m+4ms[0m
+  ✓  2 [chrome] › web-e2e/screen-167-payment-screen.test.js:31:5 › Payment Failed Screen - Complete flow from login through all error scenarios (7.6s)
+  [38;5;45;1mpw:api [0m=> browser.close started [38;5;45m+6ms[0m
+  [30;1mpw:browser [0m[pid=46118] <gracefully close start> [30m+8s[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+252ms[0m
+  [38;5;45;1mpw:api [0m  unexpected value "hidden" [38;5;45m+0ms[0m
+  [30;1mpw:browser [0m[pid=46118] <process did exit: exitCode=0, signal=null> [30m+17ms[0m
+  [30;1mpw:browser [0m[pid=46118] starting temporary directories cleanup [30m+0ms[0m
+  [30;1mpw:browser [0m[pid=46118] finished temporary directories cleanup [30m+3ms[0m
+  [30;1mpw:browser [0m[pid=46118] <gracefully close end> [30m+0ms[0m
+  [38;5;45;1mpw:api [0m<= browser.close succeeded [38;5;45m+20ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+103ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-try-again-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-oqsv00 r-borderRadius-1q9bdsx r-boxShadow-1qoemw2 r-height-1mwlp6a r-justifyContent-1777fci">…</div> [38;5;45m+402ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-different-card-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-different-card-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderColor-2mo425 r-borderRadius-1q9bdsx r-borderWidth-d045u9 r-height-h3s6tt r-justifyContent-1777fci">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-help-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-help-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-cancel-link"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-cancel-link" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-height-1ugchlj r-justifyContent-1777fci r-marginTop-knv0ih">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.goto started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mnavigating to "http://localhost:8423/(payment)/payment-failed?errorType=insufficient_funds&goalName=Final%20Flow%20Test&commitmentAmount=200&charityName=Final%20Charity&goalId=final-test", waiting until "load" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "commit" event fired [38;5;45m+6ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/(payment)/payment-failed?errorType=insufficient_funds&goalName=Final%20Flow%20Test&commitmentAmount=200&charityName=Final%20Charity&goalId=final-test" [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  "domcontentloaded" event fired [38;5;45m+98ms[0m
+  [38;5;45;1mpw:api [0m  "load" event fired [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= page.goto succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/payment-failed?errorType=insufficient_funds&goalName=Final%20Flow%20Test&commitmentAmount=200&charityName=Final%20Charity&goalId=final-test" [38;5;45m+21ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+47ms[0m
+  [38;5;45;1mpw:api [0m=> expect.toBeVisible started [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mExpect "toBeVisible" with timeout 5000ms [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-back-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-back-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1q9bdsx r-boxShadow-r1kdcf r-height-1ugchlj r-justifyContent-1777fci r-width-usgzl9">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m<= expect.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> locator.click started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-back-button"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div tabindex="0" data-testid="payment-failed-back-button" class="css-view-g5y9jx r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1q9bdsx r-boxShadow-r1kdcf r-height-1ugchlj r-justifyContent-1777fci r-width-usgzl9">…</div> [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mattempting click action [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+26ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+32ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting 20ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+22ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+29ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting 100ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+101ms[0m
+  [38;5;45;1mpw:api [0m  element is not stable [38;5;45m+34ms[0m
+  [38;5;45;1mpw:api [0mretrying click action [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting 100ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  waiting for element to be visible, enabled and stable [38;5;45m+102ms[0m
+  [38;5;45;1mpw:api [0m  element is visible, enabled and stable [38;5;45m+31ms[0m
+  [38;5;45;1mpw:api [0m  scrolling into view if needed [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  done scrolling [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  performing click action [38;5;45m+4ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/" [38;5;45m+19ms[0m
+  [38;5;45;1mpw:api [0m  navigated to "http://localhost:8423/login" [38;5;45m+8ms[0m
+  [38;5;45;1mpw:api [0m  click action done [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0m  waiting for scheduled navigations to finish [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  navigations have finished [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= locator.click succeeded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m=> expect.not.toBeVisible started [38;5;45m+2ms[0m
+  [38;5;45;1mpw:api [0mExpect "not toBeVisible" with timeout 2000ms [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for locator('[data-testid="payment-failed-screen"]') [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m  locator resolved to <div data-testid="payment-failed-screen" class="css-view-g5y9jx r-backgroundColor-1ins33t r-flex-13awgt0">…</div> [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m<= expect.not.toBeVisible succeeded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> page.screenshot started [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0m  "networkidle" event fired [38;5;45m+32ms[0m
+  [38;5;45;1mpw:api [0m<= page.screenshot succeeded [38;5;45m+48ms[0m
+  [38;5;45;1mpw:api [0mtaking page screenshot [38;5;45m+3ms[0m
+  [38;5;45;1mpw:api [0mwaiting for fonts to load... [38;5;45m+1ms[0m
+  [38;5;45;1mpw:api [0mfonts loaded [38;5;45m+0ms[0m
+  [38;5;45;1mpw:api [0m=> browserContext.close started [38;5;45m+65ms[0m
+  [38;5;45;1mpw:api [0m<= browserContext.close succeeded [38;5;45m+4ms[0m
+  ✓  1 [chrome] › web-e2e/flow-102-payment-failure-and-retry.test.js:24:5 › Payment Failure & Retry Flow - Complete flow from login through payment failure and retry (8.9s)
+  [38;5;45;1mpw:api [0m=> browser.close started [38;5;45m+3ms[0m
+  [30;1mpw:browser [0m[pid=46117] <gracefully close start> [30m+9s[0m
+  [30;1mpw:browser [0m[pid=46117] <process did exit: exitCode=0, signal=null> [30m+21ms[0m
+  [30;1mpw:browser [0m[pid=46117] starting temporary directories cleanup [30m+1ms[0m
+  [30;1mpw:browser [0m[pid=46117] finished temporary directories cleanup [30m+2ms[0m
+  [30;1mpw:browser [0m[pid=46117] <gracefully close end> [30m+0ms[0m
+  [38;5;45;1mpw:api [0m<= browser.close succeeded [38;5;45m+24ms[0m
+
+  2 passed (9.5s)
