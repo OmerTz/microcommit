@@ -111,25 +111,40 @@ export default function AddPaymentMethodScreen() {
     setIsProcessing(true);
 
     try {
-      // Web: Log payment details (in production, would call backend API)
-      console.log('[ADD_PAYMENT_METHOD] Web: Would process payment with:', {
-        cardNumber: cardNumber.substring(0, 4) + '****',
-        expiryDate,
+      // Call payment processing handler
+      const result = await processPaymentMethod({
         cardholderName,
         billingZip,
+        cardDetails: null,
+        cardNumber,
+        expiryDate,
+        cvc,
         saveForFuture,
+        platform: 'web',
       });
 
+      if (!result.success) {
+        // Handler returned error (web not yet supported)
+        console.error('[ADD_PAYMENT_METHOD] Payment processing failed:', result.error);
+        analytics.track('payment_method_add_failed', {
+          error: result.error,
+          platform: 'web',
+        });
+        setErrors({ general: result.error || t('payment.addPaymentMethod.errors.tokenizationFailed') });
+        setIsProcessing(false);
+        return;
+      }
+
+      // Success case (currently unreachable for web, but ready for future implementation)
+      console.log('[ADD_PAYMENT_METHOD] Payment method created:', result.paymentMethodId);
       analytics.track('payment_method_changed', {
         save_for_future: saveForFuture,
         success: true,
         platform: 'web',
       });
-
-      // Navigate back to indicate success
       router.back();
     } catch (error) {
-      console.error('[ADD_PAYMENT_METHOD] Error:', error);
+      console.error('[ADD_PAYMENT_METHOD] Unexpected error:', error);
       analytics.track('payment_method_add_failed', {
         error: error instanceof Error ? error.message : 'unknown',
         platform: 'web',
