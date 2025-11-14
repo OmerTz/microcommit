@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   ScrollView,
   ActivityIndicator,
+  Platform,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -155,6 +156,10 @@ export default function AddPaymentMethodScreen() {
     }
   };
 
+  // Disable animations on web where reanimated has compatibility issues
+  const AnimatedWrapper = Platform.OS === 'web' ? View : Animated.View;
+  const animationProps = Platform.OS === 'web' ? {} : { entering: FadeInDown.duration(500).springify() };
+
   return (
     <View style={styles.container} testID="add-payment-method-screen">
       <ScrollView
@@ -163,7 +168,7 @@ export default function AddPaymentMethodScreen() {
         testID="add-payment-method-scrollview"
       >
         {/* Header with back button */}
-        <Animated.View entering={FadeInUp.duration(400).springify()} style={styles.header}>
+        <AnimatedWrapper {...(Platform.OS === 'web' ? {} : { entering: FadeInUp.duration(400).springify() })} style={styles.header}>
           <TouchableOpacity
             onPress={() => router.back()}
             style={styles.backButton}
@@ -171,20 +176,20 @@ export default function AddPaymentMethodScreen() {
           >
             <Ionicons name="arrow-back" size={24} color={PaymentColors.text.primary} />
           </TouchableOpacity>
-        </Animated.View>
+        </AnimatedWrapper>
 
         {/* Title section */}
-        <Animated.View
-          entering={FadeInDown.duration(500).delay(100).springify()}
+        <AnimatedWrapper
+          {...(Platform.OS === 'web' ? {} : { entering: FadeInDown.duration(500).delay(100).springify() })}
           style={styles.titleContainer}
         >
           <Text style={styles.title}>{t('payment.addPaymentMethod.title')}</Text>
           <Text style={styles.subtitle}>{t('payment.addPaymentMethod.subtitle')}</Text>
-        </Animated.View>
+        </AnimatedWrapper>
 
         {/* Security badge */}
-        <Animated.View
-          entering={FadeInDown.duration(500).delay(200).springify()}
+        <AnimatedWrapper
+          {...(Platform.OS === 'web' ? {} : { entering: FadeInDown.duration(500).delay(200).springify() })}
           style={styles.securityBadge}
           testID="add-payment-method-security-badge"
         >
@@ -192,11 +197,11 @@ export default function AddPaymentMethodScreen() {
           <Text style={styles.securityText}>
             {t('payment.addPaymentMethod.security.securedByStripe')}
           </Text>
-        </Animated.View>
+        </AnimatedWrapper>
 
         {/* Form */}
-        <Animated.View
-          entering={FadeInDown.duration(500).delay(300).springify()}
+        <AnimatedWrapper
+          {...(Platform.OS === 'web' ? {} : { entering: FadeInDown.duration(500).delay(300).springify() })}
           style={styles.formContainer}
         >
           {/* Web manual card input fields */}
@@ -319,13 +324,13 @@ export default function AddPaymentMethodScreen() {
               {t('payment.addPaymentMethod.fields.saveForFuture')}
             </Text>
           </TouchableOpacity>
-        </Animated.View>
+        </AnimatedWrapper>
 
         {/* Alternative payment methods not available on web */}
 
         {/* Actions */}
-        <Animated.View
-          entering={FadeInDown.duration(500).delay(500).springify()}
+        <AnimatedWrapper
+          {...(Platform.OS === 'web' ? {} : { entering: FadeInDown.duration(500).delay(500).springify() })}
           style={styles.actionsContainer}
         >
           {errors.general && (
@@ -365,7 +370,7 @@ export default function AddPaymentMethodScreen() {
           <Text style={styles.securityDisclaimer}>
             {t('payment.addPaymentMethod.security.neverStoreDetails')}
           </Text>
-        </Animated.View>
+        </AnimatedWrapper>
       </ScrollView>
     </View>
   );
