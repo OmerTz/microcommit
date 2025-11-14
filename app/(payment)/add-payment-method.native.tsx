@@ -331,7 +331,7 @@ export default function AddPaymentMethodScreen() {
                 style={styles.alternativePaymentButton}
                 testID="add-payment-method-apple-pay-button"
               >
-                <Ionicons name="logo-apple" size={24} color="#000" />
+                <Ionicons name="logo-apple" size={24} color={PaymentColors.thirdParty.applePay} />
                 <Text style={styles.alternativePaymentButtonText}>
                   {t('payment.addPaymentMethod.buttons.useApplePay')}
                 </Text>
@@ -369,7 +369,7 @@ export default function AddPaymentMethodScreen() {
             testID="add-payment-method-process-button"
           >
             {isProcessing ? (
-              <ActivityIndicator color="#FFF" />
+              <ActivityIndicator color={PaymentColors.text.onPrimary} />
             ) : (
               <Text style={styles.primaryButtonText}>
                 {t('payment.addPaymentMethod.buttons.processPayment')}
