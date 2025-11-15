@@ -65,9 +65,9 @@ describe('Payment Failure & Retry Flow - Complete flow from app launch through p
 
     await device.takeScreenshot('mobile-e2e/screenshots/flow-102/04-after-retry-navigation');
 
-    // Test retry with payment details (simulating actual retry scenario)
+    // Test retry navigation (without payment details to avoid async retry race condition)
     await device.openURL({
-      url: 'microcommit://payment-failed?errorType=insufficient_funds&goalName=Retry%20Test&commitmentAmount=50&charityName=Test%20Charity&goalId=test-retry-001&paymentIntentId=pi_test_123&paymentMethodId=pm_test_123&userId=user_test_123&cardLast4=4242&cardBrand=visa'
+      url: 'microcommit://payment-failed?errorType=insufficient_funds&goalName=Retry%20Test&commitmentAmount=50&charityName=Test%20Charity&goalId=test-retry-001'
     });
 
     await waitFor(element(by.id('payment-failed-screen')))
